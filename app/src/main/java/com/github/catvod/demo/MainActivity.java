@@ -3,7 +3,9 @@ package com.github.catvod.demo;
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.github.catvod.spider.Aidi;
 import com.github.catvod.spider.AppYsV2;
+import com.github.catvod.spider.Douban;
 import com.github.catvod.spider.XPath;
 
 import org.json.JSONArray;
@@ -22,18 +24,35 @@ public class MainActivity extends Activity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                AppYsV2 aidi1 = new AppYsV2();
-                aidi1.init(MainActivity.this, "https://vipmv.co/xgapp.php/v1/");
-                String json = aidi1.homeContent(true);
+                Douban aidi1 = new Douban();
+                try {
+                    aidi1.init(MainActivity.this,"https://movie.douban.com/");
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+                String json = null;
+                try {
+                    json = aidi1.homeContent(true);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
                 System.out.println(json);
                 JSONObject homeContent = null;
                 try {
-                    homeContent = new JSONObject(aidi1.homeVideoContent());
-                    System.out.println(homeContent.toString());
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                    String json1 = aidi1.homeVideoContent();
+                    if(null != json1){
+                        homeContent = new JSONObject(json1);
+                    }
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
                 }
-                System.out.println(aidi1.categoryContent("1", "1", false, null));
+                System.out.println(homeContent.toString());
+                try {
+                    String categoryContent = aidi1.categoryContent("1", "1", false, null);
+                    System.out.println(categoryContent);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
                 if (homeContent != null) {
                     try {
                         List<String> ids = new ArrayList<String>();
@@ -42,8 +61,9 @@ public class MainActivity extends Activity {
                             try {
                                 ids.clear();
                                 ids.add(array.getJSONObject(i).getString("vod_id"));
-                                System.out.println(aidi1.detailContent(ids));
-                                JSONObject detailContent = new JSONObject(aidi1.detailContent(ids)).getJSONArray("list").getJSONObject(0);
+                                String detailContent1 = aidi1.detailContent(ids);
+                                System.out.println(detailContent1);
+                                JSONObject detailContent = new JSONObject(detailContent1).getJSONArray("list").getJSONObject(0);
                                 String[] playFlags = detailContent.getString("vod_play_from").split("\\$\\$\\$");
                                 String[] playUrls = detailContent.getString("vod_play_url").split("\\$\\$\\$");
                                 for (int j = 0; j < playFlags.length; j++) {
@@ -58,8 +78,16 @@ public class MainActivity extends Activity {
 
                     }
                 }
-                System.out.println(aidi1.searchContent("陪你一起", false));
-                System.out.println(aidi1.searchContent("顶楼", false));
+                try {
+                    System.out.println(aidi1.searchContent("陪你一起", false));
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    System.out.println(aidi1.searchContent("顶楼", false));
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
 
                 XPath aidi = new XPath();
                 aidi.init(MainActivity.this, "{\n" +
@@ -123,13 +151,21 @@ public class MainActivity extends Activity {
                         "  \"scVodMark\": \"/button/text()\"\n" +
                         "}\n");
                 System.out.println(aidi.homeContent(true));
-                System.out.println(aidi.homeVideoContent());
+                try {
+                    System.out.println(aidi.homeVideoContent());
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
                 System.out.println(aidi.categoryContent("2", "1", false, null));
                 List<String> ids = new ArrayList<String>();
                 ids.add("25603");
                 System.out.println(aidi.detailContent(ids));
                 System.out.println(aidi.playerContent("", "11111", new ArrayList<>()));
-                System.out.println(aidi.searchContent("陪你一起", false));
+                try {
+                    System.out.println(aidi.searchContent("陪你一起", false));
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         }).start();
     }
