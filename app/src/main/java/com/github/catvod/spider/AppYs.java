@@ -32,7 +32,7 @@ public class AppYs extends Spider {
     private String extString = "";
 
     @Override
-    public void init(Context context, String extend) {
+    public void init(Context context, String extend) throws Exception{
         super.init(context, extend);
         this.extString = extend;
     }

@@ -52,7 +52,7 @@ public class Ysdq extends Spider {
     private String sourceName = "";
 
     @Override
-    public void init(Context context, String extend) {
+    public void init(Context context, String extend) throws Exception {
         super.init(context, extend);
         this.sourceName = extend;
     }

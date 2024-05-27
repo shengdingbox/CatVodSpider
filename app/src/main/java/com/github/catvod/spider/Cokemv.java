@@ -26,6 +26,10 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 不可以使用了
+ */
+
 public class Cokemv extends Spider {
     private static final String siteUrl = "https://cokemv.me";
     private static final String siteHost = "cokemv.me";
@@ -45,7 +49,7 @@ public class Cokemv extends Spider {
 
 
     @Override
-    public void init(Context context) {
+    public void init(Context context) throws Exception{
         super.init(context);
         try {
             playerConfig = new JSONObject("{\"app\":{\"sh\":\"APP\",\"pu\":\"\",\"sn\":0,\"or\":999},\"cokeqie01\":{\"sh\":\"極速路線\",\"pu\":\"\",\"sn\":0,\"or\":999},\"xin\":{\"sh\":\"高速路線\",\"pu\":\"\",\"sn\":0,\"or\":999},\"90mm\":{\"sh\":\"藍光號路\",\"pu\":\"\",\"sn\":0,\"or\":999},\"age01\":{\"sh\":\"動漫一線\",\"pu\":\"\",\"sn\":0,\"or\":999},\"age02\":{\"sh\":\"動漫二線\",\"pu\":\"\",\"sn\":0,\"or\":999},\"mahua\":{\"sh\":\"采集路線\",\"pu\":\"\",\"sn\":0,\"or\":999},\"toutiao\":{\"sh\":\"蓝光不卡\",\"pu\":\"\",\"sn\":0,\"or\":999}}");

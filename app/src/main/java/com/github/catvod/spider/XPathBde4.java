@@ -70,14 +70,14 @@ public class XPathBde4 extends XPath {
             fetchRule();
             String webUrl = rule.getPlayUrl().isEmpty() ? id : rule.getPlayUrl().replace("{playUrl}", id);
             SpiderDebug.log(webUrl);
-            String content = OkHttpUtil.string(webUrl, getHeaders(webUrl));
+            String content = OkHttpUtil.string(webUrl, getHeaders());
             String startFlag = "var m3u8 = \"";
             int start = content.indexOf(startFlag);
             start = start + startFlag.length();
             int end = content.indexOf("\";", start);
             String m3u8 = content.substring(start, end).replace("\\", "").replace("https", "http");
             SpiderDebug.log(m3u8);
-            HashMap<String, String> headers = getHeaders(m3u8);
+            HashMap<String, String> headers = getHeaders();
 
             OKCallBack<String> m3u8Callback = new OKCallBack<String>() {
                 @Override

@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 
 import okhttp3.Call;
 
+@SuppressWarnings("aaa")
 public class YydsAli1 extends Spider {
     private static final String siteUrl = "https://cmn.yyds.fans";
 

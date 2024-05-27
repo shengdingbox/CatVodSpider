@@ -27,7 +27,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Demo for self study
+ * Demo for self study https://yingshi.cc/
  * <p>
  * Source from Author: CatVod
  */
@@ -46,7 +46,7 @@ public class Imaple extends Spider {
     protected Pattern regexPage = Pattern.compile("\\S+/page/(\\d+)\\S+");
 
     @Override
-    public void init(Context context) {
+    public void init(Context context) throws Exception {
         super.init(context);
         try {
             playerConfig = new JSONObject("{\"kbm3u8\":{\"sh\":\"秒播雲\",\"sn\":0,\"pu\":\"\",\"or\":999},\"bjm3u8\":{\"sh\":\"八戒雲\",\"sn\":0,\"pu\":\"\",\"or\":999},\"605m3u8\":{\"sh\":\"光速雲\",\"sn\":0,\"pu\":\"\",\"or\":999},\"mlm3u8\":{\"sh\":\"藍光線一\",\"sn\":0,\"pu\":\"\",\"or\":999},\"alizy\":{\"sh\":\"藍光線三\",\"sn\":1,\"pu\":\"https://player.imaple.tv/player/?url=\",\"or\":999},\"dplayer\":{\"sh\":\"動漫專線\",\"sn\":1,\"pu\":\"https://player.imaple.tv/player/?url=\",\"or\":999},\"qdyun\":{\"sh\":\"驱动云\",\"sn\":0,\"pu\":\"\",\"or\":999},\"wjm3u8\":{\"sh\":\"理想雲\",\"sn\":0,\"pu\":\"\",\"or\":999},\"fanqie\":{\"sh\":\"番茄资源\",\"sn\":1,\"pu\":\"https://player.imaple.tv/player/?url=\",\"or\":999},\"youku\":{\"sh\":\"奇藝雲\",\"sn\":1,\"pu\":\"https://player.imaple.tv/player/?url=\",\"or\":999},\"qq\":{\"sh\":\"騰訊雲\",\"sn\":1,\"pu\":\"https://player.imaple.tv/player/?url=\",\"or\":999},\"mgtv\":{\"sh\":\"芒果雲\",\"sn\":1,\"pu\":\"https://player.imaple.tv/player/?url=\",\"or\":999},\"sohu\":{\"sh\":\"搜狐雲\",\"sn\":1,\"pu\":\"https://player.imaple.tv/player/?url=\",\"or\":999},\"88zym3u8\":{\"sh\":\"優雅雲\",\"sn\":1,\"pu\":\"https://player.imaple.tv/player/?url=\",\"or\":999},\"bilibili\":{\"sh\":\"嗶哩雲\",\"sn\":1,\"pu\":\"https://player.imaple.tv/player/?url=\",\"or\":999},\"dbm3u8\":{\"sh\":\"急速雲\",\"sn\":0,\"pu\":\"\",\"or\":999},\"tkm3u8\":{\"sh\":\"天空雲\",\"sn\":0,\"pu\":\"\",\"or\":999}}");

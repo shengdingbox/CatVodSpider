@@ -27,7 +27,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 真不卡 播放好像还有问题 需要大佬继续修复
+ * 真不卡 播放好像还有问题 需要大佬继续修复  不可以使用了
  * <p>
  * Author: 小黄瓜
  */
@@ -51,7 +51,7 @@ public class Buka extends Spider {
     private Pattern regexPage = Pattern.compile("/vodshow/(\\S+)/");
 
     @Override
-    public void init(Context context) {
+    public void init(Context context) throws Exception{
         super.init(context);
         try {
             playerConfig = new JSONObject("{\"qqpic\":{\"sh\":\"不卡超清[推荐]\",\"pu\":\"http://good-vip.mmiyue.com/zhenbuka2/player/index.php?video_id=\",\"sn\":0,\"or\":999},\"niuxyun\":{\"sh\":\"不卡备用[推荐]\",\"pu\":\"http://good-vip.mmiyue.com/jiekou/zbk-bkby/jx.php?id=\",\"sn\":0,\"or\":999},\"vipjx\":{\"sh\":\"不卡备用③[推荐]\",\"pu\":\"https://cq.mmiyue.com/zhenbuka2/player/index.php?url=\",\"sn\":0,\"or\":999},\"bkm3u8\":{\"sh\":\"不卡备用②[推荐]\",\"pu\":\"http://good-vip.mmiyue.com/zhenbuka2/player/index.php?url=//good-vip.mmiyue.com/zhenbuka2/api/dymp4.php?video_id=\",\"sn\":0,\"or\":999},\"cy\":{\"sh\":\"动漫云\",\"pu\":\"https://cq.mmiyue.com/jiekou/zbk-bkby/jx.php?id=\",\"sn\":0,\"or\":999},\"mgtv\":{\"sh\":\"不卡芒果\",\"pu\":\"https://cq.mmiyue.com/zhenbuka2/player/index.php?url=\",\"sn\":0,\"or\":999},\"qiyi\":{\"sh\":\"不卡奇艺\",\"pu\":\"https://cq.mmiyue.com/zhenbuka2/player/index.php?url=\",\"sn\":0,\"or\":999},\"qq\":{\"sh\":\"不卡企鹅\",\"pu\":\"https://cq.mmiyue.com/zhenbuka2/player/index.php?url=\",\"sn\":0,\"or\":999},\"youku\":{\"sh\":\"不卡优酷\",\"pu\":\"https://cq.mmiyue.com/zhenbuka2/player/index.php?url=\",\"sn\":0,\"or\":999},\"dbm3u8\":{\"sh\":\"资源备用[不推荐]\",\"pu\":\"\",\"sn\":0,\"or\":999},\"niuyun\":{\"sh\":\"超清备用\",\"pu\":\"https://api.l32c.cn/danmu/niuyun.php?id=\",\"sn\":0,\"or\":999},\"123kum3u8\":{\"sh\":\"资源备用[不推荐]\",\"pu\":\"\",\"sn\":0,\"or\":999},\"sixpan\":{\"sh\":\"不卡备用②[推荐]\",\"pu\":\"https://cq.mmiyue.com/zhenbuka2/player/index.php?url=//cq.mmiyue.com/m3u8/buka/\",\"sn\":0,\"or\":999},\"qq1\":{\"sh\":\"超清云播\",\"pu\":\"https://api.nixingle.com/zhenbuka/player/index.php?id=\",\"sn\":0,\"or\":999}}");

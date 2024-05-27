@@ -27,6 +27,9 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 黄了
+ */
 public class Juhi extends Spider {
 
     private static final String siteUrl = "https://www.juhi.cc/";
