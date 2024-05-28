@@ -9,6 +9,7 @@ import com.github.catvod.crawler.Spider;
 import com.github.catvod.net.OkHttp;
 import com.github.catvod.utils.Json;
 import com.github.catvod.utils.Util;
+import com.google.gson.JsonElement;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -45,11 +46,17 @@ public class Douban extends Spider {
         List<Class> classes = new ArrayList<>();
         List<String> typeIds = Arrays.asList("hot_gaia", "tv_hot", "show_hot", "movie", "tv", "rank_list_movie", "rank_list_tv");
         List<String> typeNames = Arrays.asList("热门电影", "热播剧集", "热播综艺", "电影筛选", "电视筛选", "电影榜单", "电视剧榜单");
-        for (int i = 0; i < typeIds.size(); i++) classes.add(new Class(typeIds.get(i), typeNames.get(i)));
-        String recommendUrl = "http://api.douban.com/api/v2/subject_collection/subject_real_time_hotest/items" + apikey;
+        for (int i = 0; i < typeIds.size(); i++)
+            classes.add(new Class(typeIds.get(i), typeNames.get(i)));
+        String recommendUrl = siteUrl + "/subject_collection/subject_real_time_hotest/items" + apikey;
         JSONObject jsonObject = new JSONObject(OkHttp.string(recommendUrl, getHeader()));
         JSONArray items = jsonObject.optJSONArray("subject_collection_items");
-        return Result.string(classes, parseVodListFromJSONArray(items), filter ? Json.parse(OkHttp.string(extend)) : null);
+        JsonElement file = null;
+        if (null != extend) {
+            String string = OkHttp.string(extend);
+            file = Json.parse(string);
+        }
+        return Result.string(classes, parseVodListFromJSONArray(items), filter ? file : null);
     }
 
     @Override
@@ -132,7 +139,8 @@ public class Douban extends Spider {
     private String getTags(HashMap<String, String> extend) {
         try {
             StringBuilder tags = new StringBuilder();
-            for (String key : extend.keySet()) if (!key.equals("sort")) tags.append(extend.get(key)).append(",");
+            for (String key : extend.keySet())
+                if (!key.equals("sort")) tags.append(extend.get(key)).append(",");
             return Util.substring(tags.toString());
         } catch (Exception e) {
             return "";

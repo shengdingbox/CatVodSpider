@@ -25,7 +25,7 @@ import java.util.Set;
 
 public class XPath extends Spider {
 
-    private HashMap<String, String> getHeaders() {
+    HashMap<String, String> getHeaders() {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("User-Agent", rule.getUa().isEmpty() ? Util.CHROME : rule.getUa());
         return headers;
