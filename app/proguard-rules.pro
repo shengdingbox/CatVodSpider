@@ -8,6 +8,19 @@
 -keep class com.github.catvod.spider.* { public <methods>; }
 -keep class com.github.catvod.parser.* { public <methods>; }
 
+# CatVod runtime dependencies
+-keep class com.github.catvod.utils.** { *; }
+-keep class com.github.catvod.bean.** { *; }
+-keep class com.github.catvod.internal.** { *; }
+-keep class com.github.catvod.en.** { *; }
+-keep class com.github.catvod.net.** { *; }
+-keep class com.github.catvod.api.** { *; }
+-keep class com.github.catvod.live.** { *; }
+-keep class com.github.catvod.xpath.** { *; }
+-keep class com.github.catvod.ui.** { *; }
+-keep class com.github.catvod.debug.** { *; }
+-keep class com.github.catvod.demo.** { *; }
+
 # AndroidX
 -keep class androidx.core.** { *; }
 
