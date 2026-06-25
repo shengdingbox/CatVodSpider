@@ -12,11 +12,27 @@ android {
         targetSdk 34
         minSdkVersion 17
         buildConfigField("String", "CLIENT_ID", "\"${clientId}\"")
+        buildConfigField("boolean", "ENCRYPT", "${ENCRYPT}")
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    signingConfigs {
+        debug {
+            // Uses default debug keystore
+        }
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+        }
         release {
-            minifyEnabled true
+            signingConfig signingConfigs.debug
+            minifyEnabled Boolean.parseBoolean("${ENCRYPT}")
             proguardFiles 'proguard-rules.pro'
             proguardDictionaries {
                 dictionaryNames = ["build/class-dictionary", "build/package-dictionary", "build/obfuscation-dictionary"]
@@ -25,11 +41,6 @@ android {
                 linesCountInDictionary 100000
             }
         }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
     }
 
     configurations.configureEach {
