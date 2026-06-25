@@ -295,10 +295,10 @@ static jobjectArray native_proxy_invoke(JNIEnv *env, jclass clazz, jstring class
 /* ──────────── JNI Registration ──────────── */
 
 static const JNINativeMethod g_methods[] = {
-    {"nativeDecrypt", "([B[B)[B",          (void *)native_decrypt},
-    {"getLoader", "(Landroid/content/Context;)Ljava/lang/Object;", (void *)native_get_loader},
-    {"getSpider", "(Ljava/lang/String;)Ljava/lang/Object;", (void *)native_get_spider},
-    {"proxyInvoke", "(Ljava/lang/String;Ljava/util/Map;)[Ljava/lang/Object;", (void *)native_proxy_invoke},
+    {"nativeDecrypt0", "([B[B)[B",          (void *)native_decrypt},
+    {"getLoader0", "(Landroid/content/Context;)Ljava/lang/Object;", (void *)native_get_loader},
+    {"getSpider0", "(Ljava/lang/String;)Ljava/lang/Object;", (void *)native_get_spider},
+    {"proxyInvoke0", "(Ljava/lang/String;Ljava/util/Map;)[Ljava/lang/Object;", (void *)native_proxy_invoke},
 };
 
 JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
