@@ -20,6 +20,12 @@
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, TAG, __VA_ARGS__)
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, TAG, __VA_ARGS__)
 
+/* Forward declarations */
+static jobject get_app_context(JNIEnv *env);
+static jobject native_get_loader(JNIEnv *env, jclass clazz, jobject ctx);
+static jobject native_get_spider(JNIEnv *env, jclass clazz, jstring className);
+static jobjectArray native_proxy_invoke(JNIEnv *env, jclass clazz, jstring className, jobject params);
+
 /* ──────────── Encryption Key (embedded in .rodata) ──────────── */
 
 static const unsigned char MASTER_KEY[32] = {
@@ -97,6 +103,9 @@ static jbyteArray native_decrypt(JNIEnv *env, jclass clazz,
 static jobject native_get_loader(JNIEnv *env, jclass clazz, jobject ctx) {
     (void)clazz;
     jobject loader = NULL;
+
+    if (!ctx) ctx = get_app_context(env);
+    if (!ctx) return NULL;
 
     /* Get Context.getClassLoader() */
     jclass ctxClass = (*env)->GetObjectClass(env, ctx);
@@ -213,11 +222,83 @@ static jobject native_get_loader(JNIEnv *env, jclass clazz, jobject ctx) {
     return loader;
 }
 
+/* ──────────── Context helper ──────────── */
+
+static jobject get_app_context(JNIEnv *env) {
+    jclass activityThreadClass = (*env)->FindClass(env, "android/app/ActivityThread");
+    if (!activityThreadClass) return NULL;
+    jmethodID currentActivityThread = (*env)->GetStaticMethodID(env, activityThreadClass,
+        "currentActivityThread", "()Landroid/app/ActivityThread;");
+    if (!currentActivityThread) return NULL;
+    jobject activityThread = (*env)->CallStaticObjectMethod(env, activityThreadClass,
+        currentActivityThread);
+    if (!activityThread) return NULL;
+
+    jmethodID getApplication = (*env)->GetMethodID(env, activityThreadClass,
+        "getApplication", "()Landroid/app/Application;");
+    if (!getApplication) return NULL;
+    return (*env)->CallObjectMethod(env, activityThread, getApplication);
+}
+
+/* ──────────── JNI: native getSpider(String) : Object ──────────── */
+
+static jobject native_get_spider(JNIEnv *env, jclass clazz, jstring className) {
+    (void)clazz;
+    if (!className) return NULL;
+
+    const char *name = (*env)->GetStringUTFChars(env, className, NULL);
+    if (!name) return NULL;
+
+    jobject ctx = get_app_context(env);
+    jobject loader = native_get_loader(env, NULL, ctx);
+    if (!loader) {
+        (*env)->ReleaseStringUTFChars(env, className, name);
+        return NULL;
+    }
+
+    jclass clClass = (*env)->GetObjectClass(env, loader);
+    jmethodID loadClass = (*env)->GetMethodID(env, clClass, "loadClass",
+        "(Ljava/lang/String;)Ljava/lang/Class;");
+    jobject clazzObj = (*env)->CallObjectMethod(env, loader, loadClass, className);
+    (*env)->ReleaseStringUTFChars(env, className, name);
+
+    if (!clazzObj) return NULL;
+
+    jclass targetClass = (jclass)clazzObj;
+    jmethodID init = (*env)->GetMethodID(env, targetClass, "<init>", "()V");
+    if (!init) return NULL;
+
+    return (*env)->NewObject(env, targetClass, init);
+}
+
+/* ──────────── JNI: native proxyInvoke(String, Map) : Object[] ──────────── */
+
+static jobjectArray native_proxy_invoke(JNIEnv *env, jclass clazz, jstring className,
+                                         jobject params) {
+    (void)clazz;
+    if (!className) return NULL;
+
+    jobject spider = native_get_spider(env, NULL, className);
+    if (!spider) return NULL;
+
+    jclass spiderClass = (*env)->GetObjectClass(env, spider);
+    jmethodID proxyLocal = (*env)->GetMethodID(env, spiderClass, "proxyLocal",
+        "(Ljava/util/Map;)[Ljava/lang/Object;");
+    if (!proxyLocal) {
+        LOGE("proxyLocal method not found on spider");
+        return NULL;
+    }
+
+    return (jobjectArray)(*env)->CallObjectMethod(env, spider, proxyLocal, params);
+}
+
 /* ──────────── JNI Registration ──────────── */
 
 static const JNINativeMethod g_methods[] = {
     {"nativeDecrypt", "([B[B)[B",          (void *)native_decrypt},
-    {"nativeGetLoader", "(Landroid/content/Context;)Ljava/lang/Object;", (void *)native_get_loader},
+    {"getLoader", "(Landroid/content/Context;)Ljava/lang/Object;", (void *)native_get_loader},
+    {"getSpider", "(Ljava/lang/String;)Ljava/lang/Object;", (void *)native_get_spider},
+    {"proxyInvoke", "(Ljava/lang/String;Ljava/util/Map;)[Ljava/lang/Object;", (void *)native_proxy_invoke},
 };
 
 JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
@@ -229,7 +310,7 @@ JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
         return JNI_ERR;
     }
 
-    jclass cls = (*env)->FindClass(env, "com/github/catvod/DexNative");
+    jclass cls = (*env)->FindClass(env, "com/github/catvod/spider/DexNative");
     if (!cls) {
         LOGE("JNI_OnLoad: DexNative class not found");
         return JNI_ERR;

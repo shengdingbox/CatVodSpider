@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.webkit.*;
+import com.github.catvod.crawler.Spider;
 import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.en.BaseApi;
 import com.github.catvod.utils.okhttp.OkHttpUtil;
@@ -178,6 +179,50 @@ public class Init {
 
     public static Application context() {
         return get().application;
+    }
+
+    /**
+     * Cached DexClassLoader backed by the decrypted payload DEX.
+     * Lazily initialized on first spider access.
+     */
+    private static ClassLoader payloadLoader;
+
+    /**
+     * Return the class loader for the decrypted payload DEX.
+     * The first call triggers native SO loading and DEX decryption.
+     */
+    public static ClassLoader loader() {
+        if (payloadLoader == null) {
+            try {
+                payloadLoader = (ClassLoader) DexNative.getLoader(context());
+            } catch (Throwable e) {
+                SpiderDebug.log("Init.loader error: " + e);
+            }
+        }
+        return payloadLoader;
+    }
+
+    /**
+     * Resolve a real spider instance from the encrypted payload.
+     *
+     * @param className fully-qualified spider class name (e.g. com.github.catvod.spider.Aidi)
+     * @return the real spider instance, or null if payload is not available
+     */
+    public static Spider getSpider(String className) {
+        ClassLoader cl = loader();
+        if (cl == null) {
+            return null;
+        }
+        try {
+            Class<?> clazz = cl.loadClass(className);
+            Object instance = clazz.newInstance();
+            if (instance instanceof Spider) {
+                return (Spider) instance;
+            }
+        } catch (Throwable e) {
+            SpiderDebug.log("Init.getSpider error: " + e);
+        }
+        return null;
     }
 
     public static void execFileBrowser(Init init, Boolean enabled) {

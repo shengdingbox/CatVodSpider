@@ -21,6 +21,16 @@
 }
 
 # ============================================================
+# Native encrypted DEX bridge (must match native SO signatures)
+# ============================================================
+-keep class com.github.catvod.spider.BaseSpider { *; }
+-keep class com.github.catvod.spider.DexNative { *; }
+-keep class com.github.catvod.spider.Init {
+    public static com.github.catvod.crawler.Spider getSpider(java.lang.String);
+    public static java.lang.ClassLoader loader();
+}
+
+# ============================================================
 # Spider host interface (loaded via reflection by host app)
 # ============================================================
 -keep class com.github.catvod.js.* { *; }
