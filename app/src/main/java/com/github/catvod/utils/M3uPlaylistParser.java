@@ -166,7 +166,7 @@ public class M3uPlaylistParser {
     }
 
     public static void m1037(LinkedHashMap<String, LinkedHashMap<String, ArrayList<String>>> linkedHashMap, String str, HashMap<String, String> map) {
-        String strM1089 = C0295.m1089(str, map);
+        String strM1089 = HttpFetcher.fetch(str, map);
         if (strM1089.startsWith(SOY.d("5917092239442F"))) {
             m1035(linkedHashMap, strM1089);
         } else {

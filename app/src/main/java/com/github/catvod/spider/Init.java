@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
@@ -134,7 +135,7 @@ public class Init {
                 cmd = "nohup ./" + binaryName;
             }
             init.execCommand(binaryName, cmd, "my_tgsou.log", showOutput);
-        } catch (Exception e) {
+        } catch (Throwable e) {
             SpiderDebug.log("Error occurred");
             SpiderDebug.log("extract assets fail");
         }
@@ -157,7 +158,7 @@ public class Init {
             String serverCmd = "nohup ./" + alistBinary + " server";
             init.execCommand(alistBinary, setAdminCmd, "my_alist.log", enabled.booleanValue());
             init.execCommand(alistBinary, serverCmd, "my_alist.log", enabled.booleanValue());
-        } catch (Exception e) {
+        } catch (Throwable e) {
             SpiderDebug.log("Error occurred");
             SpiderDebug.log("extract assets fail");
         }
@@ -166,7 +167,7 @@ public class Init {
     public static void checkPermission() {
         try {
             Activity activity = getActivity();
-            if (activity == null || Build.VERSION.SDK_INT < 23 || activity.checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") == 0) {
+            if (activity == null || Build.VERSION.SDK_INT < 23 || activity.checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") == PackageManager.PERMISSION_GRANTED) {
                 return;
             }
             activity.requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, 9999);
@@ -186,7 +187,7 @@ public class Init {
             File file = new File(context().getFilesDir().getAbsolutePath() + "/" + fileBrowserBinary);
             init.extractBinary(fileBrowserBinary, file);
             init.execCommand(fileBrowserBinary, "HOME=/Users/my_username " + file.getAbsolutePath() + " -a 0.0.0.0 -r /storage/emulated/0", "my_filebrowser.log", enabled.booleanValue());
-        } catch (Exception e) {
+        } catch (Throwable e) {
             SpiderDebug.log("Error occurred");
             SpiderDebug.log("extract assets fail");
         }
@@ -197,11 +198,10 @@ public class Init {
         try {
             allinOneBinary = init.getArchBinary("allinone-linux", "allinone-arm64", "allinone-armV7");
             init.extractBinary(allinOneBinary, new File(context().getFilesDir().getAbsolutePath() + "/" + allinOneBinary));
-            StringBuilder sb = new StringBuilder();
-            sb.append("nohup ./");
-            sb.append(allinOneBinary);
-            init.execCommand(allinOneBinary, sb.toString(), "my_allinoneutput.log", enabled.booleanValue());
-        } catch (Exception e) {
+            String sb = "nohup ./" +
+                    allinOneBinary;
+            init.execCommand(allinOneBinary, sb, "my_allinoneutput.log", enabled.booleanValue());
+        } catch (Throwable e) {
             SpiderDebug.log("Error occurred");
             SpiderDebug.log("extract assets fail");
         }
@@ -226,7 +226,7 @@ public class Init {
                 cmd = "nohup ./" + tgSouGoBinary;
             }
             init.execCommand(tgSouGoBinary, cmd, "my_tgsou-go.log", enabled.booleanValue());
-        } catch (Exception e) {
+        } catch (Throwable e) {
             SpiderDebug.log("Error occurred");
             SpiderDebug.log("extract assets fail");
         }
@@ -240,7 +240,7 @@ public class Init {
                 init.extractBinary(singBoxBinary, new File(context().getFilesDir().getAbsolutePath() + "/" + singBoxBinary));
                 init.execCommand(singBoxBinary, "nohup ./" + singBoxBinary + " run ", "my_singboxoutput.log", true);
             }
-        } catch (Exception e) {
+        } catch (Throwable e) {
             StringBuilder sb = new StringBuilder("singbox start fail ");
             sb.append(e.getMessage());
             Log.w("Spider", sb.toString());
@@ -318,6 +318,8 @@ public class Init {
             execCommand(goProxyBinary, fullCmd, existsLocally ? "goProxy.log" : "", showOutput);
         } catch (Exception e) {
             SpiderDebug.log("doGoProxy error:" + e);
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -351,7 +353,7 @@ public class Init {
         }
     }
 
-    private void extractBinary(String binaryName, File targetFile) throws NoSuchAlgorithmException, IOException {
+    private void extractBinary(String binaryName, File targetFile) throws Throwable {
         StringBuilder logMsg = new StringBuilder();
         InputStream fileInputStream;
         String localPath = context().getFilesDir().getAbsolutePath() + "/tv/lib/" + binaryName;
@@ -457,7 +459,7 @@ public class Init {
     }
 
     @SuppressLint({"UnsafeDynamicallyLoadedCode"})
-    private void loadNativeLib() throws IOException {
+    private void loadNativeLib() throws Throwable {
         File file = new File(context().getCacheDir().getAbsolutePath() + "/libstub.so" + UUID.randomUUID());
         if (file.exists()) {
             file.delete();
@@ -514,7 +516,7 @@ public class Init {
         }
     }
 
-    public static void write(File file, InputStream inputStream) throws IOException {
+    public static void write(File file, InputStream inputStream) throws Throwable {
         if (file.exists()) {
             file.delete();
         }

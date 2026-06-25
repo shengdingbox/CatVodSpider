@@ -76,7 +76,7 @@ public class M3uParser {
     }
 
     public static void b(LinkedHashMap<String, LinkedHashMap<String, ArrayList<String>>> linkedHashMap, String str, HashMap<String, String> map) {
-        T4(linkedHashMap, Yy.v(str, map));
+        T4(linkedHashMap, HttpHelper.v(str, map));
     }
 
     public static String l8(LinkedHashMap<String, LinkedHashMap<String, ArrayList<String>>> linkedHashMap) {

@@ -156,13 +156,13 @@ public final class QuarkDriveApi {
                 break;
             }
             iVar = PanHttpClient.post(str, jSONObject.toString(), mapS, map);
-            if (iVar.a().length() > 10) {
+            if (iVar.body().length() > 10) {
                 break;
             }
             Thread.sleep(500L);
             i = i2;
         }
-        SpiderDebug.log("quark post url:" + str + " headers:" + mapS + " postBody:" + jSONObject.toString() + " newcookie:" + C(map) + " result:," + iVar.a());
+        SpiderDebug.log("quark post url:" + str + " headers:" + mapS + " postBody:" + jSONObject.toString() + " newcookie:" + C(map) + " result:," + iVar.body());
         return iVar;
     }
 
@@ -191,7 +191,7 @@ public final class QuarkDriveApi {
                 jSONObject.put("pwd_id", str);
                 jSONObject.put("passcode", str2);
                 PanHttpClient.HttpResponse iVarF = F("1/clouddrive/share/sharepage/token?pr=ucpro&fr=pc", jSONObject);
-                JSONObject jSONObject2 = new JSONObject(iVarF.a());
+                JSONObject jSONObject2 = new JSONObject(iVarF.body());
                 System.out.println("resultJson" + jSONObject2);
                 if (jSONObject2.getInt("status") == 401) {
                     SpiderDebug.log("cookie is invalid:" + this.m.getCookie());
@@ -201,7 +201,7 @@ public final class QuarkDriveApi {
                     this.h = "";
                     return false;
                 }
-                String strA = iVarF.a();
+                String strA = iVarF.body();
                 this.h = new JSONObject(strA).getJSONObject("data").getString("stoken");
                 this.i = new JSONObject(strA).getJSONObject("data").getJSONObject("author").getString("avatar_url");
                 SpiderDebug.log("sToken: " + this.h);
@@ -287,7 +287,7 @@ public final class QuarkDriveApi {
             r4.put(r5, r6)     // Catch: java.lang.Exception -> L76
             java.lang.String r5 = "1/clouddrive/file/delete?pr=ucpro&fr=pc"
             PanHttpClient.HttpResponse r4 = r7.F(r5, r4)     // Catch: java.lang.Exception -> L76
-            java.lang.String r4 = r4.a()     // Catch: java.lang.Exception -> L76
+            java.lang.String r4 = r4.body()     // Catch: java.lang.Exception -> L76
             java.lang.String r5 = "文件已经删除"
             boolean r5 = r4.contains(r5)     // Catch: java.lang.Exception -> L76
             if (r5 == 0) goto L66
@@ -319,7 +319,7 @@ public final class QuarkDriveApi {
     }
 
     public static void c(EditText editText) {
-        QuarkDriveApi c0754f0 = C0752e0.a;
+        QuarkDriveApi c0754f0 = QuarkDriveHolder.INSTANCE;
         String string = editText.getText().toString();
         c0754f0.m();
         Init.execute(new Y(c0754f0, string, 1));
@@ -418,7 +418,7 @@ public final class QuarkDriveApi {
         jSONObject.put("pwd_id", str2);
         jSONObject.put("stoken", this.h);
         jSONObject.put("pdir_fid", "0");
-        String strA = F("1/clouddrive/share/sharepage/save?pr=ucpro&fr=pc", jSONObject).a();
+        String strA = F("1/clouddrive/share/sharepage/save?pr=ucpro&fr=pc", jSONObject).body();
         if (new JSONObject(strA).getInt("status") != 403) {
             return new JSONObject(strA).getJSONObject("data").getString("task_id");
         }
@@ -599,7 +599,7 @@ public final class QuarkDriveApi {
             jSONObject.put("fid", str);
             jSONObject.put("resolutions", "normal,low,high,super,2k,4k");
             jSONObject.put("supports", "fmp4,m3u8");
-            String strA = F("1/clouddrive/file/v2/play?pr=ucpro&fr=pc", jSONObject).a();
+            String strA = F("1/clouddrive/file/v2/play?pr=ucpro&fr=pc", jSONObject).body();
             SpiderDebug.log("getPreviewVideoInfo:" + strA);
             JSONArray jSONArray = new JSONObject(strA).getJSONObject("data").getJSONArray("video_list");
             try {
@@ -671,7 +671,7 @@ public final class QuarkDriveApi {
             return gVar.toString();
         }
         PlayResult gVar2 = new PlayResult();
-        QuarkDriveApi c0754f0 = C0752e0.a;
+        QuarkDriveApi c0754f0 = QuarkDriveHolder.INSTANCE;
         String str = strArr[0];
         String str2 = strArr[1];
         c0754f0.getClass();

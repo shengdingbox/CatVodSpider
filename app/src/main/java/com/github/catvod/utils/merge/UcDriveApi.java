@@ -162,14 +162,14 @@ public final class UcDriveApi {
                 break;
             }
             iVar = PanHttpClient.post(str, jSONObject.toString(), mapV, map);
-            if (iVar.a().length() > 10) {
+            if (iVar.body().length() > 10) {
                 break;
             }
             Thread.sleep(500L);
             i = i2;
         }
         E(map);
-        SpiderDebug.log("quark post url:" + str + " headers:" + mapV + " postBody:" + jSONObject.toString() + " newcookie: result:," + iVar.a());
+        SpiderDebug.log("quark post url:" + str + " headers:" + mapV + " postBody:" + jSONObject.toString() + " newcookie: result:," + iVar.body());
         return iVar;
     }
 
@@ -198,7 +198,7 @@ public final class UcDriveApi {
                 jSONObject.put("pwd_id", str);
                 jSONObject.put("passcode", str2);
                 PanHttpClient.HttpResponse iVarH = H("1/clouddrive/share/sharepage/token?pr=UCBrowser&fr=pc", jSONObject);
-                JSONObject jSONObject2 = new JSONObject(iVarH.a());
+                JSONObject jSONObject2 = new JSONObject(iVarH.body());
                 System.out.println("resultJson" + jSONObject2);
                 if (jSONObject2.getInt("status") == 401) {
                     SpiderDebug.log("cookie is invalid:" + this.m.getCookie());
@@ -208,7 +208,7 @@ public final class UcDriveApi {
                     this.h = "";
                     return false;
                 }
-                String strA = iVarH.a();
+                String strA = iVarH.body();
                 this.h = new JSONObject(strA).getJSONObject("data").getString("stoken");
                 this.i = new JSONObject(strA).getJSONObject("data").getJSONObject("author").getString("avatar_url");
                 SpiderDebug.log("sToken: " + this.h);
@@ -374,7 +374,7 @@ public final class UcDriveApi {
             r4.put(r5, r6)     // Catch: java.lang.Exception -> L76
             java.lang.String r5 = "1/clouddrive/file/delete?pr=UCBrowser&fr=pc"
             PanHttpClient.HttpResponse r4 = r7.H(r5, r4)     // Catch: java.lang.Exception -> L76
-            java.lang.String r4 = r4.a()     // Catch: java.lang.Exception -> L76
+            java.lang.String r4 = r4.body()     // Catch: java.lang.Exception -> L76
             java.lang.String r5 = "文件已经删除"
             boolean r5 = r4.contains(r5)     // Catch: java.lang.Exception -> L76
             if (r5 == 0) goto L66
@@ -480,7 +480,7 @@ public final class UcDriveApi {
         jSONObject.put("pwd_id", str2);
         jSONObject.put("stoken", this.h);
         jSONObject.put("pdir_fid", "0");
-        String strA = H("1/clouddrive/share/sharepage/save?pr=UCBrowser&fr=pc", jSONObject).a();
+        String strA = H("1/clouddrive/share/sharepage/save?pr=UCBrowser&fr=pc", jSONObject).body();
         if (new JSONObject(strA).getInt("status") != 403) {
             return new JSONObject(strA).getJSONObject("data").getString("task_id");
         }
@@ -942,7 +942,7 @@ public final class UcDriveApi {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("fids", new JSONArray().put(str));
                     String utValue = (this.m.getUt() != null && !this.m.getUt().isEmpty()) ? this.m.getUt() : "Nk2oZFe20xVMub17UQTOKJdg4CHccNwuJJuwVL1gaHZIlw==";
-                    String strA = H("1/clouddrive/file/download?pr=UCBrowser&fr=pc&sys=win32&ve=1.8.5&ut=" + utValue, jSONObject).a();
+                    String strA = H("1/clouddrive/file/download?pr=UCBrowser&fr=pc&sys=win32&ve=1.8.5&ut=" + utValue, jSONObject).body();
                     SpiderDebug.log("getDownloadUrl:" + str4);
                     string = new JSONObject(strA).getJSONArray("data").getJSONObject(0).getString("download_url");
                 }
@@ -1028,7 +1028,7 @@ public final class UcDriveApi {
                 jSONObject2.put("fid", str);
                 jSONObject2.put("resolutions", "normal,low,high,super,2k,4k");
                 jSONObject2.put("supports", "fmp4,m3u8");
-                String strA = H("1/clouddrive/file/v2/play?pr=UCBrowser&fr=pc", jSONObject2).a();
+                String strA = H("1/clouddrive/file/v2/play?pr=UCBrowser&fr=pc", jSONObject2).body();
                 SpiderDebug.log("getPreviewVideoInfo:" + strA);
                 JSONArray jSONArray2 = new JSONObject(strA).getJSONObject("data").getJSONArray("video_list");
                 try {

@@ -8,9 +8,9 @@ android {
 
     defaultConfig {
         applicationId "com.github.catvod.demo"
-        minSdk 17
+        minSdk 21
         targetSdk 34
-        minSdkVersion 17
+        minSdkVersion 21
         buildConfigField("String", "CLIENT_ID", "\"${clientId}\"")
         buildConfigField("boolean", "ENCRYPT", "${ENCRYPT}")
     }

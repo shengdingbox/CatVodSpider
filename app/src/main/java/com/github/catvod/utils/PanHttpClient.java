@@ -37,14 +37,14 @@ public final class PanHttpClient {
         private final int code;
 
         public HttpResponse() { this.body = ""; this.code = -1; }
-    public HttpResponse(String body, int code) {
+        public HttpResponse(String body, int code) {
             this.body = body;
             this.code = code;
         }
 
-        /** 响应体（替代 .a()） */
-    /** @deprecated Use body() instead */
-    public String a() { return body; }
+        /** @deprecated Use {@link #body()} instead. */
+        @Deprecated
+        public String a() { return body; }
         public String body() { return body; }
 
         /** HTTP 状态码（替代 .b()） */

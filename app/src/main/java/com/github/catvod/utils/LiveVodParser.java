@@ -100,7 +100,7 @@ public class LiveVodParser extends Spider {
                 return str3;
             }
         };
-        Yy.N(T4(), str, str2, map, utVar);
+        HttpHelper.N(T4(), str, str2, map, utVar);
         return utVar.getResult();
     }
 
@@ -178,9 +178,9 @@ public class LiveVodParser extends Spider {
                 strOptString = jSONArray.optJSONObject(0).optString("url");
             }
             HashMap map = new HashMap();
-            Yy.Kf(strOptString, l8(), map);
-            String strOL = Yy.OL(map);
-            String strV = Yy.v(strOL, l8());
+            HttpHelper.Kf(strOptString, l8(), map);
+            String strOL = HttpHelper.OL(map);
+            String strV = HttpHelper.v(strOL, l8());
             String str5 = strOL.substring(0, strOL.lastIndexOf("/")) + "/";
             ArrayList arrayList2 = new ArrayList();
             HashMap map2 = new HashMap();
@@ -276,8 +276,8 @@ public class LiveVodParser extends Spider {
             Matcher matcher2 = pattern.matcher(str15);
             String str16 = "vod_remarks";
             String str17 = "vod_area";
-            if (ZP.l(str15) && !str15.contains("qq.com") && !str15.contains("mgtv.com")) {
-                String strOL = YS.l8(Yy.v(str15, null)).LD("head > title").OL();
+            if (UrlChecker.l(str15) && !str15.contains("qq.com") && !str15.contains("mgtv.com")) {
+                String strOL = HtmlParser.parse(HttpHelper.v(str15, null)).LD("head > title").OL();
                 JSONObject jSONObject = new JSONObject();
                 JSONArray jSONArray = new JSONArray();
                 JSONObject jSONObject2 = new JSONObject();
@@ -297,14 +297,14 @@ public class LiveVodParser extends Spider {
                 jSONObject.put("list", jSONArray);
                 return jSONObject.toString();
             }
-            if (ZP.l(str15) && str15.contains("qq.com")) {
+            if (UrlChecker.l(str15) && str15.contains("qq.com")) {
                 ArrayList arrayList = new ArrayList();
                 JSONObject jSONObject3 = new JSONObject();
                 JSONArray jSONArray2 = new JSONArray();
                 JSONObject jSONObject4 = new JSONObject();
-                g9 g9VarL8 = YS.l8(Yy.v(str15, tT()));
+                HtmlDocument g9VarL8 = HtmlParser.parse(HttpHelper.v(str15, tT()));
                 String strOL2 = g9VarL8.LD("head > title").OL();
-                jk jkVarLD = g9VarL8.LD("div.episode-list-rect__item");
+                HtmlElements jkVarLD = g9VarL8.LD("div.episode-list-rect__item");
                 try {
                     if (jkVarLD.isEmpty()) {
                         str11 = "";
@@ -314,8 +314,8 @@ public class LiveVodParser extends Spider {
                     } else {
                         int i = 0;
                         while (i < jkVarLD.size()) {
-                            Iw iw = jkVarLD.get(i);
-                            jk jkVar = jkVarLD;
+                            HtmlElement iw = jkVarLD.get(i);
+                            HtmlElements jkVar = jkVarLD;
                             String str18 = str16;
                             String strL8 = iw.LD("div").l8("data-vid");
                             String str19 = str17;
@@ -359,7 +359,7 @@ public class LiveVodParser extends Spider {
                 }
             }
             String str22 = "list";
-            if (!ZP.l(str15)) {
+            if (!UrlChecker.l(str15)) {
                 str = str22;
                 str2 = "vod_play_from";
                 str3 = "vod_content";
@@ -377,7 +377,7 @@ public class LiveVodParser extends Spider {
                         sb2.append("https://pcweb.api.mgtv.com/episode/list?video_id=");
                         sb2.append(matcher3.group(2));
                         str6 = "vod_area";
-                        JSONObject jSONObject7 = new JSONObject(Yy.v(sb2.toString(), l8()));
+                        JSONObject jSONObject7 = new JSONObject(HttpHelper.v(sb2.toString(), l8()));
                         String strOptString = jSONObject7.optJSONObject("data").optJSONObject("info").optString("title");
                         JSONArray jSONArray4 = new JSONArray(jSONObject7.optJSONObject("data").optString(str22));
                         if (jSONArray4.length() > 0) {
@@ -436,7 +436,7 @@ public class LiveVodParser extends Spider {
                 str3 = "vod_content";
                 str2 = "vod_play_from";
             }
-            if (ZP.OL(str15)) {
+            if (UrlChecker.OL(str15)) {
                 JSONObject jSONObject8 = new JSONObject();
                 JSONArray jSONArray6 = new JSONArray();
                 JSONObject jSONObject9 = new JSONObject();
@@ -475,7 +475,7 @@ public class LiveVodParser extends Spider {
             if (!str15.startsWith("http") || matcher2.find() || matcher.find()) {
                 return "";
             }
-            String strOL3 = YS.l8(Yy.v(str15, null)).LD("head > title").OL();
+            String strOL3 = HtmlParser.parse(HttpHelper.v(str15, null)).LD("head > title").OL();
             JSONObject jSONObject12 = new JSONObject();
             JSONArray jSONArray8 = new JSONArray();
             JSONObject jSONObject13 = new JSONObject();
@@ -575,7 +575,7 @@ public class LiveVodParser extends Spider {
             SpiderDebug.log(e);
         }
         if (str.startsWith("http")) {
-            HM = Yy.v(str, null);
+            HM = HttpHelper.v(str, null);
         } else {
             HM = str;
         }

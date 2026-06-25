@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.utils.TraditionalChinese;
 
-import com.github.catvod.utils.fS;
+import com.github.catvod.utils.WebImageView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -76,14 +76,14 @@ public class Init2 {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 LinearLayout linearLayout = new LinearLayout(getActivity());
                 linearLayout.setOrientation(LinearLayout.VERTICAL);
-                fS fSVar = new fS(getActivity());
-                fSVar.setMaxHeight(300);
-                fSVar.HM(imageUrl);
+                WebImageView imgView = new WebImageView(getActivity());
+                imgView.setMaxHeight(300);
+                imgView.HM(imageUrl);
                 EditText editText = new EditText(getActivity());
                 activationCodeInput = editText;
                 editText.setHint("请输入激活码");
                 activationCodeInput.setInputType(2);
-                linearLayout.addView(fSVar);
+                linearLayout.addView(imgView);
                 linearLayout.addView(activationCodeInput);
 
                 if (noticeType == 1) {
