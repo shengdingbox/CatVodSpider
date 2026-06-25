@@ -47,8 +47,6 @@ public class LocalProxy extends Spider {
                 objArrVod = Ddrk.loadsub(map.get("url"));
             } else if (str.equals("ddrk")) {
                 objArrVod = Ddrk.loadsub(map.get("url"));
-            } else if (str.equals("hmys")) {
-                objArrVod = Hmys.vod(map);
             }
         } catch (Throwable th) {
         }

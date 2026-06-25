@@ -2,11 +2,9 @@ package com.github.catvod.demo;
 
 import android.app.Activity;
 import android.os.Bundle;
-
-import com.github.catvod.spider.*;
-
+import com.github.catvod.spider.AppRJ;
+import com.github.catvod.spider.XPath;
 import org.apache.commons.lang3.StringUtils;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -21,16 +19,18 @@ public class MainActivity extends Activity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Aidi aidi1 = new Aidi();
+                AppRJ aidi1 = new AppRJ();
                 try {
-                    aidi1.init(MainActivity.this);
+                    JSONObject json = new JSONObject();
+                    json.put("url", "http://v.rbotv.cn");
+                    aidi1.init(MainActivity.this, json.toString());
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
                 JSONObject homeContent = null;
                 try {
                     String json1 = aidi1.homeContent(true);
-                    if(StringUtils.isNotEmpty(json1)){
+                    if (StringUtils.isNotEmpty(json1)) {
                         homeContent = new JSONObject(json1);
                         System.out.println(homeContent.toString());
                     }
@@ -43,42 +43,49 @@ public class MainActivity extends Activity {
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-                if (homeContent != null) {
-                    try {
-                        List<String> ids = new ArrayList<String>();
-                        JSONArray array = homeContent.getJSONArray("list");
-                        for (int i = 0; i < array.length() && i < 3; i++) {
-                            try {
-                                ids.clear();
-                                ids.add(array.getJSONObject(i).getString("vod_id"));
-                                String detailContent1 = aidi1.detailContent(ids);
-                                System.out.println(detailContent1);
-                                JSONObject detailContent = new JSONObject(detailContent1).getJSONArray("list").getJSONObject(0);
-                                String[] playFlags = detailContent.getString("vod_play_from").split("\\$\\$\\$");
-                                String[] playUrls = detailContent.getString("vod_play_url").split("\\$\\$\\$");
-                                for (int j = 0; j < playFlags.length; j++) {
-                                    String pu = playUrls[j].split("#")[0].split("\\$")[1];
-                                    System.out.println(aidi1.playerContent(playFlags[j], pu, new ArrayList<>()));
-                                }
-                            } catch (Throwable th) {
-
-                            }
-                        }
-                    } catch (Throwable th) {
-
-                    }
-                }
+//                if (homeContent != null) {
+//                    try {
+//                        List<String> ids = new ArrayList<String>();
+//                        JSONArray array = homeContent.getJSONArray("list");
+//                        for (int i = 0; i < array.length() && i < 3; i++) {
+//                            try {
+//                                ids.clear();
+//                                ids.add(array.getJSONObject(i).getString("vod_id"));
+//                                String detailContent1 = aidi1.detailContent(ids);
+//                                System.out.println(detailContent1);
+//                                JSONObject detailContent = new JSONObject(detailContent1).getJSONArray("list").getJSONObject(0);
+//                                String[] playFlags = detailContent.getString("vod_play_from").split("\\$\\$\\$");
+//                                String[] playUrls = detailContent.getString("vod_play_url").split("\\$\\$\\$");
+//                                for (int j = 0; j < playFlags.length; j++) {
+//                                    String pu = playUrls[j].split("#")[0].split("\\$")[1];
+//                                    System.out.println(aidi1.playerContent(playFlags[j], pu, new ArrayList<>()));
+//                                }
+//                            } catch (Throwable th) {
+//
+//                            }
+//                        }
+//                    } catch (Throwable th) {
+//
+//                    }
+//                }
                 try {
-                    System.out.println(aidi1.searchContent("陪你一起", false));
+                    String searchContent = aidi1.searchContent("主角", false);
+                    System.out.println(searchContent);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
                 try {
-                    System.out.println(aidi1.searchContent("顶楼", false));
+                    String detailContent = aidi1.detailContent(List.of("75852"));
+                    System.out.println(detailContent);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-
+                try {
+                    String searchContent = aidi1.playerContent("主角", "1", null);
+                    System.out.println(searchContent);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
                 XPath aidi = new XPath();
                 aidi.init(MainActivity.this, "{\n" +
                         "  \"ua\": \"\",\n" +

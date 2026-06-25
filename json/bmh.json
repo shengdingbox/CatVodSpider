@@ -65,6 +65,20 @@
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 1
+    },
+    {
+      "key": "热播影视",
+      "name": "热播｜1920",
+      "type": 3,
+      "api": "csp_AppRJ",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "ext": {
+        "url": "http://v.rbotv.cn"
+      },
+      "_aggregate_from": "ts",
+      "_site_key": "20dcb8a4df8211911122fa349c122268"
     }
   ],
   "doh": [
