@@ -40,18 +40,14 @@ if /i "%ENCRYPT%"=="true" (
     set BUILD_TYPE=release
     set DEX_PATH=%~dp0\..\app\build\intermediates\dex\release\minifyReleaseWithR8\classes.dex
 ) else (
-    set BUILD_TYPE=debug
-    set DEX_PATH=%~dp0\..\app\build\intermediates\dex\debug\mergeDexDebug\classes.dex
+    set BUILD_TYPE=release
+    set DEX_PATH=%~dp0\..\app\build\intermediates\dex\release\mergeDexRelease\classes.dex
 )
 
 :: Step 1: Gradle build
 echo [*] Building %BUILD_TYPE%...
 cd /d "%~dp0\.."
-if /i "%ENCRYPT%"=="true" (
-    call gradlew clean assembleRelease
-) else (
-    call gradlew clean assembleDebug
-)
+call gradlew clean assembleRelease
 cd /d "%~dp0"
 
 :: Step 2: Disassemble DEX
