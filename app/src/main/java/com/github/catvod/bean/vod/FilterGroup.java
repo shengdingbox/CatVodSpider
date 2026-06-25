@@ -133,11 +133,11 @@ public final class FilterGroup {
         return new Gson().newBuilder().disableHtmlEscaping().create().toJson(this);
     }
 
-    /** Setter for subtitle list (accepts bean.h list). */
-    public final FilterGroup v(List<com.github.catvod.bean.h> subs) {
+    /** Setter for subtitle list (accepts Subtitle list). */
+    public final FilterGroup v(List<com.github.catvod.bean.Subtitle> subs) {
         if (subs == null || subs.isEmpty()) return this;
         if (this.g == null) this.g = new java.util.ArrayList<>();
-        for (com.github.catvod.bean.h sub : subs) {
+        for (com.github.catvod.bean.Subtitle sub : subs) {
             SubtitleEntry entry = new SubtitleEntry();
             entry.name = sub != null ? String.valueOf(sub) : "";
             this.g.add(entry);

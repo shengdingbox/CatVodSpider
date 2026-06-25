@@ -261,11 +261,11 @@ public final class Yun139Api {
                 String str3 = strArrSplit[0];
                 String str4 = strArrSplit[1];
                 String str5 = Proxy.getUrl() + "?do=ali&type=sub&shareId=" + strArr[0] + "&fileId=" + strArrSplit[2];
-                com.github.catvod.bean.h hVar = new com.github.catvod.bean.h();
-                hVar.b(str3);
-                com.github.catvod.bean.h hVarA = hVar.a(str4);
-                hVarA.c(str5);
-                arrayList.add(hVarA);
+                com.github.catvod.bean.Subtitle sub = new com.github.catvod.bean.Subtitle();
+                sub.name(str3);
+                sub.ext(str4);
+                sub.url(str5);
+                arrayList.add(sub);
             }
         }
         gVar3.v(arrayList);

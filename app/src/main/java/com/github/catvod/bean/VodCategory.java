@@ -14,7 +14,12 @@ public abstract class VodCategory {
     public static final Pattern b = Pattern.compile("^/((\\.{1,2}/)+)");
     public static final Pattern c = Pattern.compile("^[a-zA-Z][a-zA-Z0-9+-.]*:");
     public static final Pattern d = Pattern.compile("[\\x00-\\x1f]*");
-    public static final a e = new a();
+    public static final ThreadLocal<Stack> e = new ThreadLocal<Stack>() {
+        @Override
+        protected Stack initialValue() {
+            return new Stack();
+        }
+    };
 
     public static void a(StringBuilder sb, String str, boolean z) {
         int length = str.length();

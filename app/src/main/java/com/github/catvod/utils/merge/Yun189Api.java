@@ -198,11 +198,11 @@ public final class Yun189Api {
                 String str5 = strArrSplit[0];
                 String str6 = strArrSplit[1];
                 String str7 = Proxy.getUrl() + "?do=ali&type=sub&shareId=" + strArr[0] + "&fileId=" + strArrSplit[2];
-                com.github.catvod.bean.h hVar = new com.github.catvod.bean.h();
-                hVar.b(str5);
-                com.github.catvod.bean.h hVarA = hVar.a(str6);
-                hVarA.c(str7);
-                arrayList.add(hVarA);
+                com.github.catvod.bean.Subtitle sub = new com.github.catvod.bean.Subtitle();
+                sub.name(str5);
+                sub.ext(str6);
+                sub.url(str7);
+                arrayList.add(sub);
             }
         }
         gVar.setSubtitles(arrayList);

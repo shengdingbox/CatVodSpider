@@ -192,7 +192,7 @@ public class LiveVodParser extends Spider {
                 if (str6.contains("x-oss-expires")) {
                     i2++;
                     map2.put("" + i2, str5 + str6);
-                    str6 = com.github.catvod.spider.u.localProxyUrl() + "?do=push&type=media&share_id=" + str + "&file_id=" + str3 + "&media_id=" + i2;
+                    str6 = com.github.catvod.spider.LocalProxy.localProxyUrl() + "?do=push&type=media&share_id=" + str + "&file_id=" + str3 + "&media_id=" + i2;
                 }
                 arrayList2.add(str6);
                 i++;
@@ -724,7 +724,7 @@ public class LiveVodParser extends Spider {
         if (b2 == 3) {
             l();
             String[] strArrSplit = str2.split("\\+");
-            String str3 = com.github.catvod.spider.u.localProxyUrl() + "?do=push&type=m3u8&share_id=" + strArrSplit[0] + "&file_id=" + strArrSplit[2];
+            String str3 = com.github.catvod.spider.LocalProxy.localProxyUrl() + "?do=push&type=m3u8&share_id=" + strArrSplit[0] + "&file_id=" + strArrSplit[2];
             JSONObject jSONObject4 = new JSONObject();
             jSONObject4.put("parse", "0");
             jSONObject4.put("playUrl", "");

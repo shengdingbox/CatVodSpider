@@ -3,6 +3,7 @@ package com.github.catvod.bean;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.reflect.TypeToken;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -20,7 +21,7 @@ public final class VodResult {
     private List<VodItem> b;
 
     @SerializedName("filters")
-    private LinkedHashMap<String, List<d>> c;
+    private LinkedHashMap<String, List<Filter>> c;
 
     @SerializedName("header")
     private String d;
@@ -32,7 +33,7 @@ public final class VodResult {
     private Object f;
 
     @SerializedName("subs")
-    private List<h> g;
+    private List<Subtitle> g;
 
     @SerializedName("parse")
     private int h;
@@ -92,7 +93,7 @@ public final class VodResult {
         return gVar.toString();
     }
 
-    public static String p(List<VodCategory> list, LinkedHashMap<String, List<d>> linkedHashMap) {
+    public static String p(List<VodCategory> list, LinkedHashMap<String, List<Filter>> linkedHashMap) {
         VodResult gVar = new VodResult();
         gVar.a = list;
         gVar.c = linkedHashMap;
@@ -114,7 +115,7 @@ public final class VodResult {
         return gVar.toString();
     }
 
-    public static String s(List<VodCategory> list, List<VodItem> list2, LinkedHashMap<String, List<d>> linkedHashMap) {
+    public static String s(List<VodCategory> list, List<VodItem> list2, LinkedHashMap<String, List<Filter>> linkedHashMap) {
         VodResult gVar = new VodResult();
         gVar.a = list;
         gVar.b = list2;
@@ -151,7 +152,7 @@ public final class VodResult {
         if (jsonElement == null) {
             return this;
         }
-        this.c = (LinkedHashMap) new Gson().fromJson(jsonElement.toString(), new e().getType());
+        this.c = (LinkedHashMap) new Gson().fromJson(jsonElement.toString(), new TypeToken<LinkedHashMap<String, List<Filter>>>(){}.getType());
         return this;
     }
 
@@ -159,7 +160,7 @@ public final class VodResult {
         if (jSONObject == null) {
             return this;
         }
-        this.c = (LinkedHashMap) new Gson().fromJson(jSONObject.toString(), new f().getType());
+        this.c = (LinkedHashMap) new Gson().fromJson(jSONObject.toString(), new TypeToken<LinkedHashMap<String, List<Filter>>>(){}.getType());
         return this;
     }
 
@@ -221,7 +222,7 @@ public final class VodResult {
         return new Gson().toJson(this);
     }
 
-    public final VodResult v(List<h> list) {
+    public final VodResult v(List<Subtitle> list) {
         this.g = list;
         return this;
     }

@@ -237,18 +237,18 @@ public final class Yun115Api {
     /**
      * 从播放地址参数中提取字幕列表
      */
-    public List<com.github.catvod.bean.h> buildSubtitleList(String[] params) {
-        ArrayList<com.github.catvod.bean.h> subtitles = new ArrayList<>();
+    public List<com.github.catvod.bean.Subtitle> buildSubtitleList(String[] params) {
+        ArrayList<com.github.catvod.bean.Subtitle> subtitles = new ArrayList<>();
         for (String param : params) {
             if (param.contains("@@@")) {
                 String[] parts = param.split("@@@");
                 String name = parts[0];
                 String ext = parts[1];
                 String subUrl = Proxy.getUrl() + "?do=quark&type=sub&share_id=" + params[0] + "&file_id=" + parts[2];
-                com.github.catvod.bean.h sub = new com.github.catvod.bean.h();
-                sub.b(name);
-                sub.a(ext);
-                sub.c(subUrl);
+                com.github.catvod.bean.Subtitle sub = new com.github.catvod.bean.Subtitle();
+                sub.name(name);
+                sub.ext(ext);
+                sub.url(subUrl);
                 subtitles.add(sub);
             }
         }

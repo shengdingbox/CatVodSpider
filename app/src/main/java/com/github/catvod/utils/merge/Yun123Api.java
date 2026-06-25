@@ -403,17 +403,17 @@ public final class Yun123Api {
         result.setExtra(AliDriveHelper.getDanmakuUrl(params));
         result.setHeaders(buildDefaultHeaders());
         // 字幕
-        ArrayList<com.github.catvod.bean.h> subtitles = new ArrayList<>();
+        ArrayList<com.github.catvod.bean.Subtitle> subtitles = new ArrayList<>();
         for (String param : params) {
             if (param.contains("@@@")) {
                 String[] parts = param.split("@@@");
                 String subName = parts[0];
                 String subExt = parts[1];
                 String subUrl = Proxy.getUrl() + "?do=ali&type=sub&shareId=" + params[0] + "&fileId=" + parts[2];
-                com.github.catvod.bean.h sub = new com.github.catvod.bean.h();
-                sub.b(subName);
-                sub.a(subExt);
-                sub.c(subUrl);
+                com.github.catvod.bean.Subtitle sub = new com.github.catvod.bean.Subtitle();
+                sub.name(subName);
+                sub.ext(subExt);
+                sub.url(subUrl);
                 subtitles.add(sub);
             }
         }

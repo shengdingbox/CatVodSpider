@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import com.github.catvod.bean.VodResult;
 import com.github.catvod.bean.vod.FilterGroup;
-import com.github.catvod.bean.h;
+import com.github.catvod.bean.Subtitle;
 import com.github.catvod.utils.okhttp.OkHttpUtil;
 
 import java.io.File;
@@ -15,7 +15,7 @@ import java.util.List;
 
 
 public class XBPQPA extends XBPQAli {
-    private List<h> a(String str) {
+    private List<Subtitle> a(String str) {
         ArrayList arrayList = new ArrayList();
         if (str.startsWith("file://")) {
             File file = new File(str.replace("file://", ""));
@@ -27,13 +27,11 @@ public class XBPQPA extends XBPQAli {
                     String strB = name.substring(name.lastIndexOf(".") + 1);
                     if (strB.equals("srt") || strB.equals("ass") || strB.equals("ssa")) {
                         String baseName = name.contains(".") ? name.substring(0, name.lastIndexOf(".")) : name;
-                        h hVar = new h();
-                        hVar.b(baseName);
-                        h hVarA = hVar.a(strB);
-                        StringBuilder sbB = new StringBuilder("file://");
-                        sbB.append(file2.getAbsolutePath());
-                        hVarA.c(sbB.toString());
-                        arrayList.add(hVarA);
+                        Subtitle sub = new Subtitle();
+                        sub.name(baseName);
+                        sub.ext(strB);
+                        sub.url("file://" + file2.getAbsolutePath());
+                        arrayList.add(sub);
                     }
                 }
             }
@@ -47,11 +45,11 @@ public class XBPQPA extends XBPQAli {
                         String strConcat = (str.contains(".") ? str.substring(0, str.lastIndexOf(".")) : str).concat(".").concat(str2);
                         if (OkHttpUtil.string(strConcat) != null) {
                             String lastPathSegment = Uri.parse(strConcat).getLastPathSegment();
-                            h hVar2 = new h();
-                            hVar2.b(lastPathSegment);
-                            h hVarA2 = hVar2.a(str2);
-                            hVarA2.c(strConcat);
-                            arrayList.add(hVarA2);
+                            Subtitle sub = new Subtitle();
+                            sub.name(lastPathSegment);
+                            sub.ext(str2);
+                            sub.url(strConcat);
+                            arrayList.add(sub);
                         }
                     }
                 }

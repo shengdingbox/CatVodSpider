@@ -6,8 +6,8 @@ import com.github.catvod.en.NetPan;
 
 import com.github.catvod.bean.VodItem;
 import com.github.catvod.bean.VodResult;
-import com.github.catvod.bean.c;
-import com.github.catvod.bean.d;
+import com.github.catvod.bean.FilterEntry;
+import com.github.catvod.bean.FilterGroup;
 import com.github.catvod.utils.okhttp.OkHttpUtil;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -320,27 +320,27 @@ public class GuaZi extends NetPan {
             CategoryItem bVar = (CategoryItem) bVar0;
             ArrayList arrayList2 = new ArrayList();
             ArrayList arrayList3 = new ArrayList();
-            arrayList3.add(new c("全部", "0"));
+            arrayList3.add(new FilterEntry("全部", "0"));
             for (int i = 2025; i >= 2005; i--) {
-                arrayList3.add(new c(String.valueOf(i), String.valueOf(i)));
+                arrayList3.add(new FilterEntry(String.valueOf(i), String.valueOf(i)));
             }
-            arrayList3.add(new c("更早", "2004"));
-            arrayList2.add(new d("year", "年份", arrayList3));
+            arrayList3.add(new FilterEntry("更早", "2004"));
+            arrayList2.add(new FilterGroup("year", "年份", arrayList3));
             if (!bVar.id().equals("64")) {
                 ArrayList arrayList4 = new ArrayList();
-                arrayList4.add(new c("全部", "0"));
+                arrayList4.add(new FilterEntry("全部", "0"));
                 String[] strArr = {"大陆", "香港", "台湾", "美国", "韩国", "日本", "英国", "法国", "泰国", "印度", "其他"};
                 for (int i2 = 0; i2 < 11; i2++) {
                     String str = strArr[i2];
-                    arrayList4.add(new c(str, str));
+                    arrayList4.add(new FilterEntry(str, str));
                 }
-                arrayList2.add(new d("area", "地区", arrayList4));
+                arrayList2.add(new FilterGroup("area", "地区", arrayList4));
             }
             ArrayList arrayList5 = new ArrayList();
-            arrayList5.add(new c("最新", "d_id"));
-            arrayList5.add(new c("最热", "d_hits"));
-            arrayList5.add(new c("推荐", "d_score"));
-            arrayList2.add(new d("sort", "排序", arrayList5));
+            arrayList5.add(new FilterEntry("最新", "d_id"));
+            arrayList5.add(new FilterEntry("最热", "d_hits"));
+            arrayList5.add(new FilterEntry("推荐", "d_score"));
+            arrayList2.add(new FilterGroup("sort", "排序", arrayList5));
             linkedHashMap.put(bVar.id(), arrayList2);
         }
         return VodResult.p(arrayList, linkedHashMap);

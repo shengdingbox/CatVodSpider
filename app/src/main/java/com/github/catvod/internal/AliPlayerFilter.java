@@ -53,7 +53,7 @@ public final class AliPlayerFilter {
     }
 
     /** 获取字幕列表 */
-    public java.util.List<com.github.catvod.bean.h> v(String[] params) {
+    public java.util.List<com.github.catvod.bean.Subtitle> v(String[] params) {
         return new java.util.ArrayList<>();
     }
 

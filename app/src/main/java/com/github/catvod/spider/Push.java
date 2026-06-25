@@ -10,7 +10,7 @@ import com.github.catvod.bean.VodItem;
 import com.github.catvod.bean.VodResult;
 
 import org.jsoup.nodes.Element;
-import com.github.catvod.bean.h;
+import com.github.catvod.bean.Subtitle;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -71,7 +71,7 @@ public class Push extends NetPan {
         }
     }
 
-    private List<h> g(String str) {
+    private List<Subtitle> g(String str) {
         ArrayList arrayList = new ArrayList();
         if (str.startsWith("file://")) {
             File file = new File(str.replace("file://", ""));
@@ -82,14 +82,12 @@ public class Push extends NetPan {
                     String fileName = file2.getName();
                     String strJ = fileName.substring(fileName.lastIndexOf(".") + 1);
                     if (strJ.equals("srt") || strJ.equals("ass") || strJ.equals("ssa")) {
-                        h hVar = new h();
+                        Subtitle sub = new Subtitle();
                         String nameWithoutExt = fileName.contains(".") ? fileName.substring(0, fileName.lastIndexOf(".")) : fileName;
-                        hVar.b(nameWithoutExt);
-                        h hVarA = hVar.a(strJ);
-                        StringBuilder sbB = new StringBuilder("file://");
-                        sbB.append(file2.getAbsolutePath());
-                        hVarA.c(sbB.toString());
-                        arrayList.add(hVarA);
+                        sub.name(nameWithoutExt);
+                        sub.ext(strJ);
+                        sub.url("file://" + file2.getAbsolutePath());
+                        arrayList.add(sub);
                     }
                 }
             }
@@ -104,11 +102,11 @@ public class Push extends NetPan {
                     String strConcat = urlBase + "." + str2;
                     if (OkHttpUtil.string(strConcat).length() <= 100) {
                         String lastPathSegment = Uri.parse(strConcat).getLastPathSegment();
-                        h hVar2 = new h();
-                        hVar2.b(lastPathSegment);
-                        h hVarA2 = hVar2.a(str2);
-                        hVarA2.c(strConcat);
-                        arrayList.add(hVarA2);
+                        Subtitle sub = new Subtitle();
+                        sub.name(lastPathSegment);
+                        sub.ext(str2);
+                        sub.url(strConcat);
+                        arrayList.add(sub);
                     }
                 }
             }

@@ -763,7 +763,7 @@ public final class QuarkDriveApi {
         }
     }
 
-    public final List<com.github.catvod.bean.h> x(String[] strArr) {
+    public final List<com.github.catvod.bean.Subtitle> x(String[] strArr) {
         ArrayList arrayList = new ArrayList();
         for (String str : strArr) {
             if (str.contains("@@@")) {
@@ -771,11 +771,11 @@ public final class QuarkDriveApi {
                 String str2 = strArrSplit[0];
                 String str3 = strArrSplit[1];
                 String str4 = Proxy.getUrl() + "?do=quark&type=sub&share_id=" + strArr[0] + "&file_id=" + strArrSplit[2];
-                com.github.catvod.bean.h hVar = new com.github.catvod.bean.h();
-                hVar.b(str2);
-                com.github.catvod.bean.h hVarA = hVar.a(str3);
-                hVarA.c(str4);
-                arrayList.add(hVarA);
+                com.github.catvod.bean.Subtitle sub = new com.github.catvod.bean.Subtitle();
+                sub.name(str2);
+                sub.ext(str3);
+                sub.url(str4);
+                arrayList.add(sub);
             }
         }
         return arrayList;
