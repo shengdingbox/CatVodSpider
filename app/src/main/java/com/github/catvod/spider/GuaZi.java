@@ -2,12 +2,9 @@ package com.github.catvod.spider;
 
 import android.text.TextUtils;
 import android.util.Base64;
+import com.github.catvod.bean.*;
 import com.github.catvod.en.NetPan;
 
-import com.github.catvod.bean.VodItem;
-import com.github.catvod.bean.VodResult;
-import com.github.catvod.bean.FilterEntry;
-import com.github.catvod.bean.FilterGroup;
 import com.github.catvod.utils.okhttp.OkHttpUtil;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -316,10 +313,10 @@ public class GuaZi extends NetPan {
         arrayList.add(new CategoryItem("3", "综艺"));
         arrayList.add(new CategoryItem("64", "短剧"));
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        for (com.github.catvod.bean.VodCategory bVar0 : arrayList) {
+        for (VodCategory bVar0 : arrayList) {
             CategoryItem bVar = (CategoryItem) bVar0;
-            ArrayList arrayList2 = new ArrayList();
-            ArrayList arrayList3 = new ArrayList();
+            List arrayList2 = new ArrayList();
+            List arrayList3 = new ArrayList();
             arrayList3.add(new FilterEntry("全部", "0"));
             for (int i = 2025; i >= 2005; i--) {
                 arrayList3.add(new FilterEntry(String.valueOf(i), String.valueOf(i)));

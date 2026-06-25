@@ -4,9 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.github.catvod.spider.Aidi;
-import com.github.catvod.spider.Cokemv;
-import com.github.catvod.spider.Dyls;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,7 +19,7 @@ public class AidiActivity extends Activity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Cokemv aidi = new Cokemv();
+                Aidi aidi = new Aidi();
                 try {
                     aidi.init(AidiActivity.this);
                 } catch (Exception e) {

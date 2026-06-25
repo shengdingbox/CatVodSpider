@@ -3,8 +3,7 @@ package com.github.catvod.demo;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.github.catvod.spider.Douban;
-import com.github.catvod.spider.XPath;
+import com.github.catvod.spider.*;
 
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
@@ -22,22 +21,15 @@ public class MainActivity extends Activity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Douban aidi1 = new Douban();
+                Aidi aidi1 = new Aidi();
                 try {
-                    aidi1.init(MainActivity.this,"https://tvbox.wgets.org/json/douban.json");
+                    aidi1.init(MainActivity.this);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-                String json = null;
-                try {
-                    json = aidi1.homeContent(true);
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-                System.out.println(json);
                 JSONObject homeContent = null;
                 try {
-                    String json1 = aidi1.homeVideoContent();
+                    String json1 = aidi1.homeContent(true);
                     if(StringUtils.isNotEmpty(json1)){
                         homeContent = new JSONObject(json1);
                         System.out.println(homeContent.toString());
