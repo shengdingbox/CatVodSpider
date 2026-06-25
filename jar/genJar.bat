@@ -24,9 +24,9 @@ for /f "tokens=1,* delims==" %%a in ('findstr /i "^ENCRYPT=" "%PROPS_FILE%"') do
 for /f "tokens=*" %%a in ("%ENCRYPT%") do set ENCRYPT=%%a
 
 if /i "%ENCRYPT%"=="true" (
-    echo [*] Mode: RELEASE (encrypt + obfuscate)
+    echo [*] Mode: RELEASE [encrypt + obfuscate]
 ) else (
-    echo [*] Mode: DEBUG (no encrypt, no obfuscate)
+    echo [*] Mode: DEBUG [no encrypt, no obfuscate]
     set ENCRYPT=false
 )
 
@@ -71,11 +71,16 @@ goto :build_jar
 :: ===== ENCRYPT MODE: Native SO encryption =====
 :encrypt_mode
 
-:: Step 3: Encrypt DEX + generate smali stubs
+:: Step 3: Copy compiled SO files to spider.jar/assets/
+echo [*] Copying native SO files...
+copy /y "%~dp0\native\obj\local\armeabi-v7a\libcatvod_unpack.so" "%~dp0\spider.jar\assets\catvod-v7.so" >nul
+copy /y "%~dp0\native\obj\local\arm64-v8a\libcatvod_unpack.so"   "%~dp0\spider.jar\assets\catvod-v8.so" >nul
+
+:: Step 4: Encrypt DEX + generate smali stubs
 echo [*] Encrypting DEX and generating stubs...
 python "%~dp0\native_packer.py" "%DEX_PATH%" "%~dp0\spider.jar"
 
-:: Step 4: Remove original smali (only keep DexLoader + DexNative)
+:: Step 5: Remove original smali (only keep DexLoader + DexNative)
 echo [*] Cleaning smali directories...
 for /d %%d in ("%~dp0\spider.jar\smali\com\github\catvod\*") do (
     if /i not "%%~nxd"=="DexLoader.smali" if /i not "%%~nxd"=="DexNative.smali" (
@@ -87,7 +92,7 @@ for /d %%d in ("%~dp0\spider.jar\smali\*") do (
     if /i not "%%~nxd"=="com" rd /s /q "%%d" 2>nul
 )
 
-:: Step 5: Verify SO files
+:: Step 6: Verify SO files
 if not exist "%~dp0\spider.jar\assets\catvod-v7.so" (
     echo WARNING: catvod-v7.so not found in spider.jar/assets/
     echo Run build_so.bat first to compile native SO files.
@@ -98,7 +103,7 @@ if not exist "%~dp0\spider.jar\assets\catvod-v8.so" (
 )
 
 :build_jar
-:: Step 6: Rebuild JAR
+:: Step 7: Rebuild JAR
 echo [*] Building JAR with apktool...
 java -jar "%~dp0\3rd\apktool_2.4.1.jar" b "%~dp0\spider.jar" -c
 
@@ -106,7 +111,7 @@ move "%~dp0\spider.jar\dist\dex.jar" "%~dp0\custom_spider.jar"
 
 certUtil -hashfile "%~dp0\custom_spider.jar" MD5 | find /i /v "md5" | find /i /v "certutil" > "%~dp0\custom_spider.jar.md5"
 
-:: Step 7: Cleanup
+:: Step 8: Cleanup
 rd /s/q "%~dp0\spider.jar\build" 2>nul
 rd /s/q "%~dp0\spider.jar\smali" 2>nul
 rd /s/q "%~dp0\spider.jar\dist" 2>nul
