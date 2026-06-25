@@ -30,7 +30,9 @@
       "name": "🐼┃闪电UC已恢复┃加资源可艾特我",
       "type": 3,
       "api": "csp_GuaZi",
-      "searchable": 0
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
     }
   ],
   "doh": [
