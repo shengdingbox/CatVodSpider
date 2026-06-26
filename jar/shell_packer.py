@@ -65,6 +65,15 @@ def smali_to_descriptor(rel_path: str) -> str:
     return None
 
 
+def get_superclass(smali_text: str) -> str:
+    """Extract the .super directive value from smali text."""
+    for line in smali_text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith('.super '):
+            return stripped.split(None, 1)[1]
+    return None
+
+
 def is_top_level_spider(desc: str) -> bool:
     """Check if class descriptor is a top-level spider class eligible for shellification."""
     if not desc.startswith('Lcom/github/catvod/spider/'):
@@ -75,6 +84,22 @@ def is_top_level_spider(desc: str) -> bool:
         if desc == 'L' + bridge + ';':
             return False
     return True
+
+
+def is_shellifiable(smali_text: str) -> bool:
+    """Check if a spider class can be safely shellified.
+
+    Only shellify classes whose .super is Spider or BaseSpider directly.
+    Classes extending NetPan, other spiders, or Object must be preserved as-is
+    to avoid breaking the inheritance chain that the host depends on.
+    """
+    super_desc = get_superclass(smali_text)
+    if super_desc is None:
+        return False
+    return super_desc in (
+        'Lcom/github/catvod/crawler/Spider;',
+        'Lcom/github/catvod/spider/BaseSpider;',
+    )
 
 
 def replace_with_shell(smali_text: str) -> str:
@@ -165,6 +190,12 @@ def main():
                 continue
 
             original = smali_file.read_text(encoding='utf-8')
+
+            if not is_shellifiable(original):
+                short_name = desc[1:-1].replace('/', '.')
+                print(f"    SKIP (non-Spider parent): {short_name}")
+                continue
+
             shell = replace_with_shell(original)
             smali_file.write_text(shell, encoding='utf-8')
             modified += 1
