@@ -203,7 +203,7 @@ def process_method(body_lines, key_bytes, method_id,
                 indent, reg, raw_str, _ = m.groups()
                 plaintext = unescape_smali(raw_str)
 
-                if len(plaintext) < 2:
+                if len(plaintext) == 0:
                     result.append(line)
                     continue
 
@@ -265,6 +265,10 @@ def process_smali_file(filepath, key_bytes,
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
     except (UnicodeDecodeError, OSError):
+        return False, 0
+
+    # Skip StringCipher itself - encrypting its keys would cause infinite recursion
+    if DECRYPTOR_CLASS.replace('/', os.sep) + '.smali' in str(filepath).replace('/', os.sep):
         return False, 0
 
     lines = content.split('\n')
