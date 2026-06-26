@@ -49,8 +49,9 @@ cd /d "%~dp0\.."
 call gradlew clean assembleRelease
 cd /d "%~dp0"
 
-:: Step 1b: Post-R8 smali obfuscation (string encryption + opaque predicates)
-if /i not "%OBFUSCATE%"=="true" goto :skip_obfuscate
+:: Step 1b: Smali obfuscation (string encryption + opaque predicates)
+:: Only when ENCRYPT=true - the encrypted strings need native SO to decrypt at runtime
+if /i not "%ENCRYPT%"=="true" goto :skip_obfuscate
 echo [*] Running smali obfuscator...
 set "OBF_DIR=%~dp0\Smali_classes"
 rd /s/q "%OBF_DIR%" 2>nul
