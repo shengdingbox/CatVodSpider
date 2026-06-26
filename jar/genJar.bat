@@ -49,21 +49,12 @@ cd /d "%~dp0\.."
 call gradlew clean assembleRelease
 cd /d "%~dp0"
 
-:: Step 1b: Smali obfuscation (string encryption + opaque predicates)
-:: Currently disabled - causes DEX loading issues in TVBox
+:: Step 1b: Smali obfuscation - DISABLED (causes TVBox loading failures)
+:: To re-enable, uncomment the block below and ensure smali_obfuscator.py works
 :: if /i not "%OBFUSCATE%"=="true" goto :skip_obfuscate
-goto :skip_obfuscate
-echo [*] Running smali obfuscator...
-set "OBF_DIR=%~dp0\Smali_classes"
-rd /s/q "%OBF_DIR%" 2>nul
-mkdir "%OBF_DIR%"
-python -c "import zipfile; z=zipfile.ZipFile(r'%OBF_DIR%\input.apk','w',zipfile.ZIP_DEFLATED); z.write(r'%DEX_PATH%','classes.dex'); z.close()"
-java -jar "%~dp0\3rd\apktool_2.4.1.jar" d -f -o "%OBF_DIR%\out" "%OBF_DIR%\input.apk"
-python "%~dp0\smali_obfuscator.py" "%OBF_DIR%\out\smali"
-java -jar "%~dp0\3rd\smali-2.5.2.jar" assemble "%OBF_DIR%\out\smali" -o "%OBF_DIR%\classes.dex"
-copy /y "%OBF_DIR%\classes.dex" "%DEX_PATH%" >nul
-echo [*] Smali obfuscation applied
-:skip_obfuscate
+:: echo [*] Running smali obfuscator...
+:: ... (see git history for full block)
+:: :skip_obfuscate
 
 :: Step 2: Copy or encrypt DEX
 if /i not "%ENCRYPT%"=="true" goto :no_encrypt

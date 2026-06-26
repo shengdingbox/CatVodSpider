@@ -109,22 +109,14 @@
 }
 
 # ============================================================
-# R8 Maximum Aggressive Obfuscation & Optimization
+# R8 Basic Obfuscation (name renaming only, no aggressive optimization)
 # ============================================================
 
-# Reuse names across unrelated classes (maximizes name collision)
+# Reuse names across unrelated classes
 -overloadaggressively
-
-# Widen access modifiers to enable more inlining & merging
--allowaccessmodification
-
-# Aggressive optimizations: class merging, inlining, dead code removal
--optimizations !code/simplification/arithmetic,!code/simplification/cast
--mergeinterfacesaggressively
 
 # Flatten ALL obfuscated packages into single directory 'a'
 -repackageclasses 'a'
 
-# Treat all classes as library classes (enables more aggressive optimization)
--dontskipnonpubliclibraryclasses
--dontskipnonpubliclibraryclassmembers
+# Disable ALL optimizations to avoid breaking plugin loading
+-dontoptimize
