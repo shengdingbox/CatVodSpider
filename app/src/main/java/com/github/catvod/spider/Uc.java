@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class Uc extends BaseSpider {
+public class Uc extends Spider {
     public static final Pattern a = Pattern.compile("drive.uc.cn/s/([^#/]+)(#*/list/share/([^\\-]+))?");
 
     public String detailContent(String str, List<String> list) {

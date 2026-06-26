@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-public class XPath extends BaseSpider {
+public class XPath extends Spider {
 
     HashMap<String, String> getHeaders() {
         HashMap<String, String> headers = new HashMap<>();

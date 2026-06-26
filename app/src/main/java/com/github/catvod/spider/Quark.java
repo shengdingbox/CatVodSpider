@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Quark extends BaseSpider {
+public class Quark extends Spider {
     public static final Pattern PAN_URL_PATTERN = Pattern.compile("pan.quark.cn/s/([^#/]+)(#*/list/share/([^\\-]+))?");
 
     public static void test() {

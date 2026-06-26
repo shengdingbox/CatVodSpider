@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class Yun115 extends BaseSpider {
+public class Yun115 extends Spider {
     public static final Pattern a = Pattern.compile("https://(?:115|anxia|115cdn)\\.com/s/([a-zA-Z0-9]+)\\?password=([a-zA-Z0-9]+)");
 
     public static void test() {

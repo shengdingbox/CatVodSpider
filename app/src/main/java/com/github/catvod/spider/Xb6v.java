@@ -32,7 +32,7 @@ import okhttp3.Response;
  * @author zhixc
  * 新版6V电影网
  */
-public class Xb6v extends BaseSpider {
+public class Xb6v extends Spider {
 
     private final String siteUrl = "http://www.xb6v.com";
     private String nextSearchUrlPrefix;

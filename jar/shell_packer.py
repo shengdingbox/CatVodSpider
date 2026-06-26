@@ -3,14 +3,17 @@
 Shell DEX generator for CatVodSpider native packer.
 
 Uses apktool to extract the full DEX into smali source files, modifies
-top-level spider classes to be empty shells (inheriting BaseSpider with a
-minimal constructor), then uses apktool to rebuild a clean, properly-formatted
-shell DEX.
+top-level spider classes to be empty shells with a realSpider delegate field,
+then uses apktool to rebuild a clean, properly-formatted shell DEX.
+
+The .super directive is NEVER changed — shell classes keep their original parent
+(e.g., Spider or NetPan). Instead, all Spider API methods are overridden to
+delegate to the real spider instance loaded from the encrypted payload.
 
 Usage: python3 shell_packer.py <input.dex> <output_shell.dex>
 """
 
-import sys, os, shutil, tempfile, zipfile, subprocess
+import sys, os, re, shutil, tempfile, zipfile, subprocess
 from pathlib import Path
 
 APKTOOL_JAR = Path(__file__).parent / "3rd" / "apktool_2.4.1.jar"
@@ -23,6 +26,25 @@ BRIDGE_CLASSES = (
     'com/github/catvod/spider/BaseSpider',
     'com/github/catvod/spider/DexNative',
 )
+
+# Spider API methods to delegate (from com.github.catvod.crawler.Spider).
+# Static methods (client, safeDns) and constructors are excluded.
+SPIDER_METHODS = [
+    # (method_name, descriptor)
+    ('categoryContent', '(Ljava/lang/String;Ljava/lang/String;ZLjava/util/HashMap;)Ljava/lang/String;'),
+    ('destroy',         '()V'),
+    ('detailContent',   '(Ljava/util/List;)Ljava/lang/String;'),
+    ('homeContent',     '(Z)Ljava/lang/String;'),
+    ('homeVideoContent', '()Ljava/lang/String;'),
+    ('init',            '(Landroid/content/Context;)V'),
+    ('init',            '(Landroid/content/Context;Ljava/lang/String;)V'),
+    ('isVideoFormat',   '(Ljava/lang/String;)Z'),
+    ('manualVideoCheck', '()Z'),
+    ('playerContent',   '(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Ljava/lang/String;'),
+    ('proxyLocal',      '(Ljava/util/Map;)[Ljava/lang/Object;'),
+    ('searchContent',   '(Ljava/lang/String;Z)Ljava/lang/String;'),
+    ('searchContent',   '(Ljava/lang/String;ZLjava/lang/String;)Ljava/lang/String;'),
+]
 
 
 def apktool_decode(apk_path: Path, out_dir: Path):
@@ -54,28 +76,13 @@ def apktool_build(apk_dir: Path, out_apk: Path):
 
 
 def smali_to_descriptor(rel_path: str) -> str:
-    """Convert relative smali file path to class descriptor.
-
-    e.g. 'com/github/catvod/spider/Aidi.smali' -> 'Lcom/github/catvod/spider/Aidi;'
-    """
     if rel_path.endswith('.smali'):
-        # Normalize Windows backslashes to forward slashes
         normalized = rel_path.replace('\\', '/')
         return 'L' + normalized[:-6] + ';'
     return None
 
 
-def get_superclass(smali_text: str) -> str:
-    """Extract the .super directive value from smali text."""
-    for line in smali_text.splitlines():
-        stripped = line.strip()
-        if stripped.startswith('.super '):
-            return stripped.split(None, 1)[1]
-    return None
-
-
 def is_top_level_spider(desc: str) -> bool:
-    """Check if class descriptor is a top-level spider class eligible for shellification."""
     if not desc.startswith('Lcom/github/catvod/spider/'):
         return False
     if '$' in desc:
@@ -87,28 +94,132 @@ def is_top_level_spider(desc: str) -> bool:
 
 
 def is_shellifiable(smali_text: str) -> bool:
-    """Check if a spider class can be safely shellified.
+    """Only shellify classes whose .super is Spider or BaseSpider directly."""
+    for line in smali_text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith('.super '):
+            super_desc = stripped.split(None, 1)[1]
+            return super_desc in (
+                'Lcom/github/catvod/crawler/Spider;',
+                'Lcom/github/catvod/spider/BaseSpider;',
+            )
+    return False
 
-    Only shellify classes whose .super is Spider or BaseSpider directly.
-    Classes extending NetPan, other spiders, or Object must be preserved as-is
-    to avoid breaking the inheritance chain that the host depends on.
+
+def descriptor_to_type(desc):
+    """Convert a return type descriptor to (category, move_instruction).
+
+    Returns:
+      'void'    -> no move-result
+      'object'  -> move-result-object
+      'int'     -> move-result
+      'long'    -> move-result-wide
+      'float'   -> move-result
+      'double'  -> move-result-wide
     """
-    super_desc = get_superclass(smali_text)
-    if super_desc is None:
-        return False
-    return super_desc in (
-        'Lcom/github/catvod/crawler/Spider;',
-        'Lcom/github/catvod/spider/BaseSpider;',
-    )
+    if desc == 'V':
+        return 'void', None
+    if desc in ('Z', 'B', 'S', 'C', 'I'):
+        return 'int', 'move-result'
+    if desc == 'J':
+        return 'long', 'move-result-wide'
+    if desc == 'F':
+        return 'float', 'move-result'
+    if desc == 'D':
+        return 'double', 'move-result-wide'
+    return 'object', 'move-result-object'
+
+
+def parse_param_types(descriptor):
+    """Parse parameter types from a method descriptor like (Ljava/lang/String;Z)V."""
+    inside = descriptor[1:descriptor.index(')')]
+    params = []
+    i = 0
+    while i < len(inside):
+        c = inside[i]
+        if c in ('Z', 'B', 'S', 'C', 'I', 'J', 'F', 'D', 'V'):
+            params.append(c)
+            i += 1
+        elif c == 'L':
+            end = inside.index(';', i)
+            params.append(inside[i:end+1])
+            i = end + 1
+        elif c == '[':
+            # Array: collect all [ then the element type
+            arr = ''
+            while inside[i] == '[':
+                arr += '['
+                i += 1
+            if inside[i] == 'L':
+                end = inside.index(';', i)
+                params.append(arr + inside[i:end+1])
+                i = end + 1
+            else:
+                params.append(arr + inside[i])
+                i += 1
+        else:
+            i += 1
+    return params
+
+
+def generate_delegate_method(method_name, descriptor, class_desc):
+    """Generate a smali method that delegates to the realSpider field."""
+    ret_type_str = descriptor[descriptor.index(')')+1:]
+    cat, move_inst = descriptor_to_type(ret_type_str)
+
+    params = parse_param_types(descriptor)
+
+    out = []
+    out.append('.method public ' + method_name + descriptor)
+    out.append('    .locals 1')
+    out.append('')
+    out.append('    iget-object v0, p0, ' + class_desc + '->realSpider:Lcom/github/catvod/crawler/Spider;')
+    out.append('')
+
+    # Build invoke-virtual argument list: {v0, p1, p2, ...}
+    invoke_args = ['v0']
+    reg_idx = 1  # p0 = this at index 1, p1 at index 2, etc.
+    for p in params:
+        reg_idx += 1
+        invoke_args.append('p' + str(reg_idx))
+        if p in ('J', 'D'):
+            reg_idx += 1  # wide types take 2 registers
+
+    args_str = ', '.join(invoke_args)
+    invoke_line = '    invoke-virtual {' + args_str + '}, Lcom/github/catvod/crawler/Spider;->' + method_name + descriptor
+    out.append(invoke_line)
+
+    if cat == 'void':
+        out.append('')
+        out.append('    return-void')
+    elif cat == 'object':
+        out.append('')
+        out.append('    move-result-object v0')
+        out.append('')
+        out.append('    return-object v0')
+    elif cat in ('long', 'double'):
+        out.append('')
+        out.append('    ' + move_inst + ' v0')
+        out.append('')
+        out.append('    return-wide v0')
+    else:
+        out.append('')
+        out.append('    ' + move_inst + ' v0')
+        out.append('')
+        out.append('    return v0')
+
+    out.append('.end method')
+    return '\n'.join(out)
 
 
 def replace_with_shell(smali_text: str) -> str:
-    """Replace the class body with a minimal shell that only has a no-arg constructor
-    calling BaseSpider.<init>()V. The .super directive is preserved as-is."""
+    """Replace the class body with a shell that keeps original .super and
+    delegates all Spider API methods to the realSpider field."""
     lines = smali_text.splitlines()
 
     source_line = None
     class_line = None
+    class_desc = None
     super_line = None
     implements_lines = []
 
@@ -118,35 +229,62 @@ def replace_with_shell(smali_text: str) -> str:
             source_line = line
         elif stripped.startswith('.class '):
             class_line = line
+            # Extract class descriptor
+            parts = stripped.split()
+            if len(parts) >= 2:
+                class_desc = parts[-1]
         elif stripped.startswith('.super '):
             super_line = line
         elif stripped.startswith('.implements '):
             implements_lines.append(line)
 
-    if class_line is None:
+    if class_line is None or class_desc is None:
         return smali_text
 
     out = []
     if source_line:
         out.append(source_line)
     out.append(class_line)
-    # Keep original .super (no longer changing to BaseSpider)
     if super_line:
         out.append(super_line)
     for impl in implements_lines:
         out.append(impl)
+
+    # realSpider field
     out.append('')
+    out.append('.field public realSpider:Lcom/github/catvod/crawler/Spider;')
     out.append('')
+
+    # Constructor: call super, then load real spider
     out.append('# direct methods')
     out.append('.method public constructor <init>()V')
-    out.append('    .registers 1')
+    out.append('    .locals 2')
     out.append('')
-    out.append('    .prologue')
+    out.append('    invoke-direct {p0}, Lcom/github/catvod/crawler/Spider;-><init>()V')
     out.append('')
-    out.append('    invoke-direct {p0}, Lcom/github/catvod/spider/BaseSpider;-><init>()V')
+    out.append('    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;')
+    out.append('')
+    out.append('    move-result-object v0')
+    out.append('')
+    out.append('    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;')
+    out.append('')
+    out.append('    move-result-object v0')
+    out.append('')
+    out.append('    invoke-static {v0}, Lcom/github/catvod/spider/Init;->getSpider(Ljava/lang/String;)Lcom/github/catvod/crawler/Spider;')
+    out.append('')
+    out.append('    move-result-object v0')
+    out.append('')
+    out.append('    iput-object v0, p0, ' + class_desc + '->realSpider:Lcom/github/catvod/crawler/Spider;')
     out.append('')
     out.append('    return-void')
     out.append('.end method')
+
+    # Delegate methods
+    out.append('')
+    out.append('# virtual methods')
+    for method_name, descriptor in SPIDER_METHODS:
+        out.append('')
+        out.append(generate_delegate_method(method_name, descriptor, class_desc))
 
     return '\n'.join(out) + '\n'
 

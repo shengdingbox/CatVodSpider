@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 /**
  * @author ColaMint & Adam & FongMi
  */
-public class Ali extends BaseSpider {
+public class Ali extends Spider {
 
     public static final Pattern pattern = Pattern.compile("(www.aliyundrive.com|www.alipan.com)/s/([^/]+)(/folder/([^/]+))?");
 

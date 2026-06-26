@@ -31,7 +31,7 @@ import java.util.regex.Pattern;
  * <p>
  * Author: CatVod
  */
-public class Aidi extends BaseSpider {
+public class Aidi extends Spider {
     private static final String siteUrl = "https://aidi.tv";
     private static final String siteHost = "aidi.tv";
 

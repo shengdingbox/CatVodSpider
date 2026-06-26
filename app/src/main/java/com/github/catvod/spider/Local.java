@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-public class Local extends BaseSpider {
+public class Local extends Spider {
 
     private SimpleDateFormat format;
 

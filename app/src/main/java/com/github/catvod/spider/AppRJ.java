@@ -36,7 +36,7 @@ import okhttp3.Response;
  *
  * @see #init(Context, String) 初始化时传入 {"url":"https://xxx"}
  */
-public class AppRJ extends BaseSpider {
+public class AppRJ extends Spider {
 
     /** API 基地址，init 时从 ext 字段读取 */
     private String baseUrl;

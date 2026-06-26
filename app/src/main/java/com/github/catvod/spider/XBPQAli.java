@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class XBPQAli extends BaseSpider {
+public class XBPQAli extends Spider {
     public static final Pattern a = Pattern.compile("www.aliyundrive.com/s/([^/]+)(/folder/([^/]+))?");
 
     public static Object[] proxy(Map<String, String> map) throws UnsupportedEncodingException {

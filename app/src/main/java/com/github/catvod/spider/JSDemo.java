@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class JSDemo extends BaseSpider {
+public class JSDemo extends Spider {
 
     private ExecutorService executor;
     private QuickJSContext ctx;

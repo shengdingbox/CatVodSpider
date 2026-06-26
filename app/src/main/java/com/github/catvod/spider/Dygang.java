@@ -19,7 +19,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Dygang extends BaseSpider {
+public class Dygang extends Spider {
 
     private static final String BASE_URL = "https://www.dygang.tv";
 

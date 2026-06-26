@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-public class Jable extends BaseSpider {
+public class Jable extends Spider {
 
     private static final String siteUrl = "https://jable.tv";
     private static final String cateUrl = siteUrl + "/categories/";

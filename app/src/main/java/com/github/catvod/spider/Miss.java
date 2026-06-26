@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-public class Miss extends BaseSpider {
+public class Miss extends Spider {
 
     private final String url = "https://missav.com/";
 

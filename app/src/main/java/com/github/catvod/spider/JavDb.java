@@ -25,7 +25,7 @@ import java.util.Map;
 /**
  * @author Qile
  */
-public class JavDb extends BaseSpider {
+public class JavDb extends Spider {
 
     private static String siteUrl = "https://javdb523.com";
 
