@@ -7,7 +7,7 @@ import java.util.Iterator;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class su extends kv {
-    public final /* synthetic */ int a = 0;
+    public final  int a = 0;
     public final Object d;
     public final Object e;
 

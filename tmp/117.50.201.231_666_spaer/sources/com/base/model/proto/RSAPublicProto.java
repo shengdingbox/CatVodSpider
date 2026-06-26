@@ -58,7 +58,7 @@ public final class RSAPublicProto {
                 this.str5_ = "";
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -71,7 +71,7 @@ public final class RSAPublicProto {
                 this.str5_ = "";
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -498,7 +498,7 @@ public final class RSAPublicProto {
             this.str5_ = "";
         }
 
-        public /* synthetic */ RSAPublic(Builder builder) {
+        public  RSAPublic(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 

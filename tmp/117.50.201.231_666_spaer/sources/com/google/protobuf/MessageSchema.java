@@ -52,8 +52,8 @@ final class MessageSchema<T> implements Schema<T> {
     private static final Unsafe UNSAFE = UnsafeUtil.getUnsafe();
 
     /* JADX INFO: renamed from: com.google.protobuf.MessageSchema$1, reason: invalid class name */
-    /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
+     class AnonymousClass1 {
+        static final  int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {
             int[] iArr = new int[WireFormat.FieldType.values().length];

@@ -2,11 +2,11 @@ package com.github.catvod.spider.merge.A0;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class adr extends n {
-    public final /* synthetic */ int c;
+    public final  int c;
     public final Object q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ adr(pb pbVar, Object obj, int i) {
+    public  adr(pb pbVar, Object obj, int i) {
         super(pbVar);
         this.c = i;
         this.q = obj;
@@ -32,7 +32,7 @@ public final class adr extends n {
     }
 
     @Override // com.github.catvod.spider.merge.A0.qw
-    public final /* bridge */ /* synthetic */ Object invoke(Object obj) {
+    public final /* bridge */  Object invoke(Object obj) {
         switch (this.c) {
             case 0:
                 f((Throwable) obj);

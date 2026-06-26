@@ -6,9 +6,9 @@ import java.util.Comparator;
 public final class gm implements Comparator {
     public static final gm a = new gm(0);
     public static final gm b = new gm(1);
-    public final /* synthetic */ int c;
+    public final  int c;
 
-    public /* synthetic */ gm(int i) {
+    public  gm(int i) {
         this.c = i;
     }
 

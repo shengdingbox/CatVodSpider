@@ -5,7 +5,7 @@ import java.io.PrintStream;
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 final class b {
     private static boolean a;
-    static /* synthetic */ Class b;
+    static  Class b;
 
     private static abstract class a {
         private a() {
@@ -21,7 +21,7 @@ final class b {
         }
     }
 
-    static /* synthetic */ Class a() {
+    static  Class a() {
         return b.class;
     }
 

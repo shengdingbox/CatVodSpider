@@ -40,24 +40,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class Init {
     private static String libStubPath = "";
     public static String goProxyBinary = "";
-    public static String singBoxBinary = "";
-    public static String extraBinary = "";
-    public static String allinOneBinary = "";
-    public static String tgSouGoBinary = "";
-    public static String alistBinary = "";
-    public static String fileBrowserBinary = "";
     public Application application;
     public String baseUrl = "";
     public String proxyUrl = "";
-    /** Reference to self, used by anonymous inner classes as this.b */
-    final Init b = this;
-    /** Background task executor, used as FilterGroup */
     final ExecutorService FilterGroup = Executors.newCachedThreadPool();
     /** UI thread handler wrapper */
     final Handler StringUtils = new Handler(Looper.getMainLooper());
-    public final AtomicBoolean isRunning = new AtomicBoolean(false);
-    private final Handler mainHandler = new Handler(Looper.getMainLooper());
-    public final ExecutorService threadPool = Executors.newFixedThreadPool(5);
 
     class AnonymousClass1 extends WebViewClient {
         @Override
@@ -125,46 +113,6 @@ public class Init {
         }
     }
 
-    public static void execTgSou(Init init, boolean showOutput, JSONObject jsonObj) {
-        try {
-            String binaryName = init.getArchBinary("tgsou-linux", "tgsou-arm64", "tgsou-armV7");
-            init.extractBinary(binaryName, new File(context().getFilesDir().getAbsolutePath() + "/" + binaryName));
-            String cmd;
-            if (jsonObj != null && jsonObj.has("proxy") && jsonObj.getString("proxy") != null && !jsonObj.getString("proxy").isEmpty()) {
-                cmd = "nohup ./" + binaryName + " -proxy " + jsonObj.getString("proxy");
-            } else {
-                cmd = "nohup ./" + binaryName;
-            }
-            init.execCommand(binaryName, cmd, "my_tgsou.log", showOutput);
-        } catch (Throwable e) {
-            SpiderDebug.log("Error occurred");
-            SpiderDebug.log("extract assets fail");
-        }
-    }
-
-    public static void execGoProxyFallback(Init init, Context context, boolean showOutput) {
-        init.execGoProxy(context, showOutput, "goProxy_arm64");
-        String pingResult = OkHttpUtil.string("http://127.0.0.1:9966" + "/api/ping", new HashMap<>());
-        if (pingResult == null || pingResult.isEmpty()) {
-            init.execGoProxy(context, showOutput, "goProxy_armV7");
-        }
-    }
-
-    public static void execAlist(Init init, Boolean enabled) {
-        init.getClass();
-        try {
-            alistBinary = init.getArchBinary("alist-linux", "alist-arm64", "alist-armV7");
-            init.extractBinary(alistBinary, new File(context().getFilesDir().getAbsolutePath() + "/" + alistBinary));
-            String setAdminCmd = "nohup ./" + alistBinary + " admin set admin";
-            String serverCmd = "nohup ./" + alistBinary + " server";
-            init.execCommand(alistBinary, setAdminCmd, "my_alist.log", enabled.booleanValue());
-            init.execCommand(alistBinary, serverCmd, "my_alist.log", enabled.booleanValue());
-        } catch (Throwable e) {
-            SpiderDebug.log("Error occurred");
-            SpiderDebug.log("extract assets fail");
-        }
-    }
-
     public static void checkPermission() {
         try {
             Activity activity = getActivity();
@@ -225,71 +173,10 @@ public class Init {
         return null;
     }
 
-    public static void execFileBrowser(Init init, Boolean enabled) {
-        init.getClass();
-        try {
-            fileBrowserBinary = init.getArchBinary("filebrowser-linux", "filebrowser-arm64", "filebrowser-armV7");
-            File file = new File(context().getFilesDir().getAbsolutePath() + "/" + fileBrowserBinary);
-            init.extractBinary(fileBrowserBinary, file);
-            init.execCommand(fileBrowserBinary, "HOME=/Users/my_username " + file.getAbsolutePath() + " -a 0.0.0.0 -r /storage/emulated/0", "my_filebrowser.log", enabled.booleanValue());
-        } catch (Throwable e) {
-            SpiderDebug.log("Error occurred");
-            SpiderDebug.log("extract assets fail");
-        }
-    }
 
-    public static void execAllInOne(Init init, Boolean enabled) {
-        init.getClass();
-        try {
-            allinOneBinary = init.getArchBinary("allinone-linux", "allinone-arm64", "allinone-armV7");
-            init.extractBinary(allinOneBinary, new File(context().getFilesDir().getAbsolutePath() + "/" + allinOneBinary));
-            String sb = "nohup ./" +
-                    allinOneBinary;
-            init.execCommand(allinOneBinary, sb, "my_allinoneutput.log", enabled.booleanValue());
-        } catch (Throwable e) {
-            SpiderDebug.log("Error occurred");
-            SpiderDebug.log("extract assets fail");
-        }
-    }
 
     public static void execute(Runnable runnable) {
         get().FilterGroup.execute(runnable);
-    }
-
-    public static void execTgSouGo(Init init, JSONObject jsonObj, Boolean enabled) {
-        String cmd;
-        init.getClass();
-        try {
-            if (new File(context().getFilesDir().getAbsolutePath() + "/tv/.tgsou_api_session").exists()) {
-                return;
-            }
-            tgSouGoBinary = init.getArchBinary("tgsou-go-linux-amd64", "tgsou-go-linux-arm64", "tgsou-go-linux-arm");
-            init.extractBinary(tgSouGoBinary, new File(context().getFilesDir().getAbsolutePath() + "/" + tgSouGoBinary));
-            if (jsonObj.has("proxy") && jsonObj.getString("proxy") != null && !jsonObj.getString("proxy").isEmpty()) {
-                cmd = "nohup ./" + tgSouGoBinary + " -proxy " + jsonObj.getString("proxy");
-            } else {
-                cmd = "nohup ./" + tgSouGoBinary;
-            }
-            init.execCommand(tgSouGoBinary, cmd, "my_tgsou-go.log", enabled.booleanValue());
-        } catch (Throwable e) {
-            SpiderDebug.log("Error occurred");
-            SpiderDebug.log("extract assets fail");
-        }
-    }
-
-    public static void execSingBox(Init init) {
-        init.getClass();
-        try {
-            if (new File(BaseApi.get().a).exists()) {
-                singBoxBinary = init.getArchBinary("sing-box-linux", "sing-box-arm64", "sing-box-armV7");
-                init.extractBinary(singBoxBinary, new File(context().getFilesDir().getAbsolutePath() + "/" + singBoxBinary));
-                init.execCommand(singBoxBinary, "nohup ./" + singBoxBinary + " run ", "my_singboxoutput.log", true);
-            }
-        } catch (Throwable e) {
-            StringBuilder sb = new StringBuilder("singbox start fail ");
-            sb.append(e.getMessage());
-            Log.w("Spider", sb.toString());
-        }
     }
 
     public static Init get() {
@@ -334,39 +221,7 @@ public class Init {
         return null;
     }
 
-    private String getArchBinary(String x86Binary, String arm64Binary, String armBinary) {
-        String supportedAbis = Arrays.toString(Build.VERSION.SDK_INT >= 21 ? Build.SUPPORTED_ABIS : new String[0]);
-        return supportedAbis.contains("x86") ? x86Binary : supportedAbis.contains("arm64") ? arm64Binary : armBinary;
-    }
 
-    private void execGoProxy(Context context, boolean showOutput, String binaryName) {
-        try {
-            if (binaryName == null || binaryName.isEmpty()) {
-                binaryName = getArchBinary("goProxy_linux", "goProxy_arm64", "goProxy_armV7");
-            }
-            goProxyBinary = binaryName;
-            File file = new File(context().getFilesDir().getAbsolutePath() + "/" + goProxyBinary);
-            String localPath = context().getFilesDir().getAbsolutePath() + "/tv/lib/goProxy55";
-            boolean existsLocally = new File(localPath).exists();
-            if (existsLocally) {
-                write(file, new FileInputStream(localPath));
-                file.setExecutable(true);
-            } else {
-                extractBinary(goProxyBinary, file);
-            }
-            String cmd = "nohup " + file.getAbsolutePath() + " --md5=ajdadywekgjjbwdasdasiwqcbbdg";
-            if ((this.proxyUrl) != null && !this.proxyUrl.isEmpty()) {
-                cmd = cmd + " --proxy=" + this.proxyUrl;
-            }
-            String fullCmd = cmd + " --appPath=" + context.getPackageResourcePath();
-            SpiderDebug.log("goProxy command: " + fullCmd);
-            execCommand(goProxyBinary, fullCmd, existsLocally ? "goProxy.log" : "", showOutput);
-        } catch (Exception e) {
-            SpiderDebug.log("doGoProxy error:" + e);
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     public static void init(Context context) {
         get().application = (Application) context;
@@ -376,132 +231,6 @@ public class Init {
         new Thread(ActionRunnable1.f).start();
     }
 
-    public static void interceptActivitySch() {
-        Executors.newScheduledThreadPool(1).scheduleWithFixedDelay(ActionRunnable2.g, 1L, 1L, TimeUnit.SECONDS);
-    }
-
-    public static void interceptActivityStart() throws IllegalAccessException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, NoSuchMethodException {
-        Class<?> cls = Class.forName("android.app.ActivityThread");
-        Object activityThread = cls.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-        Field activitiesField = cls.getDeclaredField("mActivities");
-        activitiesField.setAccessible(true);
-        for (Object obj : ((Map) activitiesField.get(activityThread)).values()) {
-            Field activityField = obj.getClass().getDeclaredField("activity");
-            activityField.setAccessible(true);
-            Activity activity = (Activity) activityField.get(obj);
-            if (activity != null) {
-                ComponentName componentName = activity.getComponentName();
-                if (componentName.getClassName().contains("Video") || componentName.getClassName().contains("Detail")) {
-                    activity.finish();
-                }
-            }
-        }
-    }
-
-    private void extractBinary(String binaryName, File targetFile) throws Throwable {
-        StringBuilder logMsg = new StringBuilder();
-        InputStream fileInputStream;
-        String localPath = context().getFilesDir().getAbsolutePath() + "/tv/lib/" + binaryName;
-        if (new File(localPath).exists()) {
-            fileInputStream = new FileInputStream(localPath);
-        } else {
-            String remoteUrl = new StringBuilder().append(this.baseUrl).append(binaryName).append("").toString();
-            String md5Url = new StringBuilder().append(this.baseUrl).append(binaryName).append(".md5").toString();
-            if (targetFile.exists()) {
-                MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-                FileInputStream fis = new FileInputStream(targetFile);
-                try {
-                    byte[] buffer = new byte[8192];
-                    while (true) {
-                        int bytesRead = fis.read(buffer);
-                        if (bytesRead <= 0) {
-                            break;
-                        } else {
-                            messageDigest.update(buffer, 0, bytesRead);
-                        }
-                    }
-                    fis.close();
-                    byte[] digest = messageDigest.digest();
-                    StringBuilder sb = new StringBuilder();
-                    for (byte b : digest) {
-                        sb.append(Integer.toString((b & 255) + 256, 16).substring(1));
-                    }
-                    String localMd5 = sb.toString();
-                    SpiderDebug.log(binaryName + ":localMd5:" + localMd5);
-                    if (OkHttpUtil.string(md5Url, new HashMap<>()).contains(localMd5)) {
-                        SpiderDebug.log(binaryName + ":与线上一致:");
-                        fileInputStream = new FileInputStream(targetFile);
-                    } else {
-                        StringBuilder sb2 = new StringBuilder();
-                        sb2.append(binaryName);
-                        sb2.append(":重新下载:");
-                        sb2.append(localMd5);
-                        logMsg = sb2;
-                    }
-                } catch (Throwable th) {
-                    try {
-                        fis.close();
-                    } catch (Throwable unused) {
-                    }
-                    throw th;
-                }
-            } else {
-                logMsg = new StringBuilder(binaryName).append(":不存在:");
-            }
-            SpiderDebug.log(logMsg.toString());
-            fileInputStream = OkHttpUtil.downloadStream(remoteUrl);
-        }
-        write(targetFile, fileInputStream);
-        targetFile.setExecutable(true);
-    }
-
-    private void execCommand(String binaryName, String command, String logFile, boolean showOutput) throws InterruptedException, IOException {
-        String fullCmd;
-        File file = new File(context().getFilesDir().getAbsolutePath() + "/" + binaryName);
-        Process process = Runtime.getRuntime().exec("/system/bin/sh\n");
-        DataOutputStream outputStream = new DataOutputStream(process.getOutputStream());
-        StringBuilder sb = new StringBuilder("cd ");
-        sb.append(file.getParent());
-        sb.append("\n");
-        outputStream.writeBytes(sb.toString());
-        outputStream.writeBytes("chmod 777 " + file.getParent() + "\n");
-        outputStream.writeBytes("chmod 777 " + file.getAbsolutePath() + "\n");
-        boolean hasLogFile = false;
-        CharSequence[] logFileArr = {logFile};
-        // unused constant removed
-        if (!(Array.getLength(logFileArr) == 0)) {
-            int idx = 0;
-            while (true) {
-                if (idx >= 1) {
-                    break;
-                }
-                if (String.valueOf(logFileArr[idx]).isEmpty() || String.valueOf(logFileArr[idx]).equals("null")) {
-                    hasLogFile = true;
-                    break;
-                }
-                idx++;
-            }
-        }
-        if (true ^ hasLogFile) {
-            String logPath = context().getFilesDir().getAbsolutePath() + "/tv/log/" + logFile;
-            StringBuilder cmdSb = new StringBuilder();
-            cmdSb.append("killall -9 ");
-            cmdSb.append(binaryName);
-            cmdSb.append(";");
-            cmdSb.append(command);
-            cmdSb.append(" > ");
-            fullCmd = cmdSb.append(logPath).append(" 2>&1\n").toString();
-        } else {
-            fullCmd = "killall -9 " + binaryName + ";" + command + "\n";
-        }
-        outputStream.writeBytes(fullCmd);
-        outputStream.flush();
-        outputStream.writeBytes("exit\n");
-        outputStream.flush();
-        readProcessOutput(process.getInputStream(), "Output", showOutput);
-        readProcessOutput(process.getErrorStream(), "Error", showOutput);
-        process.waitFor();
-    }
 
     @SuppressLint({"UnsafeDynamicallyLoadedCode"})
     private void loadNativeLib() throws Throwable {
@@ -519,23 +248,6 @@ public class Init {
         } catch (Throwable th) {
             SpiderDebug.log(libStubPath + "libstubExtracted error：" + th.getMessage());
             throw th;
-        }
-    }
-
-    private static void readProcessOutput(InputStream inputStream, String tag, boolean showOutput) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-        SpiderDebug.log(tag + ":");
-        while (true) {
-            String line = reader.readLine();
-            if (line == null) {
-                return;
-            }
-            if (!(line.contains("not found") || line.contains("killall") || line.contains("sing-box") || line.contains("goProxy") || line.contains("Killed"))) {
-                SpiderDebug.log(line);
-                if (showOutput) {
-                    Log.w("Spider", line);
-                }
-            }
         }
     }
 
@@ -594,45 +306,6 @@ public class Init {
         }
     }
 
-    public void exeAListProxy(Context context, Boolean enabled) {
-        if (context.getApplicationContext().getApplicationInfo().targetSdkVersion >= 29) {
-            return;
-        }
-        this.FilterGroup.execute(new RunnableC0755g(this, enabled, 4));
-    }
-
-    public void exeAllInOneProxy(Context context, Boolean enabled) {
-        if (context.getApplicationContext().getApplicationInfo().targetSdkVersion >= 29) {
-            return;
-        }
-        this.FilterGroup.execute(new C(this, enabled, 2));
-    }
-
-    public void exeFileProxy(Context context, Boolean enabled) {
-        if (context.getApplicationContext().getApplicationInfo().targetSdkVersion >= 29) {
-            return;
-        }
-        this.FilterGroup.execute(new RunnableC0747c(this, enabled, 5));
-    }
-
-    static class RunnableC0747c implements Runnable {
-        private final Init b;
-        private final Boolean enabled;
-        RunnableC0747c(Init init, Boolean enabled, int unused) { this.b = init; this.enabled = enabled; }
-        @Override public void run() { /* Stub: original handled FileBrowser proxy */ }
-    }
-
-    public void exeGoProxy(final Context context, final boolean showOutput) {
-        if (context.getApplicationContext().getApplicationInfo().targetSdkVersion >= 29) {
-            return;
-        }
-        new Thread(new Runnable() {
-            @Override
-            public final void run() {
-                Init.execGoProxyFallback(Init.this, context, showOutput);
-            }
-        }).start();
-    }
 
     public void exeLibStub() {
         try {
@@ -648,48 +321,6 @@ public class Init {
         }
     }
 
-    public void exeSingBoxProxy(Context context) {
-        if (context.getApplicationContext().getApplicationInfo().targetSdkVersion >= 29) {
-            return;
-        }
-        this.FilterGroup.execute(new B(this, 5));
-    }
-
-    public void exeTgProxy(final boolean showOutput, final JSONObject jsonObj, Context context) {
-        if (context.getApplicationContext().getApplicationInfo().targetSdkVersion >= 29) {
-            return;
-        }
-        this.FilterGroup.execute(new Runnable() {
-            @Override
-            public final void run() {
-                Init.execTgSou(Init.this, showOutput, jsonObj);
-            }
-        });
-    }
-
-    public void exeTgSouGoProxy(Context context, Boolean enabled, JSONObject jsonObj) {
-        if (context.getApplicationContext().getApplicationInfo().targetSdkVersion >= 29) {
-            return;
-        }
-        this.FilterGroup.execute(new RunnableC0750d0(this, jsonObj, enabled, 1));
-    }
-
-    // --- Inner class stubs (original implementation depended on deleted merge classes) ---
-
-    static class B implements Runnable {
-        private final Init b;
-        private final int delay;
-        B(Init init, int delay) { this.b = init; this.delay = delay; }
-        @Override public void run() { /* Stub: original handled sing-box proxy */ }
-    }
-
-    static class C implements Runnable {
-        private final Init b;
-        private final Boolean enabled;
-        C(Init init, Boolean enabled, int unused) { this.b = init; this.enabled = enabled; }
-        @Override public void run() { /* Stub: original handled AllInOne proxy */ }
-    }
-
     static class RunnableC0746b0 implements Runnable {
         private final String message;
         RunnableC0746b0(String message, int unused) { this.message = message; }
@@ -700,22 +331,5 @@ public class Init {
                 SpiderDebug.log("show toast error: " + e);
             }
         }
-    }
-
-    static class RunnableC0750d0 implements Runnable {
-        private final Init b;
-        private final JSONObject jsonObj;
-        private final Boolean enabled;
-        RunnableC0750d0(Init init, JSONObject jsonObj, Boolean enabled, int unused) {
-            this.b = init; this.jsonObj = jsonObj; this.enabled = enabled;
-        }
-        @Override public void run() { /* Stub: original handled TgSouGo proxy */ }
-    }
-
-    static class RunnableC0755g implements Runnable {
-        private final Init b;
-        private final Boolean enabled;
-        RunnableC0755g(Init init, Boolean enabled, int unused) { this.b = init; this.enabled = enabled; }
-        @Override public void run() { /* Stub: original handled AList proxy */ }
     }
 }

@@ -5,10 +5,10 @@ import java.util.regex.Pattern;
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.FM.M.i, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class C0276i extends N {
-    public final /* synthetic */ int a;
+    public final  int a;
     private final Object b;
 
-    public /* synthetic */ C0276i(Object obj, int i) {
+    public  C0276i(Object obj, int i) {
         this.a = i;
         this.b = obj;
     }

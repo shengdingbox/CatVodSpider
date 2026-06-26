@@ -6,14 +6,14 @@ import com.github.catvod.spider.merge.AB.b.Q;
 import com.github.catvod.spider.merge.AB.o.F;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class m implements Runnable {
+public final  class m implements Runnable {
     public static final m b = new m(0);
     public static final m c = new m(1);
     public static final m d = new m(2);
     public static final m e = new m(3);
     public final int a;
 
-    public /* synthetic */ m(int i) {
+    public  m(int i) {
         this.a = i;
     }
 

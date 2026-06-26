@@ -825,7 +825,7 @@ public final class JavaFeaturesProto {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$1576(JavaFeatures javaFeatures, int i) {
+        public static  int access$1576(JavaFeatures javaFeatures, int i) {
             int i2 = i | javaFeatures.bitField0_;
             javaFeatures.bitField0_ = i2;
             return i2;

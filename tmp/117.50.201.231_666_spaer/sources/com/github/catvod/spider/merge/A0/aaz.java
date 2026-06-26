@@ -7,9 +7,9 @@ public final class aaz implements r {
     public static final aaz c = new aaz(0);
     public static final aaz d = new aaz(1);
     public static final aaz e = new aaz(2);
-    public final /* synthetic */ int f;
+    public final  int f;
 
-    public /* synthetic */ aaz(int i) {
+    public  aaz(int i) {
         this.f = i;
     }
 

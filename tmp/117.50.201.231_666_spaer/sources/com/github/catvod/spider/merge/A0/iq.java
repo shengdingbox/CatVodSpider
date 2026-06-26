@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class iq implements PrivilegedAction {
-    public final /* synthetic */ Class a;
+    public final  Class a;
 
     public iq(Class cls) {
         this.a = cls;

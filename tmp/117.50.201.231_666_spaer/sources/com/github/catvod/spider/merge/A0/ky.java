@@ -7,9 +7,9 @@ public final class ky implements br {
     public static final ky a = new ky(0);
     public static final ky b = new ky(1);
     public static final ky d = new ky(2);
-    public final /* synthetic */ int g;
+    public final  int g;
 
-    public /* synthetic */ ky(int i) {
+    public  ky(int i) {
         this.g = i;
     }
 

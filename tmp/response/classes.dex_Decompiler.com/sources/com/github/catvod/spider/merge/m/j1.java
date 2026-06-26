@@ -69,7 +69,7 @@ abstract class j1 {
     public static final C0022c0 r;
     private static final String r0;
     public static final C0024d0 s;
-    private static final /* synthetic */ j1[] s0;
+    private static final  j1[] s0;
     public static final C0028f0 t;
     public static final C0030g0 u;
     public static final C0032h0 v;

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.b.k, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class C0547k {
+public final  class C0547k {
     public static StringBuilder a(String str, String str2) {
         StringBuilder sb = new StringBuilder();
         sb.append(str);

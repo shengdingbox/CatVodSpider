@@ -7,11 +7,11 @@ import com.github.catvod.spider.merge.p.C0208a;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.d.b, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class RunnableC0143b implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final  class RunnableC0143b implements Runnable {
+    public final  int a;
+    public final  Object b;
 
-    public /* synthetic */ RunnableC0143b(Object obj, int i) {
+    public  RunnableC0143b(Object obj, int i) {
         this.a = i;
         this.b = obj;
     }

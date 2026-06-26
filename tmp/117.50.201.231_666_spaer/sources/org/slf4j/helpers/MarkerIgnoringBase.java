@@ -58,7 +58,7 @@ public abstract class MarkerIgnoringBase extends NamedLoggerBase implements Logg
     }
 
     @Override // org.slf4j.helpers.NamedLoggerBase, org.slf4j.Logger
-    public /* bridge */ /* synthetic */ String getName() {
+    public /* bridge */  String getName() {
         return super.getName();
     }
 

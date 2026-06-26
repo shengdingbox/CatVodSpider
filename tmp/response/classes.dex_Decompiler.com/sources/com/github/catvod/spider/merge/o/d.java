@@ -6,12 +6,12 @@ import com.github.catvod.spider.merge.p.C0206C;
 import java.util.HashMap;
 
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class d implements Runnable {
-    public static final /* synthetic */ d b = new d(0);
-    public static final /* synthetic */ d c = new d(1);
-    public final /* synthetic */ int a;
+public final  class d implements Runnable {
+    public static final  d b = new d(0);
+    public static final  d c = new d(1);
+    public final  int a;
 
-    public /* synthetic */ d(int i) {
+    public  d(int i) {
         this.a = i;
     }
 

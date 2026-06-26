@@ -7,10 +7,10 @@ import java.util.EnumSet;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class xc implements ub {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Type b;
+    public final  int a;
+    public final  Type b;
 
-    public /* synthetic */ xc(Type type, int i) {
+    public  xc(Type type, int i) {
         this.a = i;
         this.b = type;
     }

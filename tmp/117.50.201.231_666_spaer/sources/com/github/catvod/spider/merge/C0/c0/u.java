@@ -21,7 +21,7 @@ public class u extends p {
     }
 
     @Override // com.github.catvod.spider.merge.C0.c0.p, com.github.catvod.spider.merge.C0.c0.r
-    public final /* bridge */ /* synthetic */ int h() {
+    public final /* bridge */  int h() {
         return 0;
     }
 

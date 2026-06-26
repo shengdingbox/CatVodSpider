@@ -281,7 +281,7 @@ public final class Q {
         q.S();
     }
 
-    public static /* synthetic */ void b(Q q, JSONObject jSONObject) {
+    public static  void b(Q q, JSONObject jSONObject) {
         q.getClass();
         String str = System.currentTimeMillis() + "";
         String strOptString = jSONObject.optString("client_id");
@@ -385,7 +385,7 @@ public final class Q {
         }
     }
 
-    public static /* synthetic */ void k(Q q, String str) {
+    public static  void k(Q q, String str) {
         q.getClass();
         HashMap map = new HashMap();
         map.put("client_id", "381");

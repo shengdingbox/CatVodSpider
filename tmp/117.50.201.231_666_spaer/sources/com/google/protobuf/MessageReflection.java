@@ -18,8 +18,8 @@ import java.util.TreeMap;
 class MessageReflection {
 
     /* JADX INFO: renamed from: com.google.protobuf.MessageReflection$1, reason: invalid class name */
-    /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$Type;
+     class AnonymousClass1 {
+        static final  int[] $SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$Type;
 
         static {
             int[] iArr = new int[Descriptors.FieldDescriptor.Type.values().length];

@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 public final class ss implements uo {
     public final int a;
     public int b = 0;
-    public final /* synthetic */ int c;
+    public final  int c;
     public final Object d;
 
     public ss(int i, Object obj, int i2) {

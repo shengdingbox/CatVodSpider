@@ -16,8 +16,8 @@ final class CodedInputStreamReader implements Reader {
     private int tag;
 
     /* JADX INFO: renamed from: com.google.protobuf.CodedInputStreamReader$1, reason: invalid class name */
-    /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
+     class AnonymousClass1 {
+        static final  int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {
             int[] iArr = new int[WireFormat.FieldType.values().length];

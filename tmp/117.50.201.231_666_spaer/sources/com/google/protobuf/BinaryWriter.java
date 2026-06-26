@@ -25,8 +25,8 @@ abstract class BinaryWriter extends ByteOutput implements Writer {
     int totalDoneBytes;
 
     /* JADX INFO: renamed from: com.google.protobuf.BinaryWriter$1, reason: invalid class name */
-    /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
+     class AnonymousClass1 {
+        static final  int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {
             int[] iArr = new int[WireFormat.FieldType.values().length];
@@ -2759,7 +2759,7 @@ abstract class BinaryWriter extends ByteOutput implements Writer {
         this.chunkSize = i;
     }
 
-    public /* synthetic */ BinaryWriter(BufferAllocator bufferAllocator, int i, AnonymousClass1 anonymousClass1) {
+    public  BinaryWriter(BufferAllocator bufferAllocator, int i, AnonymousClass1 anonymousClass1) {
         this(bufferAllocator, i);
     }
 

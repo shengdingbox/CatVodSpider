@@ -9,7 +9,7 @@ import java.util.List;
 @CheckReturnValue
 final class ListFieldSchemaFull implements ListFieldSchema {
     private static final Class<?> UNMODIFIABLE_LIST_CLASS = Collections.unmodifiableList(Collections.emptyList()).getClass();
-    public static final /* synthetic */ int a = 0;
+    public static final  int a = 0;
 
     public static <E> List<E> getList(Object obj, long j) {
         return (List) UnsafeUtil.getObject(obj, j);

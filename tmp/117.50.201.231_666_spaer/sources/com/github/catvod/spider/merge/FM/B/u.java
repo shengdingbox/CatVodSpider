@@ -310,7 +310,7 @@ public final class u {
         uVar.O();
     }
 
-    public static /* synthetic */ void d(u uVar, Map map) {
+    public static  void d(u uVar, Map map) {
         uVar.getClass();
         C0336d c0336dC = C0336d.g(C0378c.i("https://passport.aliyundrive.com/newlogin/qrcode/query.do?appName=aliyun_drive&fromSite=52&_bx-v=2.2.3", map)).b().c();
         if (c0336dC.f()) {

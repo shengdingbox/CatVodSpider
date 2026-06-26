@@ -6,10 +6,10 @@ import org.slf4j.Marker;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class ct implements vq {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final  int b;
+    public final  Object c;
 
-    public /* synthetic */ ct(int i, Object obj) {
+    public  ct(int i, Object obj) {
         this.b = i;
         this.c = obj;
     }

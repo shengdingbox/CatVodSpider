@@ -4,11 +4,11 @@ import android.content.DialogInterface;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.b.I, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class DialogInterfaceOnDismissListenerC0107I implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final  class DialogInterfaceOnDismissListenerC0107I implements DialogInterface.OnDismissListener {
+    public final  int a;
+    public final  Object b;
 
-    public /* synthetic */ DialogInterfaceOnDismissListenerC0107I(Object obj, int i) {
+    public  DialogInterfaceOnDismissListenerC0107I(Object obj, int i) {
         this.a = i;
         this.b = obj;
     }

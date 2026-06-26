@@ -958,7 +958,7 @@ public final class PluginProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$2176(CodeGeneratorRequest codeGeneratorRequest, int i) {
+        public static  int access$2176(CodeGeneratorRequest codeGeneratorRequest, int i) {
             int i2 = i | codeGeneratorRequest.bitField0_;
             codeGeneratorRequest.bitField0_ = i2;
             return i2;
@@ -2444,7 +2444,7 @@ public final class PluginProtos {
                 this.memoizedIsInitialized = (byte) -1;
             }
 
-            public static /* synthetic */ int access$3676(File file, int i) {
+            public static  int access$3676(File file, int i) {
                 int i2 = i | file.bitField0_;
                 file.bitField0_ = i2;
                 return i2;
@@ -2821,7 +2821,7 @@ public final class PluginProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$4576(CodeGeneratorResponse codeGeneratorResponse, int i) {
+        public static  int access$4576(CodeGeneratorResponse codeGeneratorResponse, int i) {
             int i2 = i | codeGeneratorResponse.bitField0_;
             codeGeneratorResponse.bitField0_ = i2;
             return i2;
@@ -3492,7 +3492,7 @@ public final class PluginProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$976(Version version, int i) {
+        public static  int access$976(Version version, int i) {
             int i2 = i | version.bitField0_;
             version.bitField0_ = i2;
             return i2;

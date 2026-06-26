@@ -16,7 +16,7 @@ public final class nn extends kv {
         this.d = new SimpleDateFormat("hh:mm:ss a");
     }
 
-    public /* synthetic */ nn(int i) {
+    public  nn(int i) {
         this();
     }
 

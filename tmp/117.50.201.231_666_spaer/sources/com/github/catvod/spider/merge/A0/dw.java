@@ -4,7 +4,7 @@ package com.github.catvod.spider.merge.A0;
 public class dw extends dr {
     public final int a;
     public final int e;
-    public final /* synthetic */ int f;
+    public final  int f;
 
     public dw(int i, int i2, int i3) {
         this.f = i3;

@@ -9,7 +9,7 @@ abstract class AbstractC0014o {
     private AbstractC0014o() {
     }
 
-    /* synthetic */ AbstractC0014o(C0004e c0004e) {
+     AbstractC0014o(C0004e c0004e) {
         this();
     }
 

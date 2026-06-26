@@ -8,7 +8,7 @@ public final class kh implements ListIterator, wi {
     public static final kh a = new kh();
 
     @Override // java.util.ListIterator
-    public final /* bridge */ /* synthetic */ void add(Object obj) {
+    public final /* bridge */  void add(Object obj) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -48,7 +48,7 @@ public final class kh implements ListIterator, wi {
     }
 
     @Override // java.util.ListIterator
-    public final /* bridge */ /* synthetic */ void set(Object obj) {
+    public final /* bridge */  void set(Object obj) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 }

@@ -5,11 +5,11 @@ import okhttp3.EventListener;
 import okhttp3.internal.Util;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class ej implements fd, EventListener.Factory {
-    public final /* synthetic */ Object a;
+public final  class ej implements fd, EventListener.Factory {
+    public final  Object a;
 
     @Override // com.github.catvod.spider.merge.A0.fd
-    public /* synthetic */ void b(fw fwVar, int i) {
+    public  void b(fw fwVar, int i) {
     }
 
     @Override // com.github.catvod.spider.merge.A0.fd

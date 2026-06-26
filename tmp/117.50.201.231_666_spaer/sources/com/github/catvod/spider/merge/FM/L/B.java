@@ -29,7 +29,7 @@ abstract class B {
     public static final C0249q w;
     public static final r x;
     private static final String y;
-    private static final /* synthetic */ B[] z;
+    private static final  B[] z;
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r23v0, types: [com.github.catvod.spider.merge.FM.L.r] */

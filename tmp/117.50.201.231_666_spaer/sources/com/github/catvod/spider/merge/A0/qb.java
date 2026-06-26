@@ -24,7 +24,7 @@ public abstract class qb extends da {
         System.arraycopy(objArr, i2, objArr2, i, i3 - i2);
     }
 
-    public static /* synthetic */ void f(Object[] objArr, Object[] objArr2, int i, int i2, int i3, int i4) {
+    public static  void f(Object[] objArr, Object[] objArr2, int i, int i2, int i3, int i4) {
         if ((i4 & 2) != 0) {
             i = 0;
         }

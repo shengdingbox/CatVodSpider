@@ -3,7 +3,7 @@ package com.github.catvod.spider.merge.A0;
 import java.util.function.BiConsumer;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class ir implements BiConsumer {
+public final  class ir implements BiConsumer {
     @Override // java.util.function.BiConsumer
     public final void accept(Object obj, Object obj2) {
         rt rtVar = (rt) obj;

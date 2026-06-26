@@ -8,7 +8,7 @@ public final class b implements Iterator<Object> {
     final Object[] a;
     int b = 0;
     boolean c = true;
-    final /* synthetic */ c d;
+    final  c d;
 
     public b(c cVar, Object[] objArr) {
         this.d = cVar;

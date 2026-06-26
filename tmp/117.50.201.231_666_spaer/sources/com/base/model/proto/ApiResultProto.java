@@ -51,7 +51,7 @@ public final class ApiResultProto {
                 this.data_ = ByteString.EMPTY;
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -61,7 +61,7 @@ public final class ApiResultProto {
                 this.data_ = ByteString.EMPTY;
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -311,7 +311,7 @@ public final class ApiResultProto {
             this.data_ = byteString;
         }
 
-        public /* synthetic */ ApiResult(Builder builder) {
+        public  ApiResult(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 

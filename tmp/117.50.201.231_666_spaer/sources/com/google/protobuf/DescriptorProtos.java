@@ -2538,7 +2538,7 @@ public final class DescriptorProtos {
                 this.memoizedIsInitialized = (byte) -1;
             }
 
-            public static /* synthetic */ int access$3676(ExtensionRange extensionRange, int i) {
+            public static  int access$3676(ExtensionRange extensionRange, int i) {
                 int i2 = i | extensionRange.bitField0_;
                 extensionRange.bitField0_ = i2;
                 return i2;
@@ -3016,7 +3016,7 @@ public final class DescriptorProtos {
                 this.memoizedIsInitialized = (byte) -1;
             }
 
-            public static /* synthetic */ int access$4476(ReservedRange reservedRange, int i) {
+            public static  int access$4476(ReservedRange reservedRange, int i) {
                 int i2 = i | reservedRange.bitField0_;
                 reservedRange.bitField0_ = i2;
                 return i2;
@@ -3272,7 +3272,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$5976(DescriptorProto descriptorProto, int i) {
+        public static  int access$5976(DescriptorProto descriptorProto, int i) {
             int i2 = i | descriptorProto.bitField0_;
             descriptorProto.bitField0_ = i2;
             return i2;
@@ -5194,7 +5194,7 @@ public final class DescriptorProtos {
                 this.memoizedIsInitialized = (byte) -1;
             }
 
-            public static /* synthetic */ int access$11576(EnumReservedRange enumReservedRange, int i) {
+            public static  int access$11576(EnumReservedRange enumReservedRange, int i) {
                 int i2 = i | enumReservedRange.bitField0_;
                 enumReservedRange.bitField0_ = i2;
                 return i2;
@@ -5445,7 +5445,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$12576(EnumDescriptorProto enumDescriptorProto, int i) {
+        public static  int access$12576(EnumDescriptorProto enumDescriptorProto, int i) {
             int i2 = i | enumDescriptorProto.bitField0_;
             enumDescriptorProto.bitField0_ = i2;
             return i2;
@@ -6487,7 +6487,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$25376(EnumOptions enumOptions, int i) {
+        public static  int access$25376(EnumOptions enumOptions, int i) {
             int i2 = i | enumOptions.bitField0_;
             enumOptions.bitField0_ = i2;
             return i2;
@@ -7207,7 +7207,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$13476(EnumValueDescriptorProto enumValueDescriptorProto, int i) {
+        public static  int access$13476(EnumValueDescriptorProto enumValueDescriptorProto, int i) {
             int i2 = i | enumValueDescriptorProto.bitField0_;
             enumValueDescriptorProto.bitField0_ = i2;
             return i2;
@@ -8186,7 +8186,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$26476(EnumValueOptions enumValueOptions, int i) {
+        public static  int access$26476(EnumValueOptions enumValueOptions, int i) {
             int i2 = i | enumValueOptions.bitField0_;
             enumValueOptions.bitField0_ = i2;
             return i2;
@@ -9697,7 +9697,7 @@ public final class DescriptorProtos {
                 this.memoizedIsInitialized = (byte) -1;
             }
 
-            public static /* synthetic */ int access$7276(Declaration declaration, int i) {
+            public static  int access$7276(Declaration declaration, int i) {
                 int i2 = i | declaration.bitField0_;
                 declaration.bitField0_ = i2;
                 return i2;
@@ -10135,7 +10135,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$8076(ExtensionRangeOptions extensionRangeOptions, int i) {
+        public static  int access$8076(ExtensionRangeOptions extensionRangeOptions, int i) {
             int i2 = i | extensionRangeOptions.bitField0_;
             extensionRangeOptions.bitField0_ = i2;
             return i2;
@@ -11907,7 +11907,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$32376(FeatureSet featureSet, int i) {
+        public static  int access$32376(FeatureSet featureSet, int i) {
             int i2 = i | featureSet.bitField0_;
             featureSet.bitField0_ = i2;
             return i2;
@@ -13140,7 +13140,7 @@ public final class DescriptorProtos {
                 this.memoizedIsInitialized = (byte) -1;
             }
 
-            public static /* synthetic */ int access$33476(FeatureSetEditionDefault featureSetEditionDefault, int i) {
+            public static  int access$33476(FeatureSetEditionDefault featureSetEditionDefault, int i) {
                 int i2 = i | featureSetEditionDefault.bitField0_;
                 featureSetEditionDefault.bitField0_ = i2;
                 return i2;
@@ -13440,7 +13440,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$34176(FeatureSetDefaults featureSetDefaults, int i) {
+        public static  int access$34176(FeatureSetDefaults featureSetDefaults, int i) {
             int i2 = i | featureSetDefaults.bitField0_;
             featureSetDefaults.bitField0_ = i2;
             return i2;
@@ -14828,7 +14828,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$9776(FieldDescriptorProto fieldDescriptorProto, int i) {
+        public static  int access$9776(FieldDescriptorProto fieldDescriptorProto, int i) {
             int i2 = i | fieldDescriptorProto.bitField0_;
             fieldDescriptorProto.bitField0_ = i2;
             return i2;
@@ -17058,7 +17058,7 @@ public final class DescriptorProtos {
                 this.memoizedIsInitialized = (byte) -1;
             }
 
-            public static /* synthetic */ int access$20576(EditionDefault editionDefault, int i) {
+            public static  int access$20576(EditionDefault editionDefault, int i) {
                 int i2 = i | editionDefault.bitField0_;
                 editionDefault.bitField0_ = i2;
                 return i2;
@@ -17664,7 +17664,7 @@ public final class DescriptorProtos {
                 this.memoizedIsInitialized = (byte) -1;
             }
 
-            public static /* synthetic */ int access$21576(FeatureSupport featureSupport, int i) {
+            public static  int access$21576(FeatureSupport featureSupport, int i) {
                 int i2 = i | featureSupport.bitField0_;
                 featureSupport.bitField0_ = i2;
                 return i2;
@@ -18271,7 +18271,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$23376(FieldOptions fieldOptions, int i) {
+        public static  int access$23376(FieldOptions fieldOptions, int i) {
             int i2 = i | fieldOptions.bitField0_;
             fieldOptions.bitField0_ = i2;
             return i2;
@@ -20868,7 +20868,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$2576(FileDescriptorProto fileDescriptorProto, int i) {
+        public static  int access$2576(FileDescriptorProto fileDescriptorProto, int i) {
             int i2 = i | fileDescriptorProto.bitField0_;
             fileDescriptorProto.bitField0_ = i2;
             return i2;
@@ -23940,7 +23940,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$18276(FileOptions fileOptions, int i) {
+        public static  int access$18276(FileOptions fileOptions, int i) {
             int i2 = i | fileOptions.bitField0_;
             fileOptions.bitField0_ = i2;
             return i2;
@@ -25442,7 +25442,7 @@ public final class DescriptorProtos {
                 this.memoizedIsInitialized = (byte) -1;
             }
 
-            public static /* synthetic */ int access$37176(Annotation annotation, int i) {
+            public static  int access$37176(Annotation annotation, int i) {
                 int i2 = i | annotation.bitField0_;
                 annotation.bitField0_ = i2;
                 return i2;
@@ -27050,7 +27050,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$19576(MessageOptions messageOptions, int i) {
+        public static  int access$19576(MessageOptions messageOptions, int i) {
             int i2 = i | messageOptions.bitField0_;
             messageOptions.bitField0_ = i2;
             return i2;
@@ -28010,7 +28010,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$15576(MethodDescriptorProto methodDescriptorProto, int i) {
+        public static  int access$15576(MethodDescriptorProto methodDescriptorProto, int i) {
             int i2 = i | methodDescriptorProto.bitField0_;
             methodDescriptorProto.bitField0_ = i2;
             return i2;
@@ -29081,7 +29081,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$28376(MethodOptions methodOptions, int i) {
+        public static  int access$28376(MethodOptions methodOptions, int i) {
             int i2 = i | methodOptions.bitField0_;
             methodOptions.bitField0_ = i2;
             return i2;
@@ -29732,7 +29732,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$10576(OneofDescriptorProto oneofDescriptorProto, int i) {
+        public static  int access$10576(OneofDescriptorProto oneofDescriptorProto, int i) {
             int i2 = i | oneofDescriptorProto.bitField0_;
             oneofDescriptorProto.bitField0_ = i2;
             return i2;
@@ -30488,7 +30488,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$24276(OneofOptions oneofOptions, int i) {
+        public static  int access$24276(OneofOptions oneofOptions, int i) {
             int i2 = i | oneofOptions.bitField0_;
             oneofOptions.bitField0_ = i2;
             return i2;
@@ -31324,7 +31324,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$14376(ServiceDescriptorProto serviceDescriptorProto, int i) {
+        public static  int access$14376(ServiceDescriptorProto serviceDescriptorProto, int i) {
             int i2 = i | serviceDescriptorProto.bitField0_;
             serviceDescriptorProto.bitField0_ = i2;
             return i2;
@@ -32172,7 +32172,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$27376(ServiceOptions serviceOptions, int i) {
+        public static  int access$27376(ServiceOptions serviceOptions, int i) {
             int i2 = i | serviceOptions.bitField0_;
             serviceOptions.bitField0_ = i2;
             return i2;
@@ -33376,7 +33376,7 @@ public final class DescriptorProtos {
                 this.memoizedIsInitialized = (byte) -1;
             }
 
-            public static /* synthetic */ int access$35476(Location location, int i) {
+            public static  int access$35476(Location location, int i) {
                 int i2 = i | location.bitField0_;
                 location.bitField0_ = i2;
                 return i2;
@@ -34975,7 +34975,7 @@ public final class DescriptorProtos {
                 this.memoizedIsInitialized = (byte) -1;
             }
 
-            public static /* synthetic */ int access$29376(NamePart namePart, int i) {
+            public static  int access$29376(NamePart namePart, int i) {
                 int i2 = i | namePart.bitField0_;
                 namePart.bitField0_ = i2;
                 return i2;
@@ -35262,7 +35262,7 @@ public final class DescriptorProtos {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public static /* synthetic */ int access$30476(UninterpretedOption uninterpretedOption, int i) {
+        public static  int access$30476(UninterpretedOption uninterpretedOption, int i) {
             int i2 = i | uninterpretedOption.bitField0_;
             uninterpretedOption.bitField0_ = i2;
             return i2;

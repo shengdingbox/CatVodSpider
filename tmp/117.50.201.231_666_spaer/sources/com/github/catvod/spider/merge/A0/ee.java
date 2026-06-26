@@ -10,7 +10,7 @@ public final class ee implements Set, Serializable, wi {
     public static final ee a = new ee();
 
     @Override // java.util.Set, java.util.Collection
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
+    public final /* bridge */  boolean add(Object obj) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 

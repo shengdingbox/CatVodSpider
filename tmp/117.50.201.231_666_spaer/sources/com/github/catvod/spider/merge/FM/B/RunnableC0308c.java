@@ -6,11 +6,11 @@ import com.github.catvod.spider.Market;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.FM.b.c, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class RunnableC0308c implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final  class RunnableC0308c implements Runnable {
+    public final  int a;
+    public final  Object b;
 
-    public /* synthetic */ RunnableC0308c(Object obj, int i) {
+    public  RunnableC0308c(Object obj, int i) {
         this.a = i;
         this.b = obj;
     }

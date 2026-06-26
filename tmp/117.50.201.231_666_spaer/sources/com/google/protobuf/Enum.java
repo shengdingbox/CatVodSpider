@@ -933,7 +933,7 @@ public final class Enum extends GeneratedMessage implements EnumOrBuilder {
         this.memoizedIsInitialized = (byte) -1;
     }
 
-    public static /* synthetic */ int access$976(Enum r1, int i) {
+    public static  int access$976(Enum r1, int i) {
         int i2 = i | r1.bitField0_;
         r1.bitField0_ = i2;
         return i2;

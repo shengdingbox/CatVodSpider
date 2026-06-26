@@ -6,7 +6,7 @@ import org.json.JSONObject;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.b.u, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class C0134u {
+public final  class C0134u {
     public static String a(String str, long j) {
         return str + j;
     }
@@ -21,7 +21,7 @@ public final /* synthetic */ class C0134u {
         jSONObject2.put(str, jSONObject.getString(C0098a.a(bArr, bArr2)));
     }
 
-    public static /* synthetic */ boolean d(Object obj, Object obj2) {
+    public static  boolean d(Object obj, Object obj2) {
         return obj == obj2 || (obj != null && obj.equals(obj2));
     }
 }

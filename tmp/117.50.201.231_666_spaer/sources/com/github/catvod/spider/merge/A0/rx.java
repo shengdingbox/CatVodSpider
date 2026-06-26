@@ -22,7 +22,7 @@ public final class rx extends mq {
     }
 
     @Override // com.github.catvod.spider.merge.A0.qw
-    public final /* bridge */ /* synthetic */ Object invoke(Object obj) {
+    public final /* bridge */  Object invoke(Object obj) {
         f((Throwable) obj);
         return jo.i;
     }

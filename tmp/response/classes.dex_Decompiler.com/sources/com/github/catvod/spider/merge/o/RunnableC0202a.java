@@ -5,12 +5,12 @@ import com.github.catvod.spider.merge.b.U;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.o.a, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class RunnableC0202a implements Runnable {
-    public static final /* synthetic */ RunnableC0202a b = new RunnableC0202a(0);
-    public static final /* synthetic */ RunnableC0202a c = new RunnableC0202a(1);
-    public final /* synthetic */ int a;
+public final  class RunnableC0202a implements Runnable {
+    public static final  RunnableC0202a b = new RunnableC0202a(0);
+    public static final  RunnableC0202a c = new RunnableC0202a(1);
+    public final  int a;
 
-    public /* synthetic */ RunnableC0202a(int i) {
+    public  RunnableC0202a(int i) {
         this.a = i;
     }
 

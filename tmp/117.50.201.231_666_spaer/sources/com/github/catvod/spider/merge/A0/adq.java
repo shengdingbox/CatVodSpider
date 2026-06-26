@@ -2,10 +2,10 @@ package com.github.catvod.spider.merge.A0;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class adq implements gf, qw {
-    public final /* synthetic */ int a;
+    public final  int a;
     public final Object b;
 
-    public /* synthetic */ adq(int i, Object obj) {
+    public  adq(int i, Object obj) {
         this.a = i;
         this.b = obj;
     }
@@ -22,7 +22,7 @@ public final class adq implements gf, qw {
     }
 
     @Override // com.github.catvod.spider.merge.A0.qw
-    public final /* bridge */ /* synthetic */ Object invoke(Object obj) {
+    public final /* bridge */  Object invoke(Object obj) {
         switch (this.a) {
             case 0:
                 c((Throwable) obj);

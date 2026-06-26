@@ -11,7 +11,7 @@ public final class b {
     private static final Map<Class<?>, Class<?>> b;
     private static final Map<Class<?>, Class<?>> c;
     private static final Map<String, String> d;
-    public static final /* synthetic */ int e = 0;
+    public static final  int e = 0;
 
     /* JADX WARN: Type inference incomplete: some casts might be missing */
     static {

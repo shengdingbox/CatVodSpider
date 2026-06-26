@@ -348,7 +348,7 @@ public final class Option extends GeneratedMessage implements OptionOrBuilder {
         this.memoizedIsInitialized = (byte) -1;
     }
 
-    public static /* synthetic */ int access$576(Option option, int i) {
+    public static  int access$576(Option option, int i) {
         int i2 = i | option.bitField0_;
         option.bitField0_ = i2;
         return i2;

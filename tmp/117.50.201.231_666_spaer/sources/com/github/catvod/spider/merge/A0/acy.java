@@ -8,7 +8,7 @@ import rxhttp.wrapper.param.Method;
 import rxhttp.wrapper.param.NoBodyParam;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public abstract /* synthetic */ class acy {
+public abstract  class acy {
     public static BodyParam a(String str) {
         return new BodyParam(str, Method.DELETE);
     }

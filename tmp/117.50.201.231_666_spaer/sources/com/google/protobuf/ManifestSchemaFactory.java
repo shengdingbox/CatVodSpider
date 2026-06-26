@@ -17,8 +17,8 @@ final class ManifestSchemaFactory implements SchemaFactory {
     private final MessageInfoFactory messageInfoFactory;
 
     /* JADX INFO: renamed from: com.google.protobuf.ManifestSchemaFactory$2, reason: invalid class name */
-    /* synthetic */ class AnonymousClass2 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$ProtoSyntax;
+     class AnonymousClass2 {
+        static final  int[] $SwitchMap$com$google$protobuf$ProtoSyntax;
 
         static {
             int[] iArr = new int[ProtoSyntax.values().length];

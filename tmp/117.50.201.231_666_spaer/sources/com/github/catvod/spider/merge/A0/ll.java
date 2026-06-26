@@ -6,7 +6,7 @@ import rxhttp.wrapper.param.IHeaders;
 import rxhttp.wrapper.param.Param;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public abstract /* synthetic */ class ll {
+public abstract  class ll {
     public static Param a(IHeaders iHeaders, Map map) {
         for (Map.Entry entry : map.entrySet()) {
             iHeaders.addHeader((String) entry.getKey(), (String) entry.getValue());

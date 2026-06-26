@@ -2,10 +2,10 @@ package com.github.catvod.spider.merge.A0;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class xb implements ub {
-    public final /* synthetic */ int a;
+    public final  int a;
     public final String b;
 
-    public /* synthetic */ xb(String str, int i) {
+    public  xb(String str, int i) {
         this.a = i;
         this.b = str;
     }

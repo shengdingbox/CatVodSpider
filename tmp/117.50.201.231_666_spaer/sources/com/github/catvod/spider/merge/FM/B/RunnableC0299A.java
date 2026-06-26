@@ -4,13 +4,13 @@ import android.widget.EditText;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.FM.b.A, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class RunnableC0299A implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final  class RunnableC0299A implements Runnable {
+    public final  int a;
+    public final  Object b;
+    public final  Object c;
+    public final  Object d;
 
-    public /* synthetic */ RunnableC0299A(Object obj, Object obj2, Object obj3, int i) {
+    public  RunnableC0299A(Object obj, Object obj2, Object obj3, int i) {
         this.a = i;
         this.b = obj;
         this.c = obj2;

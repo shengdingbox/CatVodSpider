@@ -27,7 +27,7 @@ public class Function {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$setProperty$0(Method method, Object[] objArr) {
+    public  Object lambda$setProperty$0(Method method, Object[] objArr) {
         try {
             return method.invoke(this, objArr);
         } catch (Exception unused) {

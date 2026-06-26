@@ -9,8 +9,8 @@ public final class xu implements Iterator {
     public adi a;
     public adi b = null;
     public int c;
-    public final /* synthetic */ my d;
-    public final /* synthetic */ int e;
+    public final  my d;
+    public final  int e;
 
     public xu(my myVar, int i) {
         this.e = i;

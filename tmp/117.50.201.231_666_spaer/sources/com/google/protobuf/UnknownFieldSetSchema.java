@@ -4,7 +4,7 @@ import com.google.protobuf.UnknownFieldSet;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 class UnknownFieldSetSchema extends UnknownFieldSchema<UnknownFieldSet, UnknownFieldSet.Builder> {
-    public static final /* synthetic */ int a = 0;
+    public static final  int a = 0;
 
     @Override // com.google.protobuf.UnknownFieldSchema
     public void addFixed32(UnknownFieldSet.Builder builder, int i, int i2) {

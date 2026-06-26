@@ -304,7 +304,7 @@ public final class d implements Serializable {
         private k() {
         }
 
-        /* synthetic */ k(a aVar) {
+         k(a aVar) {
             this();
         }
 
@@ -590,7 +590,7 @@ public final class d implements Serializable {
         return i2 >= dVar.e ? i3 : i3 + 100;
     }
 
-    static /* synthetic */ StringBuilder f(StringBuilder sb, String str) {
+    static  StringBuilder f(StringBuilder sb, String str) {
         j(sb, str);
         return sb;
     }

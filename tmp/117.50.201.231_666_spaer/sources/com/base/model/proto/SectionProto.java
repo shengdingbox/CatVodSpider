@@ -66,7 +66,7 @@ public final class SectionProto {
                 this.vodList_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -77,7 +77,7 @@ public final class SectionProto {
                 this.vodList_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -640,7 +640,7 @@ public final class SectionProto {
             this.vodList_ = Collections.emptyList();
         }
 
-        public /* synthetic */ SectionBean(Builder builder) {
+        public  SectionBean(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 

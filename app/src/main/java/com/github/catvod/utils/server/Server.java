@@ -4,7 +4,7 @@ import java.util.Map;
 
 
 public class Server extends t {
-    public static final /* synthetic */ int l = 0;
+    public static final  int l = 0;
 
     public Server(int i) { super(i); }
 

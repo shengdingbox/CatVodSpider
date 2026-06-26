@@ -6,10 +6,10 @@ import java.util.Stack;
 import java.util.function.Supplier;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class se implements Supplier {
-    public final /* synthetic */ int a;
+public final  class se implements Supplier {
+    public final  int a;
 
-    public /* synthetic */ se(int i) {
+    public  se(int i) {
         this.a = i;
     }
 

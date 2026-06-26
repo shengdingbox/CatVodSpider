@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.FM.M.k, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class C0278k extends N {
-    public final /* synthetic */ int a;
+    public final  int a;
     private final Serializable b;
 
     public C0278k(String str, int i) {

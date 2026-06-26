@@ -21,7 +21,7 @@ public class NetPan extends Spider {
     public static GuangYaPan guangYaPan = new GuangYaPan();
     public static JSONObject jsonObject;
 
-    public static native /* synthetic */ void a(NetPan netPan, String str, Map map, String str2);
+    public static native  void a(NetPan netPan, String str, Map map, String str2);
 
     private native void b(String str, String str2, Map map);
 

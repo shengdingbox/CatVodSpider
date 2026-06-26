@@ -4,11 +4,11 @@ import java.util.concurrent.ThreadFactory;
 import okhttp3.internal.Util;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class yh implements ThreadFactory {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ boolean b;
+public final  class yh implements ThreadFactory {
+    public final  String a;
+    public final  boolean b;
 
-    public /* synthetic */ yh(String str, boolean z) {
+    public  yh(String str, boolean z) {
         this.a = str;
         this.b = z;
     }

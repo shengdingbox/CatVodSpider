@@ -39,7 +39,7 @@ public final class eg implements Map, Serializable, wi {
     }
 
     @Override // java.util.Map
-    public final /* bridge */ /* synthetic */ Object get(Object obj) {
+    public final /* bridge */  Object get(Object obj) {
         return null;
     }
 
@@ -59,7 +59,7 @@ public final class eg implements Map, Serializable, wi {
     }
 
     @Override // java.util.Map
-    public final /* bridge */ /* synthetic */ Object put(Object obj, Object obj2) {
+    public final /* bridge */  Object put(Object obj, Object obj2) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 

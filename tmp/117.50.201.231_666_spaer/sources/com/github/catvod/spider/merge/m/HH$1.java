@@ -6,7 +6,7 @@ import android.os.Process;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 class HH$1 implements Runnable {
-    final /* synthetic */ Context val$context;
+    final  Context val$context;
 
     HH$1(Context context) {
         this.val$context = context;

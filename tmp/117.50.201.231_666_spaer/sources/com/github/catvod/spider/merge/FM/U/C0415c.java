@@ -6,7 +6,7 @@ import java.io.PrintStream;
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 final class C0415c {
     private static boolean a;
-    static /* synthetic */ Class b;
+    static  Class b;
 
     static {
         try {
@@ -15,7 +15,7 @@ final class C0415c {
         }
     }
 
-    static /* synthetic */ Class a() {
+    static  Class a() {
         return C0415c.class;
     }
 

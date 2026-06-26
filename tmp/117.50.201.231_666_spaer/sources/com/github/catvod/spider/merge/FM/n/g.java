@@ -5,13 +5,13 @@ import com.github.catvod.spider.merge.FM.b.Q;
 import com.github.catvod.spider.merge.FM.b.u;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class g implements Runnable {
-    public static final /* synthetic */ g b = new g(0);
-    public static final /* synthetic */ g c = new g(1);
-    public static final /* synthetic */ g d = new g(2);
-    public final /* synthetic */ int a;
+public final  class g implements Runnable {
+    public static final  g b = new g(0);
+    public static final  g c = new g(1);
+    public static final  g d = new g(2);
+    public final  int a;
 
-    public /* synthetic */ g(int i) {
+    public  g(int i) {
         this.a = i;
     }
 

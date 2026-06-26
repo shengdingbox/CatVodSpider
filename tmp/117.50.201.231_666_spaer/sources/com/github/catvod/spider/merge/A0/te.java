@@ -8,10 +8,10 @@ public final class te extends zy implements ha {
     public static final te d = new te(2, 3);
     public static final te e = new te(2, 4);
     public static final te f = new te(2, 5);
-    public final /* synthetic */ int g;
+    public final  int g;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ te(int i, int i2) {
+    public  te(int i, int i2) {
         super(i);
         this.g = i2;
     }

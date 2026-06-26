@@ -109,7 +109,7 @@ public class Config extends Spider {
         }
     }
 
-    public static /* synthetic */ void a(Config config) {
+    public static  void a(Config config) {
         String str = config.h;
         config.r(1);
     }
@@ -130,7 +130,7 @@ public class Config extends Spider {
         }
     }
 
-    public static /* synthetic */ void b(Config config) {
+    public static  void b(Config config) {
         config.getClass();
         try {
             config.l(config.h);
@@ -155,7 +155,7 @@ public class Config extends Spider {
         }
     }
 
-    public static /* synthetic */ void c(Config config) {
+    public static  void c(Config config) {
         config.getClass();
         try {
             config.o(config.h);
@@ -219,7 +219,7 @@ public class Config extends Spider {
         }
     }
 
-    public static /* synthetic */ void e(Config config) {
+    public static  void e(Config config) {
         String str = config.h;
         config.r(2);
     }

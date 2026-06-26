@@ -58,7 +58,7 @@ public final class RSARequestProto {
                 this.fake2_ = "";
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -70,7 +70,7 @@ public final class RSARequestProto {
                 this.fake2_ = "";
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -467,7 +467,7 @@ public final class RSARequestProto {
             this.fake2_ = "";
         }
 
-        public /* synthetic */ RSARequest(Builder builder) {
+        public  RSARequest(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 

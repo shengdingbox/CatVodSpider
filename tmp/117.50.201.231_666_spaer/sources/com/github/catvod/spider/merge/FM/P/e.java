@@ -8,7 +8,7 @@ import okhttp3.Response;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 final class e extends AbstractC0401c<String> {
-    final /* synthetic */ Map b;
+    final  Map b;
 
     e(Map map) {
         this.b = map;
@@ -21,7 +21,7 @@ final class e extends AbstractC0401c<String> {
     }
 
     @Override // com.github.catvod.spider.merge.FM.p.AbstractC0401c
-    public final /* bridge */ /* synthetic */ void b(String str) {
+    public final /* bridge */  void b(String str) {
     }
 
     @Override // com.github.catvod.spider.merge.FM.p.AbstractC0401c

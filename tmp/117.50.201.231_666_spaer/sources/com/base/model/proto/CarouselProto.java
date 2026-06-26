@@ -85,7 +85,7 @@ public final class CarouselProto {
                 this.themeColor_ = "";
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -100,7 +100,7 @@ public final class CarouselProto {
                 this.themeColor_ = "";
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -845,7 +845,7 @@ public final class CarouselProto {
             this.themeColor_ = "";
         }
 
-        public /* synthetic */ CarouselBean(Builder builder) {
+        public  CarouselBean(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 

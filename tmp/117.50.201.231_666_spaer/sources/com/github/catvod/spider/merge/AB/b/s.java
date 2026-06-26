@@ -5,7 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class s {
+public final  class s {
     public static Object a(String str, Class cls) {
         return new Gson().fromJson(str, cls);
     }

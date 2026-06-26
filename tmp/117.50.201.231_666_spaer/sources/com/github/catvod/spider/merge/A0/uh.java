@@ -5,7 +5,7 @@ import java.util.Iterator;
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class uh implements Iterator, wi {
     public final Iterator a;
-    public final /* synthetic */ acr b;
+    public final  acr b;
 
     public uh(acr acrVar) {
         this.b = acrVar;

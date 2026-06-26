@@ -11,8 +11,8 @@ import java.util.Map;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 final class f implements O {
-    final /* synthetic */ Map a;
-    final /* synthetic */ C0274g b;
+    final  Map a;
+    final  C0274g b;
 
     f(Map map, C0274g c0274g) {
         this.a = map;

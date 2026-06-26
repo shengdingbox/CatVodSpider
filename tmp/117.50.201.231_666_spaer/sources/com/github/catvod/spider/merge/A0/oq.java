@@ -8,7 +8,7 @@ import okhttp3.Response;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class oq extends xh {
-    public final /* synthetic */ AbstractMap a;
+    public final  AbstractMap a;
 
     public oq(AbstractMap abstractMap) {
         this.a = abstractMap;
@@ -35,6 +35,6 @@ public final class oq extends xh {
     }
 
     @Override // com.github.catvod.spider.merge.A0.xh
-    public final /* bridge */ /* synthetic */ void onResponse(Object obj) {
+    public final /* bridge */  void onResponse(Object obj) {
     }
 }

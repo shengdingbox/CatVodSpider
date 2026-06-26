@@ -7,16 +7,16 @@ import java.util.Map;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.m.C, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class DialogInterfaceOnClickListenerC0584C implements DialogInterface.OnClickListener {
-    public final /* synthetic */ C0588G a;
-    public final /* synthetic */ Map b;
+public final  class DialogInterfaceOnClickListenerC0584C implements DialogInterface.OnClickListener {
+    public final  C0588G a;
+    public final  Map b;
 
     /* JADX INFO: renamed from: com.github.catvod.spider.merge.m.C$1, reason: invalid class name */
-    public final /* synthetic */ class AnonymousClass1 implements DialogInterface.OnClickListener {
-        public final /* synthetic */ C0588G a;
-        public final /* synthetic */ Map b;
+    public final  class AnonymousClass1 implements DialogInterface.OnClickListener {
+        public final  C0588G a;
+        public final  Map b;
 
-        public /* synthetic */ AnonymousClass1(C0588G c0588g, Map map) {
+        public  AnonymousClass1(C0588G c0588g, Map map) {
             this.a = c0588g;
             this.b = map;
         }
@@ -31,7 +31,7 @@ public final /* synthetic */ class DialogInterfaceOnClickListenerC0584C implemen
         }
     }
 
-    public /* synthetic */ DialogInterfaceOnClickListenerC0584C(C0588G c0588g, Map map) {
+    public  DialogInterfaceOnClickListenerC0584C(C0588G c0588g, Map map) {
         this.a = c0588g;
         this.b = map;
     }

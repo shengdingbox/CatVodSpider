@@ -19,9 +19,9 @@ final class FieldSet<T extends FieldDescriptorLite<T>> {
     private boolean isImmutable;
 
     /* JADX INFO: renamed from: com.google.protobuf.FieldSet$1, reason: invalid class name */
-    /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$JavaType;
+     class AnonymousClass1 {
+        static final  int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
+        static final  int[] $SwitchMap$com$google$protobuf$WireFormat$JavaType;
 
         static {
             int[] iArr = new int[WireFormat.FieldType.values().length];
@@ -149,7 +149,7 @@ final class FieldSet<T extends FieldDescriptorLite<T>> {
             this(SmallSortedMap.newFieldMap());
         }
 
-        public /* synthetic */ Builder(AnonymousClass1 anonymousClass1) {
+        public  Builder(AnonymousClass1 anonymousClass1) {
             this();
         }
 
@@ -473,7 +473,7 @@ final class FieldSet<T extends FieldDescriptorLite<T>> {
         makeImmutable();
     }
 
-    public /* synthetic */ FieldSet(SmallSortedMap smallSortedMap, AnonymousClass1 anonymousClass1) {
+    public  FieldSet(SmallSortedMap smallSortedMap, AnonymousClass1 anonymousClass1) {
         this(smallSortedMap);
     }
 

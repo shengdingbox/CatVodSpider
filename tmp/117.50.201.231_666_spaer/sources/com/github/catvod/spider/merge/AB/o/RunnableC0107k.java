@@ -4,11 +4,11 @@ import android.widget.Toast;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.AB.o.k, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class RunnableC0107k implements Runnable {
+public final  class RunnableC0107k implements Runnable {
     public final int a;
     public final C0113q b;
 
-    public /* synthetic */ RunnableC0107k(C0113q c0113q, int i) {
+    public  RunnableC0107k(C0113q c0113q, int i) {
         this.a = i;
         this.b = c0113q;
     }

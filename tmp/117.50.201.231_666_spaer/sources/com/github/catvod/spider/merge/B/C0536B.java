@@ -41,7 +41,7 @@ import org.slf4j.Marker;
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class C0536B {
     private static HashMap d = new HashMap();
-    public static final /* synthetic */ int e = 0;
+    public static final  int e = 0;
 
     /* JADX INFO: renamed from: e, reason: collision with other field name */
     private static String f28e = "";

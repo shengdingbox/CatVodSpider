@@ -35,6 +35,6 @@ final class f extends c<String> {
     }
 
     @Override // com.github.catvod.spider.merge.C0.k.c
-    public final /* bridge */ /* synthetic */ void onResponse(String str) {
+    public final /* bridge */  void onResponse(String str) {
     }
 }

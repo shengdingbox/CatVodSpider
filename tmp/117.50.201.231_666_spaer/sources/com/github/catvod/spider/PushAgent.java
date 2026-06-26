@@ -33,7 +33,7 @@ public class PushAgent extends Spider {
         }
 
         @Override // com.github.catvod.spider.merge.A0.xh
-        public final /* bridge */ /* synthetic */ void onResponse(Object obj) {
+        public final /* bridge */  void onResponse(Object obj) {
         }
     }
 

@@ -155,7 +155,7 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
         }
 
         @Override // com.google.protobuf.ByteString, java.lang.Iterable
-        public /* bridge */ /* synthetic */ Iterator<Byte> iterator() {
+        public /* bridge */  Iterator<Byte> iterator() {
             return super.iterator2();
         }
 

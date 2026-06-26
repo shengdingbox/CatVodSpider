@@ -1,15 +1,15 @@
 package com.github.catvod.spider.merge.G;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class h implements com.github.catvod.spider.merge.I.e {
-    public final /* synthetic */ StringBuilder a;
+public final  class h implements com.github.catvod.spider.merge.I.e {
+    public final  StringBuilder a;
 
-    public /* synthetic */ h(StringBuilder sb) {
+    public  h(StringBuilder sb) {
         this.a = sb;
     }
 
     @Override // com.github.catvod.spider.merge.I.e
-    public final /* synthetic */ void a(m mVar, int i) {
+    public final  void a(m mVar, int i) {
     }
 
     @Override // com.github.catvod.spider.merge.I.e

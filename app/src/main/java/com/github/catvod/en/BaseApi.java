@@ -80,13 +80,13 @@ public class BaseApi {
 
     public static native String MD5(String str, String str2);
 
-    public static native /* synthetic */ void a(BaseApi baseApi, String str);
+    public static native  void a(BaseApi baseApi, String str);
 
     public static native void ab();
 
     public static native void b(Activity activity, String str);
 
-    public static native /* synthetic */ void c(BaseApi baseApi, String str);
+    public static native  void c(BaseApi baseApi, String str);
 
     public static native byte[] calculateMethodHash(byte[] bArr);
 
@@ -94,11 +94,11 @@ public class BaseApi {
 
     public static native Drawable createRoundedBackground(int i, int i2);
 
-    public static native /* synthetic */ void d(Activity activity);
+    public static native  void d(Activity activity);
 
-    public static native /* synthetic */ void e(BaseApi baseApi, String str);
+    public static native  void e(BaseApi baseApi, String str);
 
-    public static native /* synthetic */ void f(Activity activity);
+    public static native  void f(Activity activity);
 
     public static native VodItem fakeVod(List list, String str);
 

@@ -5,10 +5,10 @@ import com.github.catvod.spider.merge.oZP;
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.N.t, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
 public final class C0086t extends N {
-    public final /* synthetic */ int a;
+    public final  int a;
     private final String b;
 
-    public /* synthetic */ C0086t(String str, int i) {
+    public  C0086t(String str, int i) {
         this.a = i;
         this.b = str;
     }

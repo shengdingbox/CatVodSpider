@@ -17,8 +17,8 @@ public final class C0578e implements Interceptor {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX INFO: renamed from: com.github.catvod.spider.merge.k.e$a */
     public final class a extends ResponseBody {
-        final /* synthetic */ Response a;
-        final /* synthetic */ InflaterInputStream b;
+        final  Response a;
+        final  InflaterInputStream b;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public a(Response response, InflaterInputStream inflaterInputStream) {

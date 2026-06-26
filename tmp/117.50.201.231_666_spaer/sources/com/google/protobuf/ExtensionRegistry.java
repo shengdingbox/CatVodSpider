@@ -18,8 +18,8 @@ public class ExtensionRegistry extends ExtensionRegistryLite {
     private final Map<DescriptorIntPair, ExtensionInfo> mutableExtensionsByNumber;
 
     /* JADX INFO: renamed from: com.google.protobuf.ExtensionRegistry$1, reason: invalid class name */
-    /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$Extension$ExtensionType;
+     class AnonymousClass1 {
+        static final  int[] $SwitchMap$com$google$protobuf$Extension$ExtensionType;
 
         static {
             int[] iArr = new int[Extension.ExtensionType.values().length];
@@ -71,7 +71,7 @@ public class ExtensionRegistry extends ExtensionRegistryLite {
             this.defaultInstance = message;
         }
 
-        public /* synthetic */ ExtensionInfo(Descriptors.FieldDescriptor fieldDescriptor, Message message, AnonymousClass1 anonymousClass1) {
+        public  ExtensionInfo(Descriptors.FieldDescriptor fieldDescriptor, Message message, AnonymousClass1 anonymousClass1) {
             this(fieldDescriptor, message);
         }
     }

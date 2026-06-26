@@ -107,7 +107,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
     public ListIterator<String> listIterator(int i) {
         return new ListIterator<String>(i) { // from class: com.google.protobuf.UnmodifiableLazyStringList.1
             ListIterator<String> iter;
-            final /* synthetic */ int val$index;
+            final  int val$index;
 
             {
                 this.val$index = i;

@@ -48,7 +48,7 @@ import org.slf4j.Marker;
 public final class J {
     private static final String h = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) quark-cloud-drive/3.0.1 Chrome/100.0.4896.160 Electron/18.3.5.12-a038f7b798 Safari/537.36 Channel/pckk_other_ch";
     private static Map<String, com.github.catvod.spider.merge.FM.j.e> i;
-    public static final /* synthetic */ int j = 0;
+    public static final  int j = 0;
     private String a;
     private ScheduledExecutorService b;
     private String c;
@@ -124,7 +124,7 @@ public final class J {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void C(String str) {
+    public  void C(String str) {
         try {
             JSONObject jSONObject = new JSONObject(C0378c.m("https://uop.quark.cn/cas/ajax/getServiceTicketByQrcodeToken?client_id=532&v=1.2&token=" + str));
             if ("ok".equals(jSONObject.optString("message"))) {

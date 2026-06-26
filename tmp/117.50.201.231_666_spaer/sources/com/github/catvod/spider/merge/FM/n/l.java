@@ -5,13 +5,13 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class l implements Runnable {
-    public final /* synthetic */ PanWebShare a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ AtomicReference c;
-    public final /* synthetic */ CountDownLatch d;
+public final  class l implements Runnable {
+    public final  PanWebShare a;
+    public final  String b;
+    public final  AtomicReference c;
+    public final  CountDownLatch d;
 
-    public /* synthetic */ l(PanWebShare panWebShare, String str, AtomicReference atomicReference, CountDownLatch countDownLatch) {
+    public  l(PanWebShare panWebShare, String str, AtomicReference atomicReference, CountDownLatch countDownLatch) {
         this.a = panWebShare;
         this.b = str;
         this.c = atomicReference;

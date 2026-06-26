@@ -357,7 +357,7 @@ public final class QuarkDriveApi {
         c0754f0.J();
     }
 
-    public static /* synthetic */ void g(QuarkDriveApi c0754f0, String str) {
+    public static  void g(QuarkDriveApi c0754f0, String str) {
         c0754f0.getClass();
         try {
             String strL = PanHttpClient.get("https://uop.quark.cn/cas/ajax/getServiceTicketByQrcodeToken?client_id=532&v=1.2&token=" + str);

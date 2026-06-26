@@ -10,7 +10,7 @@ final class N extends O {
     }
 
     @Override // com.github.catvod.spider.merge.M.O, com.github.catvod.spider.merge.M.Q
-    final /* bridge */ /* synthetic */ Q h() {
+    final /* bridge */  Q h() {
         h();
         return this;
     }

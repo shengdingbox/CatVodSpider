@@ -104,7 +104,7 @@ public final class DramaProto {
                 maybeForceBuilderInitialization();
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -121,7 +121,7 @@ public final class DramaProto {
                 maybeForceBuilderInitialization();
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -1048,7 +1048,7 @@ public final class DramaProto {
             this.clazz_ = "";
         }
 
-        public /* synthetic */ DramaBean(Builder builder) {
+        public  DramaBean(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 
@@ -1623,7 +1623,7 @@ public final class DramaProto {
                 this.dramaBean_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -1632,7 +1632,7 @@ public final class DramaProto {
                 this.dramaBean_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -2014,7 +2014,7 @@ public final class DramaProto {
             this.dramaBean_ = Collections.emptyList();
         }
 
-        public /* synthetic */ DramaBeanPage(Builder builder) {
+        public  DramaBeanPage(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 

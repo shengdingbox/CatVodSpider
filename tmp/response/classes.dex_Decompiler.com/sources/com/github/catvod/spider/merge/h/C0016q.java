@@ -8,7 +8,7 @@ import java.util.Calendar;
 final class C0016q {
     private final Calendar a;
     private int b;
-    final /* synthetic */ t c;
+    final  t c;
 
     C0016q(t tVar, Calendar calendar) {
         this.c = tVar;

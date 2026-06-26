@@ -15,8 +15,8 @@ abstract class BinaryReader implements Reader {
     private static final int FIXED64_MULTIPLE_MASK = 7;
 
     /* JADX INFO: renamed from: com.google.protobuf.BinaryReader$1, reason: invalid class name */
-    /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
+     class AnonymousClass1 {
+        static final  int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {
             int[] iArr = new int[WireFormat.FieldType.values().length];
@@ -1560,7 +1560,7 @@ abstract class BinaryReader implements Reader {
     private BinaryReader() {
     }
 
-    public /* synthetic */ BinaryReader(AnonymousClass1 anonymousClass1) {
+    public  BinaryReader(AnonymousClass1 anonymousClass1) {
         this();
     }
 

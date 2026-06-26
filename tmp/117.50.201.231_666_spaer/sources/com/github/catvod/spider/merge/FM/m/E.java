@@ -2,9 +2,9 @@ package com.github.catvod.spider.merge.FM.M;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class E extends N {
-    public final /* synthetic */ int a;
+    public final  int a;
 
-    public /* synthetic */ E(int i) {
+    public  E(int i) {
         this.a = i;
     }
 

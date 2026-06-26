@@ -88,7 +88,7 @@ public class Init {
     }
 
     /* JADX WARN: Type inference failed for: r2v1, types: [java.util.HashMap, java.util.Map<java.lang.String, java.lang.Boolean>] */
-    public static /* synthetic */ void b() {
+    public static  void b() {
         try {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new URL(e).openStream()));
             while (true) {

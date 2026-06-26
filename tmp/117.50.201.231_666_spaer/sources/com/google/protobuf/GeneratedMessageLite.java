@@ -31,8 +31,8 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
     protected UnknownFieldSetLite unknownFields = UnknownFieldSetLite.getDefaultInstance();
 
     /* JADX INFO: renamed from: com.google.protobuf.GeneratedMessageLite$1, reason: invalid class name */
-    /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$JavaType;
+     class AnonymousClass1 {
+        static final  int[] $SwitchMap$com$google$protobuf$WireFormat$JavaType;
 
         static {
             int[] iArr = new int[WireFormat.JavaType.values().length];
@@ -307,7 +307,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
                 this.messageSetWireFormat = z;
             }
 
-            public /* synthetic */ ExtensionWriter(ExtendableMessage extendableMessage, boolean z, AnonymousClass1 anonymousClass1) {
+            public  ExtensionWriter(ExtendableMessage extendableMessage, boolean z, AnonymousClass1 anonymousClass1) {
                 this(z);
             }
 
@@ -421,7 +421,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         }
 
         @Override // com.google.protobuf.GeneratedMessageLite, com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public /* bridge */ /* synthetic */ MessageLite getDefaultInstanceForType() {
+        public /* bridge */  MessageLite getDefaultInstanceForType() {
             return getDefaultInstanceForType();
         }
 
@@ -462,7 +462,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         }
 
         @Override // com.google.protobuf.GeneratedMessageLite, com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public /* bridge */ /* synthetic */ MessageLite.Builder newBuilderForType() {
+        public /* bridge */  MessageLite.Builder newBuilderForType() {
             return newBuilderForType();
         }
 
@@ -488,7 +488,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         }
 
         @Override // com.google.protobuf.GeneratedMessageLite, com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public /* bridge */ /* synthetic */ MessageLite.Builder toBuilder() {
+        public /* bridge */  MessageLite.Builder toBuilder() {
             return toBuilder();
         }
     }

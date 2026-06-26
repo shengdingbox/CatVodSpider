@@ -21,8 +21,8 @@ final class FieldInfo implements Comparable<FieldInfo> {
     private final FieldType type;
 
     /* JADX INFO: renamed from: com.google.protobuf.FieldInfo$1, reason: invalid class name */
-    /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$FieldType;
+     class AnonymousClass1 {
+        static final  int[] $SwitchMap$com$google$protobuf$FieldType;
 
         static {
             int[] iArr = new int[FieldType.values().length];
@@ -63,7 +63,7 @@ final class FieldInfo implements Comparable<FieldInfo> {
         private Builder() {
         }
 
-        public /* synthetic */ Builder(AnonymousClass1 anonymousClass1) {
+        public  Builder(AnonymousClass1 anonymousClass1) {
             this();
         }
 

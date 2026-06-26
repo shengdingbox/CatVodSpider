@@ -10,7 +10,7 @@ import java.util.concurrent.ScheduledExecutorService;
 
 
 public class TgYunDouBanPan extends NetPan {
-    public static final /* synthetic */ int t = 0;
+    public static final  int t = 0;
     private ScheduledExecutorService l;
     private String m;
     private AlertDialog n;
@@ -34,7 +34,7 @@ public class TgYunDouBanPan extends NetPan {
 
     public static native void j(TgYunDouBanPan tgYunDouBanPan);
 
-    public static native /* synthetic */ void k(TgYunDouBanPan tgYunDouBanPan);
+    public static native  void k(TgYunDouBanPan tgYunDouBanPan);
 
     public static native void l(TgYunDouBanPan tgYunDouBanPan, String str);
 

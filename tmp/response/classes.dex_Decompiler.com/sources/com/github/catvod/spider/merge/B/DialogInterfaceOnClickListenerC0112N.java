@@ -9,12 +9,12 @@ import java.util.Map;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.b.N, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class DialogInterfaceOnClickListenerC0112N implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final  class DialogInterfaceOnClickListenerC0112N implements DialogInterface.OnClickListener {
+    public final  int a;
+    public final  Object b;
+    public final  Object c;
 
-    public /* synthetic */ DialogInterfaceOnClickListenerC0112N(Object obj, Object obj2, int i) {
+    public  DialogInterfaceOnClickListenerC0112N(Object obj, Object obj2, int i) {
         this.a = i;
         this.b = obj;
         this.c = obj2;

@@ -17,7 +17,7 @@ public final class b {
     private static final Pattern c = Pattern.compile(oZP.d("2B34166C161458352A1A0D780F2E5A1B5C784C445A6F317F4F"));
     private static final Pattern d = Pattern.compile(oZP.d("2E330F715C7829174627317F"));
     private static final ThreadLocal<Stack<StringBuilder>> e = new a();
-    public static final /* synthetic */ int f = 0;
+    public static final  int f = 0;
 
     public static void a(StringBuilder sb, String str, boolean z) {
         int length = str.length();

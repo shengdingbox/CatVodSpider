@@ -109,7 +109,7 @@ public final class C0588G {
     }
 
     /* JADX INFO: renamed from: com.github.catvod.spider.merge.m.G$8, reason: invalid class name */
-    /* synthetic */ class AnonymousClass8 implements View.OnClickListener {
+     class AnonymousClass8 implements View.OnClickListener {
         AnonymousClass8() {
         }
 
@@ -215,7 +215,7 @@ public final class C0588G {
             });
             textView4.setOnFocusChangeListener(new View.OnFocusChangeListener(textView4) { // from class: com.github.catvod.spider.merge.m.G.ArrowAdapter.2
                 private int originalColor;
-                final /* synthetic */ TextView val$textView;
+                final  TextView val$textView;
 
                 {
                     this.val$textView = textView4;
@@ -338,7 +338,7 @@ public final class C0588G {
             });
             textView5.setOnFocusChangeListener(new View.OnFocusChangeListener(textView5) { // from class: com.github.catvod.spider.merge.m.G.ArrowAdapter.2
                 private int originalColor;
-                final /* synthetic */ TextView val$textView;
+                final  TextView val$textView;
 
                 {
                     this.val$textView = textView5;
@@ -423,7 +423,7 @@ public final class C0588G {
 
     /* JADX INFO: renamed from: com.github.catvod.spider.merge.m.G$ArrowConfirm */
     class ArrowConfirm implements DialogInterface.OnClickListener {
-        final /* synthetic */ ArrayList val$items;
+        final  ArrayList val$items;
 
         ArrowConfirm(ArrayList arrayList) {
             this.val$items = arrayList;
@@ -465,7 +465,7 @@ public final class C0588G {
 
     /* JADX INFO: renamed from: com.github.catvod.spider.merge.m.G$BackupTip */
     class BackupTip implements DialogInterface.OnClickListener {
-        final /* synthetic */ Context val$context;
+        final  Context val$context;
 
         BackupTip(Context context) {
             this.val$context = context;
@@ -624,7 +624,7 @@ public final class C0588G {
 
     /* JADX INFO: renamed from: com.github.catvod.spider.merge.m.G$LocalBackup */
     class LocalBackup implements DialogInterface.OnClickListener {
-        final /* synthetic */ Context val$context;
+        final  Context val$context;
 
         LocalBackup(Context context) {
             this.val$context = context;
@@ -725,8 +725,8 @@ public final class C0588G {
 
     /* JADX INFO: renamed from: com.github.catvod.spider.merge.m.G$b */
     class b implements Runnable {
-        final /* synthetic */ TextView val$goView;
-        final /* synthetic */ TextView val$javaView;
+        final  TextView val$goView;
+        final  TextView val$javaView;
 
         b(TextView textView, TextView textView2) {
             this.val$goView = textView;
@@ -756,8 +756,8 @@ public final class C0588G {
 
     /* JADX INFO: renamed from: com.github.catvod.spider.merge.m.G$c */
     class c implements Runnable {
-        final /* synthetic */ TextView val$targetView;
-        final /* synthetic */ String val$text;
+        final  TextView val$targetView;
+        final  String val$text;
 
         c(TextView textView, String str) {
             this.val$targetView = textView;
@@ -1122,7 +1122,7 @@ public final class C0588G {
     	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:395)
     	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
      */
-    public static /* synthetic */ void a(C0588G c0588g, Map map) {
+    public static  void a(C0588G c0588g, Map map) {
         c0588g.A(map);
     }
 
@@ -1178,7 +1178,7 @@ public final class C0588G {
         title.setSingleChoiceItems(strArr, i, new Option()).setPositiveButton("确定", new com.github.catvod.spider.merge.A.e()).create().show();
     }
 
-    public static /* synthetic */ void b(C0588G c0588g, Map map) {
+    public static  void b(C0588G c0588g, Map map) {
         c0588g.C();
         Init.execute(new r(c0588g, map, 0));
     }
@@ -1190,7 +1190,7 @@ public final class C0588G {
         alertDialogCreate.show();
     }
 
-    public static /* synthetic */ void c(C0588G c0588g, EditText editText, EditText editText2) {
+    public static  void c(C0588G c0588g, EditText editText, EditText editText2) {
         c0588g.getClass();
         c0588g.u("cloud189", editText.getText().toString() + "|" + editText2.getText().toString() + "|Y");
     }
@@ -1288,7 +1288,7 @@ public final class C0588G {
         title.setSingleChoiceItems(strArr, i, new Option()).setPositiveButton("确定", new com.github.catvod.spider.merge.A.i()).create().show();
     }
 
-    public static /* synthetic */ void e(C0588G c0588g, Map map, String str) {
+    public static  void e(C0588G c0588g, Map map, String str) {
         c0588g.getClass();
         map.put("push", "");
         map.put("flag", c0588g.r(str));
@@ -1297,12 +1297,12 @@ public final class C0588G {
         Init.execute(new r(c0588g, map, 1));
     }
 
-    public static /* synthetic */ void f(C0588G c0588g, EditText editText) {
+    public static  void f(C0588G c0588g, EditText editText) {
         c0588g.getClass();
         c0588g.u("ucMachineCode", editText.getText().toString());
     }
 
-    public static /* synthetic */ void g(C0588G c0588g, String str, EditText editText) {
+    public static  void g(C0588G c0588g, String str, EditText editText) {
         c0588g.getClass();
         c0588g.u(str, editText.getText().toString());
     }
@@ -1499,7 +1499,7 @@ public final class C0588G {
         return "阿里云盘".equals(str) || "夸克网盘".equals(str) || "UC网盘".equals(str) || "天翼云盘".equals(str) || "123云盘".equals(str) || "百度网盘".equals(str) || "移动云盘".equals(str);
     }
 
-    public static /* synthetic */ void j(C0588G c0588g, Map map) {
+    public static  void j(C0588G c0588g, Map map) {
         c0588g.C();
         map.put("push", "1");
         map.put("flag", c0588g.r(""));
@@ -1622,7 +1622,7 @@ public final class C0588G {
         }
     }
 
-    public static /* synthetic */ void m(C0588G c0588g, EditText editText, EditText editText2) {
+    public static  void m(C0588G c0588g, EditText editText, EditText editText2) {
         c0588g.getClass();
         c0588g.u("cloud123", editText.getText().toString() + "|" + editText2.getText().toString() + "|Y");
     }
@@ -1998,7 +1998,7 @@ public final class C0588G {
 
             /* JADX INFO: renamed from: com.github.catvod.spider.merge.m.G$13$1, reason: invalid class name */
             class AnonymousClass1 implements Runnable {
-                final /* synthetic */ String val$text;
+                final  String val$text;
 
                 AnonymousClass1(String str) {
                     this.val$text = str;
@@ -2604,14 +2604,14 @@ public final class C0588G {
         }).start();
     }
 
-    public static /* synthetic */ void o(C0588G c0588g, Map map) {
+    public static  void o(C0588G c0588g, Map map) {
         c0588g.C();
         map.put("button", "0");
         map.put("input", "1");
         c0588g.w(map);
     }
 
-    public static /* synthetic */ void p(C0588G c0588g, Map map, String str) {
+    public static  void p(C0588G c0588g, Map map, String str) {
         c0588g.getClass();
         map.put("push", "");
         map.put("flag", c0588g.r(str));

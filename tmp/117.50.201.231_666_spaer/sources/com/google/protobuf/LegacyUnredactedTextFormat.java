@@ -10,7 +10,7 @@ public final class LegacyUnredactedTextFormat {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$legacyUnredactedToString$0(String[] strArr, Object obj) {
+    public static  void lambda$legacyUnredactedToString$0(String[] strArr, Object obj) {
         strArr[0] = obj.toString();
     }
 

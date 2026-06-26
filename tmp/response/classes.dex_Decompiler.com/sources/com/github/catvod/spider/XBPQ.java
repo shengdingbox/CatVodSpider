@@ -228,7 +228,7 @@ public class XBPQ extends Spider {
             }
 
             @Override // com.github.catvod.spider.merge.q.AbstractC0224c
-            protected final /* bridge */ /* synthetic */ void b(Response response) {
+            protected final /* bridge */  void b(Response response) {
             }
         };
         if (str.contains(oZP.d("4E1F183218"))) {
@@ -384,7 +384,7 @@ public class XBPQ extends Spider {
                 }
 
                 @Override // com.github.catvod.spider.merge.q.AbstractC0224c
-                protected final /* bridge */ /* synthetic */ void b(Response response) {
+                protected final /* bridge */  void b(Response response) {
                 }
             };
             f.c(f.b(), str2, y, abstractC0222a);
@@ -1141,7 +1141,7 @@ public class XBPQ extends Spider {
                 }
 
                 @Override // com.github.catvod.spider.merge.q.AbstractC0224c
-                protected final /* bridge */ /* synthetic */ void b(String str2) {
+                protected final /* bridge */  void b(String str2) {
                 }
             };
             if (strTrim.isEmpty()) {

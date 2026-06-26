@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public final class O {
     private static final Pattern a = Pattern.compile("^(?:(?i)GMT)?([+-])?(\\d\\d?)?(:?(\\d\\d?))?$");
     private static final TimeZone b = new Q(false, 0, 0);
-    public static final /* synthetic */ int c = 0;
+    public static final  int c = 0;
 
     public static TimeZone a(String str) {
         if ("Z".equals(str) || "UTC".equals(str)) {

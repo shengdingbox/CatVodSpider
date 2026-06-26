@@ -9,11 +9,11 @@ public final class jv {
     public final String a;
     public final Field b;
     public final String c;
-    public final /* synthetic */ Method d;
-    public final /* synthetic */ kv e;
-    public final /* synthetic */ kv f;
-    public final /* synthetic */ boolean g;
-    public final /* synthetic */ boolean h;
+    public final  Method d;
+    public final  kv e;
+    public final  kv f;
+    public final  boolean g;
+    public final  boolean h;
 
     public jv(String str, Field field, Method method, kv kvVar, kv kvVar2, boolean z, boolean z2) {
         this.d = method;

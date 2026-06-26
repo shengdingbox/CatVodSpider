@@ -294,7 +294,7 @@ public abstract class GeneratedMessageV3 extends GeneratedMessage.ExtendableMess
 
         @Override // com.google.protobuf.GeneratedMessage.FieldAccessorTable
         @Deprecated
-        public /* bridge */ /* synthetic */ GeneratedMessage.FieldAccessorTable ensureFieldAccessorsInitialized(Class cls, Class cls2) {
+        public /* bridge */  GeneratedMessage.FieldAccessorTable ensureFieldAccessorsInitialized(Class cls, Class cls2) {
             return ensureFieldAccessorsInitialized((Class<? extends GeneratedMessage>) cls, (Class<? extends GeneratedMessage.Builder<?>>) cls2);
         }
 

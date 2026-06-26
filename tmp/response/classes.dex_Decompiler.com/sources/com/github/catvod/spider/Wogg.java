@@ -46,7 +46,7 @@ public class Wogg extends WangPan {
     private String h = C0098a.a(new byte[]{-18, -47, 18, -123}, new byte[]{-71, -66, 117, -30, 84, -39, 8, 3});
     private Context i;
 
-    public static /* synthetic */ void d(String str, AtomicReference atomicReference, CountDownLatch countDownLatch) {
+    public static  void d(String str, AtomicReference atomicReference, CountDownLatch countDownLatch) {
         try {
             Response responseExecute = j.newCall(new Request.Builder().url(str).build()).execute();
             if (responseExecute.code() >= 200 && responseExecute.code() < 300 && atomicReference.compareAndSet(null, str)) {

@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.b.h, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class C0544h {
+public final  class C0544h {
     public static String a(String str, C0552c c0552c, int i, int i2, int i3, ArrayList arrayList) {
         c0552c.i(Integer.valueOf(str).intValue(), i, i2, i3);
         c0552c.w(arrayList);

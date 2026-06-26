@@ -95,7 +95,7 @@ public final class J {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void D(String str) {
+    public  void D(String str) {
         try {
             JSONObject jSONObject = new JSONObject(com.github.catvod.spider.merge.AB.m.c.k("https://uop.quark.cn/cas/ajax/getServiceTicketByQrcodeToken?client_id=532&v=1.2&token=" + str));
             if ("ok".equals(jSONObject.optString("message"))) {

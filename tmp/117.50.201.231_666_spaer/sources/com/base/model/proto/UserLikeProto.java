@@ -58,7 +58,7 @@ public final class UserLikeProto {
             private Builder() {
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -66,7 +66,7 @@ public final class UserLikeProto {
                 super(builderParent);
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -313,7 +313,7 @@ public final class UserLikeProto {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public /* synthetic */ UserLikeBean(Builder builder) {
+        public  UserLikeBean(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 
@@ -555,7 +555,7 @@ public final class UserLikeProto {
                 this.userLikeBean_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -564,7 +564,7 @@ public final class UserLikeProto {
                 this.userLikeBean_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -916,7 +916,7 @@ public final class UserLikeProto {
             this.userLikeBean_ = Collections.emptyList();
         }
 
-        public /* synthetic */ UserLikeBeanPage(Builder builder) {
+        public  UserLikeBeanPage(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 

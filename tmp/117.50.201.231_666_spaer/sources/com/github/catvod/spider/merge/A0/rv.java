@@ -8,10 +8,10 @@ import java.util.concurrent.atomic.AtomicLongArray;
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class rv extends kv {
     public static final ct a = new ct(0, new rv(3, vs.d));
-    public final /* synthetic */ int d;
+    public final  int d;
     public final Object e;
 
-    public /* synthetic */ rv(int i, Object obj) {
+    public  rv(int i, Object obj) {
         this.d = i;
         this.e = obj;
     }

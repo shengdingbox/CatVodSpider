@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class acr implements hp {
-    public final /* synthetic */ int a = 1;
+    public final  int a = 1;
     public final zy b;
     public final Object c;
 

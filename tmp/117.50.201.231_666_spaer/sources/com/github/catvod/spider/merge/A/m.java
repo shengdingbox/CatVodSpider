@@ -101,7 +101,7 @@ public final class m {
         });
     }
 
-    public static /* synthetic */ void b(m mVar, JSONObject jSONObject) {
+    public static  void b(m mVar, JSONObject jSONObject) {
         mVar.getClass();
         String str = System.currentTimeMillis() + "";
         String strOptString = jSONObject.optString("client_id");

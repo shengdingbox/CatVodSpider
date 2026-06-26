@@ -37,7 +37,7 @@ public final class WireFormat {
      */
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     public class FieldType {
-        private static final /* synthetic */ FieldType[] $VALUES;
+        private static final  FieldType[] $VALUES;
         public static final FieldType BOOL;
         public static final FieldType BYTES;
         public static final FieldType ENUM;
@@ -59,7 +59,7 @@ public final class WireFormat {
         public static final FieldType DOUBLE = new FieldType("DOUBLE", 0, JavaType.DOUBLE, 1);
         public static final FieldType FLOAT = new FieldType("FLOAT", 1, JavaType.FLOAT, 5);
 
-        private static /* synthetic */ FieldType[] $values() {
+        private static  FieldType[] $values() {
             return new FieldType[]{DOUBLE, FLOAT, INT64, UINT64, INT32, FIXED64, FIXED32, BOOL, STRING, GROUP, MESSAGE, BYTES, UINT32, ENUM, SFIXED32, SFIXED64, SINT32, SINT64};
         }
 

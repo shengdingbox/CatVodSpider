@@ -8,7 +8,7 @@ public final class pu implements Iterator {
     public final Object[] a;
     public int b = 0;
     public boolean c = true;
-    public final /* synthetic */ jm d;
+    public final  jm d;
 
     public pu(jm jmVar, Object[] objArr) {
         this.d = jmVar;

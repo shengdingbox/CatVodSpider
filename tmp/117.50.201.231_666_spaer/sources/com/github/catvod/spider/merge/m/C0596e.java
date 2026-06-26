@@ -11,7 +11,7 @@ public final class C0596e {
 
     /* JADX INFO: renamed from: com.github.catvod.spider.merge.m.e$a */
     final class a extends b {
-        final /* synthetic */ char[] a;
+        final  char[] a;
 
         a(char[] cArr) {
             this.a = cArr;

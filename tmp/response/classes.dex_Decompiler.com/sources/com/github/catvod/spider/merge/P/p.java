@@ -7,13 +7,13 @@ import com.github.catvod.spider.merge.b.RunnableC0126l;
 import java.util.Map;
 
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class p implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ C0206C b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final  class p implements DialogInterface.OnClickListener {
+    public final  int a;
+    public final  C0206C b;
+    public final  Object c;
+    public final  Object d;
 
-    public /* synthetic */ p(C0206C c0206c, Object obj, Object obj2, int i) {
+    public  p(C0206C c0206c, Object obj, Object obj2, int i) {
         this.a = i;
         this.b = c0206c;
         this.c = obj;

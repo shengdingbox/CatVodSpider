@@ -47,7 +47,7 @@ public final class C0206C {
         }
     }
 
-    public static /* synthetic */ void a(C0206C c0206c, Map map, String str) {
+    public static  void a(C0206C c0206c, Map map, String str) {
         c0206c.getClass();
         map.put(C0098a.a(new byte[]{-54, 63, 45, -53}, new byte[]{-70, 74, 94, -93, 106, 47, -49, -62}), "");
         map.put(C0098a.a(new byte[]{-115, -71, -47, -96}, new byte[]{-21, -43, -80, -57, -106, -26, -44, 27}), c0206c.p(str));
@@ -56,14 +56,14 @@ public final class C0206C {
         Init.execute(new RunnableC0205B(c0206c, map, 1));
     }
 
-    public static /* synthetic */ void b(C0206C c0206c, Map map) {
+    public static  void b(C0206C c0206c, Map map) {
         c0206c.A();
         map.put(C0098a.a(new byte[]{-43, 2, 64, 21, 94, -50}, new byte[]{-73, 119, 52, 97, 49, -96, -63, -62}), C0098a.a(new byte[]{48}, new byte[]{0, 60, 78, -43, 79, 45, -40, -24}));
         map.put(C0098a.a(new byte[]{-39, -5, -52, -102, -106}, new byte[]{-80, -107, -68, -17, -30, 36, -62, 72}), C0098a.a(new byte[]{52}, new byte[]{5, -5, -32, 126, 60, -121, -23, -107}));
         c0206c.u(map);
     }
 
-    public static /* synthetic */ void c(C0206C c0206c, EditText editText, EditText editText2) {
+    public static  void c(C0206C c0206c, EditText editText, EditText editText2) {
         c0206c.getClass();
         String strA = C0098a.a(new byte[]{-74, -30, 61, -79, -43}, new byte[]{-43, -114, 82, -60, -79, -6, 7, 53});
         StringBuilder sb = new StringBuilder();
@@ -85,7 +85,7 @@ public final class C0206C {
         }
     }
 
-    public static /* synthetic */ void f(C0206C c0206c, Map map) {
+    public static  void f(C0206C c0206c, Map map) {
         c0206c.A();
         map.put(C0098a.a(new byte[]{-76, -113, 85, 81}, new byte[]{-60, -6, 38, 57, 92, 60, -112, 58}), C0098a.a(new byte[]{48}, new byte[]{1, 81, -112, 67, -10, -26, -24, -27}));
         map.put(C0098a.a(new byte[]{-122, -62, -7, 16}, new byte[]{-32, -82, -104, 119, 69, -89, 78, -105}), c0206c.p(""));
@@ -93,7 +93,7 @@ public final class C0206C {
         c0206c.u(map);
     }
 
-    public static /* synthetic */ void i(C0206C c0206c, EditText editText, EditText editText2) {
+    public static  void i(C0206C c0206c, EditText editText, EditText editText2) {
         c0206c.getClass();
         String strA = C0098a.a(new byte[]{-104, 110, -50, -16, -20, -96}, new byte[]{-24, 15, -96, -63, -34, -109, -80, 59});
         StringBuilder sb = new StringBuilder();
@@ -103,17 +103,17 @@ public final class C0206C {
         c0206c.s(strA, C0133t.b(new byte[]{45, 8}, new byte[]{81, 81, -79, 79, -15, -17, -21, 35}, sb));
     }
 
-    public static /* synthetic */ void k(C0206C c0206c, EditText editText) {
+    public static  void k(C0206C c0206c, EditText editText) {
         c0206c.getClass();
         c0206c.s(C0098a.a(new byte[]{114, 42, 73, 88, -31, -23, 73, 27, 98, 10, 107, 93, -25}, new byte[]{7, 73, 4, 57, -126, -127, 32, 117}), editText.getText().toString());
     }
 
-    public static /* synthetic */ void l(C0206C c0206c, String str, EditText editText) {
+    public static  void l(C0206C c0206c, String str, EditText editText) {
         c0206c.getClass();
         c0206c.s(str, editText.getText().toString());
     }
 
-    public static /* synthetic */ void m(C0206C c0206c, Map map, String str) {
+    public static  void m(C0206C c0206c, Map map, String str) {
         c0206c.getClass();
         map.put(C0098a.a(new byte[]{-30, 40, -1, 77}, new byte[]{-110, 93, -116, 37, -16, 15, -29, -104}), "");
         map.put(C0098a.a(new byte[]{44, -41, -57, -48}, new byte[]{74, -69, -90, -73, -40, -17, -66, -13}), c0206c.p(str));

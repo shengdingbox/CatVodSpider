@@ -4,7 +4,7 @@ import okhttp3.Call;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class adc extends ya {
-    public final /* synthetic */ int a;
+    public final  int a;
 
     private final void b(Call call, Exception exc) {
     }
@@ -18,7 +18,7 @@ public final class adc extends ya {
     }
 
     @Override // com.github.catvod.spider.merge.A0.xh
-    public final /* bridge */ /* synthetic */ void onResponse(Object obj) {
+    public final /* bridge */  void onResponse(Object obj) {
         switch (this.a) {
             case 0:
                 break;

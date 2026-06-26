@@ -91,7 +91,7 @@ public final class ChatRoomProto {
                 this.userHeadImg_ = "";
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -106,7 +106,7 @@ public final class ChatRoomProto {
                 this.userHeadImg_ = "";
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -758,7 +758,7 @@ public final class ChatRoomProto {
             this.userHeadImg_ = "";
         }
 
-        public /* synthetic */ ChatRoomAdd(Builder builder) {
+        public  ChatRoomAdd(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 
@@ -1224,7 +1224,7 @@ public final class ChatRoomProto {
                 this.chatRoom_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -1233,7 +1233,7 @@ public final class ChatRoomProto {
                 this.chatRoom_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -1676,7 +1676,7 @@ public final class ChatRoomProto {
             this.chatRoom_ = Collections.emptyList();
         }
 
-        public /* synthetic */ ChatRoomPage(Builder builder) {
+        public  ChatRoomPage(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 
@@ -1960,7 +1960,7 @@ public final class ChatRoomProto {
             private Builder() {
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -1968,7 +1968,7 @@ public final class ChatRoomProto {
                 super(builderParent);
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -2245,7 +2245,7 @@ public final class ChatRoomProto {
             this.memoizedIsInitialized = (byte) -1;
         }
 
-        public /* synthetic */ ChatRoomReq(Builder builder) {
+        public  ChatRoomReq(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 
@@ -2505,7 +2505,7 @@ public final class ChatRoomProto {
                 this.roomName_ = "";
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -2514,7 +2514,7 @@ public final class ChatRoomProto {
                 this.roomName_ = "";
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -2731,7 +2731,7 @@ public final class ChatRoomProto {
             this.roomName_ = "";
         }
 
-        public /* synthetic */ ChatRoomUpdate(Builder builder) {
+        public  ChatRoomUpdate(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 
@@ -3009,7 +3009,7 @@ public final class ChatRoomProto {
                 this.userHeadImg_ = "";
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -3024,7 +3024,7 @@ public final class ChatRoomProto {
                 this.userHeadImg_ = "";
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -4028,7 +4028,7 @@ public final class ChatRoomProto {
             this.userHeadImg_ = "";
         }
 
-        public /* synthetic */ ChatRoomVO(Builder builder) {
+        public  ChatRoomVO(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 

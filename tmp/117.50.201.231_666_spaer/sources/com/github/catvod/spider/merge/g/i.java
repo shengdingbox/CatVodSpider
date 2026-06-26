@@ -25,7 +25,7 @@ public class i extends m {
     com.github.catvod.spider.merge.G.b g;
 
     final class a implements com.github.catvod.spider.merge.I.e {
-        final /* synthetic */ StringBuilder a;
+        final  StringBuilder a;
 
         a(StringBuilder sb) {
             this.a = sb;

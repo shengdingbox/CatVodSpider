@@ -15,7 +15,7 @@ public final class kl extends kv {
         this.d = new SimpleDateFormat("MMM d, yyyy");
     }
 
-    public /* synthetic */ kl(int i) {
+    public  kl(int i) {
         this();
     }
 

@@ -17,7 +17,7 @@ public class JSDemo extends Spider {
     private ExecutorService a;
     private QuickJSContext b;
 
-    public static /* synthetic */ void a(JSDemo jSDemo) {
+    public static  void a(JSDemo jSDemo) {
         jSDemo.a.shutdownNow();
         jSDemo.b.destroy();
     }
@@ -31,7 +31,7 @@ public class JSDemo extends Spider {
         QuickJSLoader.initConsoleLog(quickJSContextCreate);
     }
 
-    public static /* synthetic */ String c(JSDemo jSDemo) {
+    public static  String c(JSDemo jSDemo) {
         jSDemo.b.evaluate(C0098a.a(new byte[]{77, -107, -20, 79, 53, -64, 16, -5, 27, -55, -66, 72, 41, -54, 5, -22, 120, -101, -16, 27, 36, -53, 28, -88, 0}, new byte[]{59, -12, -98, 111, 65, -91, 104, -113}));
         return jSDemo.b.getGlobalObject().getString(C0098a.a(new byte[]{91, -98, 0, -85}, new byte[]{47, -5, 120, -33, -37, -47, -56, 61}));
     }

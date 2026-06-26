@@ -2,10 +2,10 @@ package com.github.catvod.spider.merge.A0;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class ew extends fa {
-    public final /* synthetic */ int a;
+    public final  int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ew(int i, String str, String str2, boolean z) {
+    public  ew(int i, String str, String str2, boolean z) {
         super(str, str2, z);
         this.a = i;
     }

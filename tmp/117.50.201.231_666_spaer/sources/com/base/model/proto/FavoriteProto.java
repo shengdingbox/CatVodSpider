@@ -105,7 +105,7 @@ public final class FavoriteProto {
                 this.clazz_ = "";
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -120,7 +120,7 @@ public final class FavoriteProto {
                 this.clazz_ = "";
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -989,7 +989,7 @@ public final class FavoriteProto {
             this.clazz_ = "";
         }
 
-        public /* synthetic */ FavoriteBean(Builder builder) {
+        public  FavoriteBean(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 
@@ -1558,7 +1558,7 @@ public final class FavoriteProto {
                 this.favoriteBean_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -1567,7 +1567,7 @@ public final class FavoriteProto {
                 this.favoriteBean_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -1919,7 +1919,7 @@ public final class FavoriteProto {
             this.favoriteBean_ = Collections.emptyList();
         }
 
-        public /* synthetic */ FavoriteBeanPage(Builder builder) {
+        public  FavoriteBeanPage(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 

@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
 public final class h {
-    public static final /* synthetic */ int a = 0;
+    public static final  int a = 0;
 
     static {
         Pattern.compile(oZP.d("291F0C0802161A021528023C1B0833280D36070603280F341922163307260844"));

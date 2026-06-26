@@ -282,7 +282,7 @@ public final class UcDriveApi {
         }, 1L, 1L, TimeUnit.SECONDS);
     }
 
-    public static /* synthetic */ void e(UcDriveApi v0Var, boolean z, String str) {
+    public static  void e(UcDriveApi v0Var, boolean z, String str) {
         v0Var.getClass();
         try {
             if (z) {

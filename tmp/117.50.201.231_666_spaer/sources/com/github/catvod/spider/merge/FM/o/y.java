@@ -44,7 +44,7 @@ public final class y {
         }
     }
 
-    public static /* synthetic */ void a(y yVar, Map map, String str) {
+    public static  void a(y yVar, Map map, String str) {
         yVar.getClass();
         map.put("push", "");
         map.put("flag", yVar.p(str));
@@ -53,14 +53,14 @@ public final class y {
         Init.execute(new w(yVar, map, 1));
     }
 
-    public static /* synthetic */ void b(y yVar, Map map) {
+    public static  void b(y yVar, Map map) {
         yVar.A();
         map.put("button", "0");
         map.put("input", "1");
         yVar.u(map);
     }
 
-    public static /* synthetic */ void c(y yVar, EditText editText, EditText editText2) {
+    public static  void c(y yVar, EditText editText, EditText editText2) {
         yVar.getClass();
         StringBuilder sb = new StringBuilder();
         sb.append(editText.getText().toString());
@@ -81,7 +81,7 @@ public final class y {
         }
     }
 
-    public static /* synthetic */ void f(y yVar, Map map) {
+    public static  void f(y yVar, Map map) {
         yVar.A();
         map.put("push", "1");
         map.put("flag", yVar.p(""));
@@ -89,7 +89,7 @@ public final class y {
         yVar.u(map);
     }
 
-    public static /* synthetic */ void i(y yVar, EditText editText, EditText editText2) {
+    public static  void i(y yVar, EditText editText, EditText editText2) {
         yVar.getClass();
         StringBuilder sb = new StringBuilder();
         sb.append(editText.getText().toString());
@@ -98,17 +98,17 @@ public final class y {
         yVar.s("cloud123", P.a(new byte[]{-50, 98}, new byte[]{-78, 59, -104, 102, -31, 91, -118, -50}, sb));
     }
 
-    public static /* synthetic */ void k(y yVar, EditText editText) {
+    public static  void k(y yVar, EditText editText) {
         yVar.getClass();
         yVar.s("ucMachineCode", editText.getText().toString());
     }
 
-    public static /* synthetic */ void l(y yVar, String str, EditText editText) {
+    public static  void l(y yVar, String str, EditText editText) {
         yVar.getClass();
         yVar.s(str, editText.getText().toString());
     }
 
-    public static /* synthetic */ void m(y yVar, Map map, String str) {
+    public static  void m(y yVar, Map map, String str) {
         yVar.getClass();
         map.put("push", "");
         map.put("flag", yVar.p(str));

@@ -9,7 +9,7 @@ import java.util.EnumSet;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class pn extends sd {
-    public final /* synthetic */ int a = 1;
+    public final  int a = 1;
     public final Object b;
 
     public pn(cd[] cdVarArr) {

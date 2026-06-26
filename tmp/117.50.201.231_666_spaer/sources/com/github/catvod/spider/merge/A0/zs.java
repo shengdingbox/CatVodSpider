@@ -6,8 +6,8 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 public final class zs extends qd {
     public zo e;
     public final n f;
-    public final /* synthetic */ bi g;
-    public final /* synthetic */ v h;
+    public final  bi g;
+    public final  v h;
 
     public zs(n nVar, bi biVar, v vVar) {
         this.g = biVar;

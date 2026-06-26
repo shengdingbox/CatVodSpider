@@ -5,7 +5,7 @@ public class ao implements vq {
     private ao() {
     }
 
-    public /* synthetic */ ao(int i) {
+    public  ao(int i) {
         this();
     }
 

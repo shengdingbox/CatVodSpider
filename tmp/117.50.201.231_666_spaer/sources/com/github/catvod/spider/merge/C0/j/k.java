@@ -74,7 +74,7 @@ public final class k {
         }
     }
 
-    public static /* synthetic */ void b(String str, j jVar, DialogInterface dialogInterface) {
+    public static  void b(String str, j jVar, DialogInterface dialogInterface) {
         String str2;
         a.removeSessionCookie();
         a.removeAllCookie();
@@ -102,7 +102,7 @@ public final class k {
         dialogInterface.dismiss();
     }
 
-    public static /* synthetic */ void c(j jVar, DialogInterface dialogInterface) {
+    public static  void c(j jVar, DialogInterface dialogInterface) {
         if (jVar != null) {
             jVar.vertifyCode("0");
         }
@@ -110,7 +110,7 @@ public final class k {
         dialogInterface.dismiss();
     }
 
-    public static /* synthetic */ void d(String str, j jVar, DialogInterface dialogInterface) {
+    public static  void d(String str, j jVar, DialogInterface dialogInterface) {
         String str2;
         a.removeSessionCookie();
         a.removeAllCookie();
@@ -138,7 +138,7 @@ public final class k {
         dialogInterface.dismiss();
     }
 
-    static /* synthetic */ int j() {
+    static  int j() {
         int i2 = j;
         j = i2 + 1;
         return i2;

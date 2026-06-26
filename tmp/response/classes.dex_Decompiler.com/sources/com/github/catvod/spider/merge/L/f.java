@@ -16,7 +16,7 @@ public final class f extends q {
     }
 
     @Override // com.github.catvod.spider.merge.L.q, com.github.catvod.spider.merge.L.s
-    public final /* bridge */ /* synthetic */ int g() {
+    public final /* bridge */  int g() {
         return 0;
     }
 

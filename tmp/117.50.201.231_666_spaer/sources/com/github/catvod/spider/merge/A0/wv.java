@@ -2,11 +2,11 @@ package com.github.catvod.spider.merge.A0;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class wv implements vq {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ kv d;
+    public final  int b;
+    public final  Object c;
+    public final  kv d;
 
-    public /* synthetic */ wv(Object obj, kv kvVar, int i) {
+    public  wv(Object obj, kv kvVar, int i) {
         this.b = i;
         this.c = obj;
         this.d = kvVar;

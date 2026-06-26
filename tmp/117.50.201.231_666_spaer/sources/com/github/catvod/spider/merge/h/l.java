@@ -69,7 +69,7 @@ abstract class l {
     public static final C0497i r;
     private static final String r0;
     public static final C0498j s;
-    private static final /* synthetic */ l[] s0;
+    private static final  l[] s0;
     public static final C0010l t;
     public static final C0500m u;
     public static final C0501n v;

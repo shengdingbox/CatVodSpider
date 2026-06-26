@@ -4,13 +4,13 @@ import com.github.catvod.spider.Init;
 import com.github.catvod.spider.merge.b.C0110L;
 
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class e implements Runnable {
-    public static final /* synthetic */ e b = new e(0);
-    public static final /* synthetic */ e c = new e(1);
-    public static final /* synthetic */ e d = new e(2);
-    public final /* synthetic */ int a;
+public final  class e implements Runnable {
+    public static final  e b = new e(0);
+    public static final  e c = new e(1);
+    public static final  e d = new e(2);
+    public final  int a;
 
-    public /* synthetic */ e(int i) {
+    public  e(int i) {
         this.a = i;
     }
 

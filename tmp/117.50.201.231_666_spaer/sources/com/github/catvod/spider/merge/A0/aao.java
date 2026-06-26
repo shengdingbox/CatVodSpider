@@ -9,7 +9,7 @@ public final class aao extends kv {
     public final nx a;
     public final nx d;
     public final ub e;
-    public final /* synthetic */ sv f;
+    public final  sv f;
 
     public aao(sv svVar, oa oaVar, Type type, kv kvVar, Type type2, kv kvVar2, ub ubVar) {
         this.f = svVar;

@@ -54,9 +54,11 @@
 -keep,allowobfuscation,allowshrinking class com.github.catvod.debug.** { *; }
 -keep,allowobfuscation,allowshrinking class com.github.catvod.demo.** { *; }
 
-# Protect string constants from extraction
--keepclassmembers class com.github.catvod.** {
-    static final java.lang.String *;
+# StringCipher decryptor - preserve class name and key fields
+-keep class com.github.catvod.spider.StringCipher {
+    static java.lang.String KEY;
+    static java.lang.String B64;
+    public static java.lang.String decrypt(java.lang.String);
 }
 
 # ============================================================

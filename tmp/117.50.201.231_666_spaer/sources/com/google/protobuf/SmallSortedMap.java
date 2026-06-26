@@ -339,7 +339,7 @@ class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V> {
 
             /* JADX WARN: Multi-variable type inference failed */
             @Override // com.google.protobuf.SmallSortedMap, java.util.AbstractMap, java.util.Map
-            public /* bridge */ /* synthetic */ Object put(Object obj, Object obj2) {
+            public /* bridge */  Object put(Object obj, Object obj2) {
                 return super.put((Comparable) obj, obj2);
             }
         };

@@ -51,7 +51,7 @@ public final class UserProto {
                 this.user_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -60,7 +60,7 @@ public final class UserProto {
                 this.user_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -412,7 +412,7 @@ public final class UserProto {
             this.user_ = Collections.emptyList();
         }
 
-        public /* synthetic */ UserList(Builder builder) {
+        public  UserList(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 
@@ -644,7 +644,7 @@ public final class UserProto {
                 this.userHeadImg_ = "";
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -654,7 +654,7 @@ public final class UserProto {
                 this.userHeadImg_ = "";
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -931,7 +931,7 @@ public final class UserProto {
             this.userHeadImg_ = "";
         }
 
-        public /* synthetic */ UserVO(Builder builder) {
+        public  UserVO(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 

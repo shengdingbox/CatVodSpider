@@ -14,8 +14,8 @@ final class CodedOutputStreamWriter implements Writer {
     private final CodedOutputStream output;
 
     /* JADX INFO: renamed from: com.google.protobuf.CodedOutputStreamWriter$1, reason: invalid class name */
-    /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
+     class AnonymousClass1 {
+        static final  int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {
             int[] iArr = new int[WireFormat.FieldType.values().length];

@@ -4,8 +4,8 @@ import java.lang.reflect.Method;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class al extends yt {
-    public final /* synthetic */ Method a;
-    public final /* synthetic */ int b;
+    public final  Method a;
+    public final  int b;
 
     public al(Method method, int i) {
         this.a = method;

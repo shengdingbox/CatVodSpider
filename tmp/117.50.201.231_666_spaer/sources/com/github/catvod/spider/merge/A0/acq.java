@@ -9,7 +9,7 @@ public final class acq implements Iterator, wi {
     public int b;
     public int c;
     public add d;
-    public final /* synthetic */ acr e;
+    public final  acr e;
 
     public acq(acr acrVar) {
         this.e = acrVar;

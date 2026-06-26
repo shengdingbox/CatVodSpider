@@ -40,7 +40,7 @@ public final class Z {
         }
     }
 
-    public static /* synthetic */ void a(Z z, Map map, String str) {
+    public static  void a(Z z, Map map, String str) {
         z.getClass();
         map.put("push", "");
         map.put("flag", z.p(str));
@@ -49,14 +49,14 @@ public final class Z {
         Init.execute(new X(z, map, 1));
     }
 
-    public static /* synthetic */ void b(Z z, Map map) {
+    public static  void b(Z z, Map map) {
         z.A();
         map.put("button", "0");
         map.put("input", "1");
         z.u(map);
     }
 
-    public static /* synthetic */ void c(Z z, EditText editText, EditText editText2) {
+    public static  void c(Z z, EditText editText, EditText editText2) {
         z.getClass();
         StringBuilder sb = new StringBuilder();
         sb.append(editText.getText().toString());
@@ -77,7 +77,7 @@ public final class Z {
         }
     }
 
-    public static /* synthetic */ void f(Z z, Map map) {
+    public static  void f(Z z, Map map) {
         z.A();
         map.put("push", "1");
         map.put("flag", z.p(""));
@@ -85,7 +85,7 @@ public final class Z {
         z.u(map);
     }
 
-    public static /* synthetic */ void i(Z z, EditText editText, EditText editText2) {
+    public static  void i(Z z, EditText editText, EditText editText2) {
         z.getClass();
         StringBuilder sb = new StringBuilder();
         sb.append(editText.getText().toString());
@@ -94,17 +94,17 @@ public final class Z {
         z.s("cloud123", com.github.catvod.spider.merge.AB.b.t.b(new byte[]{-4, -125}, new byte[]{-128, -38, 11, 15, -58, -52, -16, -113}, sb));
     }
 
-    public static /* synthetic */ void k(Z z, EditText editText) {
+    public static  void k(Z z, EditText editText) {
         z.getClass();
         z.s("ucMachineCode", editText.getText().toString());
     }
 
-    public static /* synthetic */ void l(Z z, String str, EditText editText) {
+    public static  void l(Z z, String str, EditText editText) {
         z.getClass();
         z.s(str, editText.getText().toString());
     }
 
-    public static /* synthetic */ void m(Z z, Map map, String str) {
+    public static  void m(Z z, Map map, String str) {
         z.getClass();
         map.put("push", "");
         map.put("flag", z.p(str));

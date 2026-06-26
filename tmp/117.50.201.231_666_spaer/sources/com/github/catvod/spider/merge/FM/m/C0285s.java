@@ -3,7 +3,7 @@ package com.github.catvod.spider.merge.FM.M;
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.FM.M.s, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class C0285s extends N {
-    public final /* synthetic */ int a;
+    public final  int a;
     private final String b;
 
     public C0285s(String str, int i) {

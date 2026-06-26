@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class W {
+public final  class W {
     public static boolean a(C0634c c0634c) {
         Iterator<C0633b> it = c0634c.iterator();
         while (it.hasNext()) {

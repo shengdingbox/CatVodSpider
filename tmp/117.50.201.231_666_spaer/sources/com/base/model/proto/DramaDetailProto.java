@@ -182,7 +182,7 @@ public final class DramaDetailProto {
                 maybeForceBuilderInitialization();
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -206,7 +206,7 @@ public final class DramaDetailProto {
                 maybeForceBuilderInitialization();
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -2658,7 +2658,7 @@ public final class DramaDetailProto {
             this.favorite_ = Collections.emptyList();
         }
 
-        public /* synthetic */ DramaDetailBean(Builder builder) {
+        public  DramaDetailBean(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 
@@ -3730,7 +3730,7 @@ public final class DramaDetailProto {
                 this.dramaDetailBean_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -3739,7 +3739,7 @@ public final class DramaDetailProto {
                 this.dramaDetailBean_ = Collections.emptyList();
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -4091,7 +4091,7 @@ public final class DramaDetailProto {
             this.dramaDetailBean_ = Collections.emptyList();
         }
 
-        public /* synthetic */ DramaDetailBeanPage(Builder builder) {
+        public  DramaDetailBeanPage(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 

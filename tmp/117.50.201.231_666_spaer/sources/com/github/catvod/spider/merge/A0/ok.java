@@ -6,17 +6,17 @@ import com.whl.quickjs.wrapper.QuickJSObject;
 import java.lang.reflect.Method;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class ok implements JSCallFunction {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ Method b;
-    public final /* synthetic */ Object c;
+public final  class ok implements JSCallFunction {
+    public final  int a = 0;
+    public final  Method b;
+    public final  Object c;
 
-    public /* synthetic */ ok(Function function, Method method) {
+    public  ok(Function function, Method method) {
         this.c = function;
         this.b = method;
     }
 
-    public /* synthetic */ ok(Method method, Object obj) {
+    public  ok(Method method, Object obj) {
         this.b = method;
         this.c = obj;
     }

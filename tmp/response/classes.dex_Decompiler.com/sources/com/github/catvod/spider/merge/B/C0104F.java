@@ -93,7 +93,7 @@ public final class C0104F {
         });
     }
 
-    public static /* synthetic */ void d(C0104F c0104f, String str, String str2) {
+    public static  void d(C0104F c0104f, String str, String str2) {
         c0104f.getClass();
         try {
             JSONObject jSONObject = new JSONObject();
@@ -109,7 +109,7 @@ public final class C0104F {
         }
     }
 
-    public static /* synthetic */ void e(C0104F c0104f) {
+    public static  void e(C0104F c0104f) {
         c0104f.getClass();
         while (c0104f.c) {
             try {

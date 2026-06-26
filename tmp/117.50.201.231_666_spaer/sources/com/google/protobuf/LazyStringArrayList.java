@@ -241,7 +241,7 @@ public class LazyStringArrayList extends AbstractProtobufList<String> implements
     }
 
     @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
-    public /* bridge */ /* synthetic */ boolean equals(Object obj) {
+    public /* bridge */  boolean equals(Object obj) {
         return super.equals(obj);
     }
 
@@ -304,12 +304,12 @@ public class LazyStringArrayList extends AbstractProtobufList<String> implements
     }
 
     @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
-    public /* bridge */ /* synthetic */ int hashCode() {
+    public /* bridge */  int hashCode() {
         return super.hashCode();
     }
 
     @Override // com.google.protobuf.AbstractProtobufList, com.google.protobuf.Internal.ProtobufList
-    public /* bridge */ /* synthetic */ boolean isModifiable() {
+    public /* bridge */  boolean isModifiable() {
         return super.isModifiable();
     }
 
@@ -346,17 +346,17 @@ public class LazyStringArrayList extends AbstractProtobufList<String> implements
     }
 
     @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public /* bridge */ /* synthetic */ boolean remove(Object obj) {
+    public /* bridge */  boolean remove(Object obj) {
         return super.remove(obj);
     }
 
     @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public /* bridge */ /* synthetic */ boolean removeAll(Collection collection) {
+    public /* bridge */  boolean removeAll(Collection collection) {
         return super.removeAll(collection);
     }
 
     @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public /* bridge */ /* synthetic */ boolean retainAll(Collection collection) {
+    public /* bridge */  boolean retainAll(Collection collection) {
         return super.retainAll(collection);
     }
 

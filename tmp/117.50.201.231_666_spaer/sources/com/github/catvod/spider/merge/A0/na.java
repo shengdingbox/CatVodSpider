@@ -12,7 +12,7 @@ import rxhttp.wrapper.param.Param;
 import rxhttp.wrapper.utils.BuildUtil;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public abstract /* synthetic */ class na {
+public abstract  class na {
     public static Param a(IPart iPart, UpFile upFile) {
         File file = upFile.getFile();
         if (!file.exists()) {

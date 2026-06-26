@@ -36,7 +36,7 @@ public class Market extends Spider {
     private List<C0178b> b;
     private boolean c;
 
-    public static /* synthetic */ void a(Market market, int i) {
+    public static  void a(Market market, int i) {
         market.getClass();
         try {
             ProgressDialog progressDialog = market.a;
@@ -48,7 +48,7 @@ public class Market extends Spider {
         }
     }
 
-    public static /* synthetic */ void b(Market market) {
+    public static  void b(Market market) {
         market.getClass();
         try {
             market.setBusy(false);
@@ -61,7 +61,7 @@ public class Market extends Spider {
         }
     }
 
-    public static /* synthetic */ void c(Market market) {
+    public static  void c(Market market) {
         market.getClass();
         try {
             ProgressDialog progressDialog = new ProgressDialog(Init.getActivity());

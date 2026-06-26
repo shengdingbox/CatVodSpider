@@ -18,7 +18,7 @@ public final class tr {
         this.e = th;
     }
 
-    public /* synthetic */ tr(Object obj, adq adqVar, CancellationException cancellationException, int i) {
+    public  tr(Object obj, adq adqVar, CancellationException cancellationException, int i) {
         this(obj, (i & 2) != 0 ? null : adqVar, null, null, (i & 16) != 0 ? null : cancellationException);
     }
 

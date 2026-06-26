@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class pf extends pe implements ListIterator {
-    public final /* synthetic */ ph d;
+    public final  ph d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public pf(ph phVar, int i) {

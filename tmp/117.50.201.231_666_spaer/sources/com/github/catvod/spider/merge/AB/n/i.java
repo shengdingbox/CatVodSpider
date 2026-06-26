@@ -5,12 +5,12 @@ import com.github.catvod.spider.merge.AB.o.Z;
 import java.util.HashMap;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class i implements Runnable {
+public final  class i implements Runnable {
     public static final i b = new i(0);
     public static final i c = new i(1);
     public final int a;
 
-    public /* synthetic */ i(int i) {
+    public  i(int i) {
         this.a = i;
     }
 

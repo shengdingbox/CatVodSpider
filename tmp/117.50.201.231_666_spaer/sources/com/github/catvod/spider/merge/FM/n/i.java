@@ -6,13 +6,13 @@ import com.github.catvod.spider.merge.FM.o.y;
 import java.util.HashMap;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class i implements Runnable {
-    public static final /* synthetic */ i b = new i(0);
-    public static final /* synthetic */ i c = new i(1);
-    public static final /* synthetic */ i d = new i(2);
-    public final /* synthetic */ int a;
+public final  class i implements Runnable {
+    public static final  i b = new i(0);
+    public static final  i c = new i(1);
+    public static final  i d = new i(2);
+    public final  int a;
 
-    public /* synthetic */ i(int i) {
+    public  i(int i) {
         this.a = i;
     }
 

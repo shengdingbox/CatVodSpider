@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class tl implements ThreadFactory {
-    public final /* synthetic */ AtomicInteger a;
+    public final  AtomicInteger a;
 
     public tl(AtomicInteger atomicInteger) {
         this.a = atomicInteger;

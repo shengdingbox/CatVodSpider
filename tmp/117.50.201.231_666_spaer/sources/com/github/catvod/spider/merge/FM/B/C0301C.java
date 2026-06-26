@@ -89,7 +89,7 @@ public final class C0301C {
         Init.execute(new RunnableC0299A(c0301c, string, string2, 0));
     }
 
-    public static /* synthetic */ void d(C0301C c0301c, String str, String str2) {
+    public static  void d(C0301C c0301c, String str, String str2) {
         c0301c.getClass();
         try {
             JSONObject jSONObject = new JSONObject();
@@ -105,7 +105,7 @@ public final class C0301C {
         }
     }
 
-    public static /* synthetic */ void e(C0301C c0301c) {
+    public static  void e(C0301C c0301c) {
         c0301c.getClass();
         while (c0301c.c) {
             try {

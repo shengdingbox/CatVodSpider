@@ -4,10 +4,10 @@ import java.util.regex.Pattern;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class dy extends dr {
-    public final /* synthetic */ int a;
+    public final  int a;
     public final Pattern e;
 
-    public /* synthetic */ dy(Pattern pattern, int i) {
+    public  dy(Pattern pattern, int i) {
         this.a = i;
         this.e = pattern;
     }

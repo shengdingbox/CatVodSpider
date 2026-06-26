@@ -166,7 +166,7 @@ abstract class i {
         }
 
         @Override // com.github.catvod.spider.merge.H.i.h, com.github.catvod.spider.merge.H.i
-        final /* bridge */ /* synthetic */ i h() {
+        final /* bridge */  i h() {
             h();
             return this;
         }

@@ -6,7 +6,7 @@ import java.util.function.Function;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public abstract class fa extends dr {
-    public final /* synthetic */ int e;
+    public final  int e;
     public final Object f;
     public final Object g;
 

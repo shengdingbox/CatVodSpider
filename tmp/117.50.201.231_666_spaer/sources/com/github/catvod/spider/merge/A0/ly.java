@@ -2,10 +2,10 @@ package com.github.catvod.spider.merge.A0;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class ly extends eo {
-    public final /* synthetic */ int e;
+    public final  int e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ly(int i, int i2) {
+    public  ly(int i, int i2) {
         super(i);
         this.e = i2;
     }

@@ -17,7 +17,7 @@ import org.json.JSONObject;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public class LocalFile extends Spider {
-    public static final /* synthetic */ int a = 0;
+    public static final  int a = 0;
 
     public static boolean checkstring(String str) {
         String[] strArr = {".avi", ".wmv", ".rm", ".3gp", ".mov", ".mp", ".m4", ".vob", ".ts", ".webm", ".dat", ".m3u", ".mkv", ".flv", ".aac", ".wma", ".flac", ".ape"};

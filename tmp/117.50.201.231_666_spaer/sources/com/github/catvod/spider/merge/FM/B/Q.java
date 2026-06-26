@@ -285,7 +285,7 @@ public final class Q {
         q.J(str);
     }
 
-    public static /* synthetic */ void f(Q q, String str) {
+    public static  void f(Q q, String str) {
         q.getClass();
         HashMap map = new HashMap();
         map.put("client_id", "381");

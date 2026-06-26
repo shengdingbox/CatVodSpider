@@ -34,7 +34,7 @@ public final class g extends l {
     }
 
     @Override // com.github.catvod.spider.merge.G.l, com.github.catvod.spider.merge.G.m
-    public final /* bridge */ /* synthetic */ int h() {
+    public final /* bridge */  int h() {
         return 0;
     }
 

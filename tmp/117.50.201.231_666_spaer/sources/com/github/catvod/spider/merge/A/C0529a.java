@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.a.a, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class C0529a {
+public final  class C0529a {
     public static final Pattern a = Pattern.compile("http((?!http).){12,}?\\.(m3u8|mp4|mkv|flv|mp3|m4a|aac)\\?.*|http((?!http).){12,}\\.(m3u8|mp4|mkv|flv|mp3|m4a|aac)|http((?!http).)*?video/tos*");
 
     public static String a(int i) {

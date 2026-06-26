@@ -1,12 +1,12 @@
 package com.github.catvod.spider.merge.o;
 
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class c implements Runnable {
-    public static final /* synthetic */ c b = new c(0);
-    public static final /* synthetic */ c c = new c(1);
-    public final /* synthetic */ int a;
+public final  class c implements Runnable {
+    public static final  c b = new c(0);
+    public static final  c c = new c(1);
+    public final  int a;
 
-    public /* synthetic */ c(int i) {
+    public  c(int i) {
         this.a = i;
     }
 

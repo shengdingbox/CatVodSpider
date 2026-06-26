@@ -6,11 +6,11 @@ import com.github.catvod.spider.JSDemo;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.b.b, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class RunnableC0116b implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final  class RunnableC0116b implements Runnable {
+    public final  int a;
+    public final  Object b;
 
-    public /* synthetic */ RunnableC0116b(Object obj, int i) {
+    public  RunnableC0116b(Object obj, int i) {
         this.a = i;
         this.b = obj;
     }

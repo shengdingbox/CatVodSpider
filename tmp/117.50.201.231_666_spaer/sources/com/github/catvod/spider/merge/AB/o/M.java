@@ -6,13 +6,13 @@ import com.github.catvod.spider.Init;
 import java.util.Map;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class M implements DialogInterface.OnClickListener {
+public final  class M implements DialogInterface.OnClickListener {
     public final int a;
     public final Z b;
     public final Object c;
     public final Object d;
 
-    public /* synthetic */ M(Z z, Object obj, Object obj2, int i) {
+    public  M(Z z, Object obj, Object obj2, int i) {
         this.a = i;
         this.b = z;
         this.c = obj;

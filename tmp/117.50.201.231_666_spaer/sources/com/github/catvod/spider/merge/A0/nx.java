@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class nx extends kv {
-    public final /* synthetic */ int a;
+    public final  int a;
     public final Object d;
     public final Object e;
     public final Object f;

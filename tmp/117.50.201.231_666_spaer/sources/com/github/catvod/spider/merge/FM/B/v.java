@@ -4,7 +4,7 @@ import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.spider.merge.FM.a.C0298a;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class v {
+public final  class v {
     public static String a(String str, Object[] objArr, StringBuilder sb) {
         sb.append(String.format(str, objArr));
         return sb.toString();

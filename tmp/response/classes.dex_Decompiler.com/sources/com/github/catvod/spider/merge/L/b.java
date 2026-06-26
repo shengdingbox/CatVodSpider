@@ -5,7 +5,7 @@ import java.util.Iterator;
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
 final class b implements Iterator<a> {
     int a = 0;
-    final /* synthetic */ c b;
+    final  c b;
 
     b(c cVar) {
         this.b = cVar;

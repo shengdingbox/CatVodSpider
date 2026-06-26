@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.b.t, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class C0133t {
+public final  class C0133t {
     public static String a(StringBuilder sb, String str, String str2) {
         sb.append(str);
         sb.append(str2);

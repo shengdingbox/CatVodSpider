@@ -4,7 +4,7 @@ import com.github.catvod.spider.merge.FM.M.O;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 final class k implements O {
-    final /* synthetic */ StringBuilder a;
+    final  StringBuilder a;
 
     k(StringBuilder sb) {
         this.a = sb;

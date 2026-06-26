@@ -196,7 +196,7 @@ public final class t implements Serializable {
         return i2 >= tVar.e ? i3 : i3 + 100;
     }
 
-    static /* synthetic */ StringBuilder f(StringBuilder sb, String str) {
+    static  StringBuilder f(StringBuilder sb, String str) {
         j(sb, str);
         return sb;
     }

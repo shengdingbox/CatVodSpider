@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
 public final class qg implements Iterator {
     public int a;
     public int b = 0;
-    public final /* synthetic */ qh c;
+    public final  qh c;
 
     public qg(qh qhVar) {
         this.c = qhVar;

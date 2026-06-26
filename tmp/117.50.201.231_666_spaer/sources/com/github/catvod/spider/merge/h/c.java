@@ -32,7 +32,7 @@ abstract class c {
     public static final o w;
     public static final p x;
     private static final String y;
-    private static final /* synthetic */ c[] z;
+    private static final  c[] z;
 
     enum a extends c {
         a() {

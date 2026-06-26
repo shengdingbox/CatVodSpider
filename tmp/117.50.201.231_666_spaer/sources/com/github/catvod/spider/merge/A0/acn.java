@@ -2,9 +2,9 @@ package com.github.catvod.spider.merge.A0;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class acn extends xm {
-    public /* synthetic */ Object a;
+    public  Object a;
     public int b;
-    public final /* synthetic */ aco c;
+    public final  aco c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public acn(aco acoVar, xm xmVar) {

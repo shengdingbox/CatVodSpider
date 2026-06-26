@@ -1163,7 +1163,7 @@ public final class Api extends GeneratedMessage implements ApiOrBuilder {
         this.memoizedIsInitialized = (byte) -1;
     }
 
-    public static /* synthetic */ int access$1076(Api api, int i) {
+    public static  int access$1076(Api api, int i) {
         int i2 = i | api.bitField0_;
         api.bitField0_ = i2;
         return i2;

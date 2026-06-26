@@ -8,12 +8,12 @@ import org.json.JSONObject;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.AB.b.i, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class RunnableC0088i implements Runnable {
+public final  class RunnableC0088i implements Runnable {
     public final int a;
     public final Object b;
     public final Object c;
 
-    public /* synthetic */ RunnableC0088i(Object obj, Object obj2, int i) {
+    public  RunnableC0088i(Object obj, Object obj2, int i) {
         this.a = i;
         this.b = obj;
         this.c = obj2;

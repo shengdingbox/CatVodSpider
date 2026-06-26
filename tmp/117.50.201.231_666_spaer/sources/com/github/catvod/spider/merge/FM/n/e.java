@@ -3,12 +3,12 @@ package com.github.catvod.spider.merge.FM.n;
 import com.github.catvod.spider.Init;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class e implements Runnable {
-    public static final /* synthetic */ e b = new e(0);
-    public static final /* synthetic */ e c = new e(1);
-    public final /* synthetic */ int a;
+public final  class e implements Runnable {
+    public static final  e b = new e(0);
+    public static final  e c = new e(1);
+    public final  int a;
 
-    public /* synthetic */ e(int i) {
+    public  e(int i) {
         this.a = i;
     }
 

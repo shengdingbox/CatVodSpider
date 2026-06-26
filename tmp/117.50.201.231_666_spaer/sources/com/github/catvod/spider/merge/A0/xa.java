@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class xa implements ub, fd {
-    public final /* synthetic */ int a;
+    public final  int a;
     public Object d;
 
     public xa(int i) {
@@ -30,7 +30,7 @@ public final class xa implements ub, fd {
         }
     }
 
-    public /* synthetic */ xa(int i, Object obj) {
+    public  xa(int i, Object obj) {
         this.a = i;
         this.d = obj;
     }

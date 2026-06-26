@@ -28,9 +28,9 @@ public final class TextFormat {
     private static final Parser PARSER = Parser.newBuilder().build();
 
     /* JADX INFO: renamed from: com.google.protobuf.TextFormat$1, reason: invalid class name */
-    /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$JavaType;
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$Type;
+     class AnonymousClass1 {
+        static final  int[] $SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$JavaType;
+        static final  int[] $SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$Type;
 
         static {
             int[] iArr = new int[Descriptors.FieldDescriptor.Type.values().length];
@@ -244,7 +244,7 @@ public final class TextFormat {
             this.recursionLimit = i;
         }
 
-        public /* synthetic */ Parser(TypeRegistry typeRegistry, boolean z, boolean z2, boolean z3, SingularOverwritePolicy singularOverwritePolicy, TextFormatParseInfoTree.Builder builder, int i, AnonymousClass1 anonymousClass1) {
+        public  Parser(TypeRegistry typeRegistry, boolean z, boolean z2, boolean z3, SingularOverwritePolicy singularOverwritePolicy, TextFormatParseInfoTree.Builder builder, int i, AnonymousClass1 anonymousClass1) {
             this(typeRegistry, z, z2, z3, singularOverwritePolicy, builder, i);
         }
 
@@ -1168,7 +1168,7 @@ public final class TextFormat {
             this.fieldReporterLevel = fieldReporterLevel;
         }
 
-        public /* synthetic */ TextGenerator(Appendable appendable, boolean z, Descriptors.Descriptor descriptor, Printer.FieldReporterLevel fieldReporterLevel, AnonymousClass1 anonymousClass1) {
+        public  TextGenerator(Appendable appendable, boolean z, Descriptors.Descriptor descriptor, Printer.FieldReporterLevel fieldReporterLevel, AnonymousClass1 anonymousClass1) {
             this(appendable, z, descriptor, fieldReporterLevel);
         }
 
@@ -1226,7 +1226,7 @@ public final class TextFormat {
             nextToken();
         }
 
-        public /* synthetic */ Tokenizer(CharSequence charSequence, AnonymousClass1 anonymousClass1) {
+        public  Tokenizer(CharSequence charSequence, AnonymousClass1 anonymousClass1) {
             this(charSequence);
         }
 

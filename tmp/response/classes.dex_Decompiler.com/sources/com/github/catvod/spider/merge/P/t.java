@@ -9,12 +9,12 @@ import com.github.catvod.spider.merge.b.RunnableC0124j;
 import java.util.Map;
 
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class t implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final  class t implements DialogInterface.OnClickListener {
+    public final  int a;
+    public final  Object b;
+    public final  Object c;
 
-    public /* synthetic */ t(Object obj, Object obj2, int i) {
+    public  t(Object obj, Object obj2, int i) {
         this.a = i;
         this.b = obj;
         this.c = obj2;

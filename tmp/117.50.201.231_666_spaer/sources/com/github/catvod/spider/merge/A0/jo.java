@@ -16,17 +16,17 @@ import okhttp3.HttpUrl;
 public final class jo implements xp, kj, ki, ub, CookieJar, aar, aah, bc {
     public static final jo a = new jo(0);
     public static final jo b = new jo(1);
-    public static final /* synthetic */ jo c = new jo(2);
-    public static final /* synthetic */ jo d = new jo(3);
-    public static final /* synthetic */ jo e = new jo(4);
+    public static final  jo c = new jo(2);
+    public static final  jo d = new jo(3);
+    public static final  jo e = new jo(4);
     public static final jo f = new jo(5);
     public static final jo g = new jo(6);
     public static final jo h = new jo(7);
     public static final jo i = new jo(8);
     public static volatile jo j;
-    public final /* synthetic */ int k;
+    public final  int k;
 
-    public /* synthetic */ jo(int i2) {
+    public  jo(int i2) {
         this.k = i2;
     }
 

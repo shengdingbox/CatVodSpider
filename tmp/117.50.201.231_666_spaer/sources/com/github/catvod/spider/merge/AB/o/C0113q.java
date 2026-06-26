@@ -63,7 +63,7 @@ public final class C0113q {
         this.a = activity;
     }
 
-    public static /* synthetic */ void a(C0113q c0113q) {
+    public static  void a(C0113q c0113q) {
         c0113q.getClass();
         c0113q.t(true, true);
         c0113q.v();
@@ -72,7 +72,7 @@ public final class C0113q {
     /* JADX WARN: Type inference failed for: r0v0, types: [java.util.ArrayList, java.util.List<java.lang.String>] */
     /* JADX WARN: Type inference failed for: r0v2, types: [java.util.ArrayList, java.util.List<java.lang.String>] */
     /* JADX WARN: Type inference failed for: r0v4, types: [java.util.ArrayList, java.util.List<java.lang.String>] */
-    public static /* synthetic */ void c(final C0113q c0113q, final String str, int i) {
+    public static  void c(final C0113q c0113q, final String str, int i) {
         String str2;
         c0113q.getClass();
         if (i < 0 || i >= c0113q.b.size()) {
@@ -165,7 +165,7 @@ public final class C0113q {
     }
 
     /* JADX WARN: Type inference incomplete: some casts might be missing */
-    public static /* synthetic */ void d(C0113q c0113q, List list, Runnable runnable) {
+    public static  void d(C0113q c0113q, List list, Runnable runnable) {
         int i = currentPlatformType;
         String str = i != 1 ? i != 2 ? i != 3 ? i != 4 ? i != 5 ? i != 6 ? i != 7 ? i != 8 ? i != 9 ? "腾讯" : "埋堆堆" : "乐视" : "西瓜" : "韩剧" : "人人" : "哔哩" : "芒果" : "优酷" : "爱奇艺";
         if (list != null && !list.isEmpty()) {
@@ -196,7 +196,7 @@ public final class C0113q {
         }
     }
 
-    public static /* synthetic */ void e(C0113q c0113q, EditText editText) {
+    public static  void e(C0113q c0113q, EditText editText) {
         c0113q.getClass();
         String strTrim = editText.getText().toString().trim();
         if (!TextUtils.isEmpty(strTrim)) {
@@ -212,20 +212,20 @@ public final class C0113q {
         c0113q.q(strTrim, c0113q.e, new RunnableC0107k(c0113q, i));
     }
 
-    public static /* synthetic */ void f(C0113q c0113q) {
+    public static  void f(C0113q c0113q) {
         c0113q.getClass();
         c0113q.t(true, true);
         c0113q.v();
     }
 
-    public static /* synthetic */ void h(C0113q c0113q) {
+    public static  void h(C0113q c0113q) {
         c0113q.getClass();
         c0113q.t(true, true);
         c0113q.v();
     }
 
     /* JADX WARN: Type inference failed for: r5v1, types: [java.util.ArrayList, java.util.List<android.widget.Button>] */
-    public static /* synthetic */ void i(C0113q c0113q, int i, Button button, int i2, EditText editText, HorizontalScrollView horizontalScrollView) {
+    public static  void i(C0113q c0113q, int i, Button button, int i2, EditText editText, HorizontalScrollView horizontalScrollView) {
         if (c0113q.e == i) {
             return;
         }
@@ -254,7 +254,7 @@ public final class C0113q {
     }
 
     /* JADX WARN: Type inference incomplete: some casts might be missing */
-    public static /* synthetic */ void l(C0113q c0113q, List list) {
+    public static  void l(C0113q c0113q, List list) {
         c0113q.b.clear();
         c0113q.b.addAll(list);
         c0113q.d.notifyDataSetChanged();
@@ -265,7 +265,7 @@ public final class C0113q {
         c0113q.v();
     }
 
-    public static /* synthetic */ void m(C0113q c0113q) {
+    public static  void m(C0113q c0113q) {
         Window window = c0113q.f.getWindow();
         if (window != null) {
             DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -284,7 +284,7 @@ public final class C0113q {
         }
     }
 
-    public static /* synthetic */ void n(C0113q c0113q, String str, String[] strArr) {
+    public static  void n(C0113q c0113q, String str, String[] strArr) {
         c0113q.getClass();
         int i = 1;
         try {

@@ -4,7 +4,7 @@ import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.spider.merge.a.C0098a;
 
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class y {
+public final  class y {
     public static String a(String str, String str2) {
         return str + str2;
     }

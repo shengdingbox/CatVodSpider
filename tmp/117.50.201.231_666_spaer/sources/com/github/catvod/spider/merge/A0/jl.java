@@ -5,9 +5,9 @@ public final class jl extends xy {
     public static final jl a = new jl(0);
     public static final jl b = new jl(1);
     public static final jl c = new jl(2);
-    public final /* synthetic */ int d;
+    public final  int d;
 
-    public /* synthetic */ jl(int i) {
+    public  jl(int i) {
         this.d = i;
     }
 

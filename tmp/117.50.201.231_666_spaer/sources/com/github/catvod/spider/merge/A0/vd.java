@@ -137,7 +137,7 @@ public class vd extends kv {
     }
 
     @Override // com.github.catvod.spider.merge.A0.kv
-    public final /* bridge */ /* synthetic */ void c(aag aagVar, Object obj) throws IOException {
+    public final /* bridge */  void c(aag aagVar, Object obj) throws IOException {
         d(aagVar, (il) obj);
     }
 }

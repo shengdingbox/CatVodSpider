@@ -32,8 +32,8 @@ public abstract class GeneratedMessage extends AbstractMessage implements Serial
     protected UnknownFieldSet unknownFields;
 
     /* JADX INFO: renamed from: com.google.protobuf.GeneratedMessage$2, reason: invalid class name */
-    /* synthetic */ class AnonymousClass2 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$JavaType;
+     class AnonymousClass2 {
+        static final  int[] $SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$JavaType;
 
         static {
             int[] iArr = new int[Descriptors.FieldDescriptor.JavaType.values().length];

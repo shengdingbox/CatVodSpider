@@ -16,7 +16,7 @@ public final class b {
     private static final Pattern c = Pattern.compile("^[a-zA-Z][a-zA-Z0-9+-.]*:");
     private static final Pattern d = Pattern.compile("[\\x00-\\x1f]*");
     private static final ThreadLocal<Stack<StringBuilder>> e = new a();
-    public static final /* synthetic */ int f = 0;
+    public static final  int f = 0;
 
     final class a extends ThreadLocal<Stack<StringBuilder>> {
         a() {

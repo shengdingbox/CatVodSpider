@@ -12,7 +12,7 @@ public final class yo extends Thread {
     public long e;
     public int f;
     public boolean g;
-    public final /* synthetic */ yp h;
+    public final  yp h;
     private volatile int indexInArray;
     private volatile Object nextParkedWorker;
     volatile int workerCtl;

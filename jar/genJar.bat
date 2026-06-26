@@ -49,6 +49,20 @@ cd /d "%~dp0\.."
 call gradlew clean assembleRelease
 cd /d "%~dp0"
 
+:: Step 1b: Post-R8 smali obfuscation (string encryption + opaque predicates)
+if /i not "%OBFUSCATE%"=="true" goto :skip_obfuscate
+echo [*] Running smali obfuscator...
+set "OBF_DIR=%~dp0\Smali_classes"
+rd /s/q "%OBF_DIR%" 2>nul
+mkdir "%OBF_DIR%"
+copy /y "%DEX_PATH%" "%OBF_DIR%\input.apk" >nul
+java -jar "%~dp0\3rd\apktool_2.4.1.jar" d -f -o "%OBF_DIR%\out" "%OBF_DIR%\input.apk"
+python "%~dp0\smali_obfuscator.py" "%OBF_DIR%\out\smali"
+java -jar "%~dp0\3rd\smali-2.5.2.jar" assemble "%OBF_DIR%\out\smali" -o "%OBF_DIR%\classes.dex"
+copy /y "%OBF_DIR%\classes.dex" "%DEX_PATH%" >nul
+echo [*] Smali obfuscation applied
+:skip_obfuscate
+
 :: Step 2: Copy or encrypt DEX
 if /i not "%ENCRYPT%"=="true" goto :no_encrypt
 

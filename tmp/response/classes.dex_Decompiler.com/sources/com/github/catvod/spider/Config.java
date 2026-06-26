@@ -76,7 +76,7 @@ public class Config extends Spider {
         }
     }
 
-    public static /* synthetic */ void b(Config config) {
+    public static  void b(Config config) {
         config.getClass();
         try {
             String str = String.format(C0098a.a(new byte[]{-24, -103, 124, -97, 103, 0, 66, 33, -13, -41, 49, -42, 106, 23, 66, 116, -14, -126, 112, -106, 98, 75, 2, 57, -16, -104, 123, -121, 52, 65, 11, 107}, new byte[]{-128, -19, 8, -17, 93, 47, 109, 4}), C0207D.g(config.a));

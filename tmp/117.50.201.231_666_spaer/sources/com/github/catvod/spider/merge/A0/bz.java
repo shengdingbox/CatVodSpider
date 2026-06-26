@@ -4,9 +4,9 @@ import java.io.IOException;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class bz extends kv {
-    public final /* synthetic */ int a;
+    public final  int a;
 
-    public /* synthetic */ bz(int i) {
+    public  bz(int i) {
         this.a = i;
     }
 

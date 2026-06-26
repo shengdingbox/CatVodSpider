@@ -6,8 +6,8 @@ import java.util.HashMap;
 import okio.Path;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public abstract /* synthetic */ class wb {
-    public static final /* synthetic */ int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+public abstract  class wb {
+    public static final  int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     public static ArrayList b(jn jnVar) {
         abn abnVar = new abn();
@@ -40,20 +40,20 @@ public abstract /* synthetic */ class wb {
         return map;
     }
 
-    public static /* synthetic */ void g(Object obj) {
+    public static  void g(Object obj) {
         if (obj != null) {
             throw new ClassCastException();
         }
     }
 
-    public static /* synthetic */ int h(int i) {
+    public static  int h(int i) {
         if (i != 0) {
             return i - 1;
         }
         throw null;
     }
 
-    public static /* synthetic */ String i(int i) {
+    public static  String i(int i) {
         switch (i) {
             case 1:
                 return "BEGIN_ARRAY";

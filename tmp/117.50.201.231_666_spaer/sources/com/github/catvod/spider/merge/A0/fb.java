@@ -9,7 +9,7 @@ import rxhttp.wrapper.param.IFile;
 import rxhttp.wrapper.param.Param;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public abstract /* synthetic */ class fb {
+public abstract  class fb {
     public static Param a(IFile iFile, String str, File file) {
         return iFile.addFile(new UpFile(str, file));
     }

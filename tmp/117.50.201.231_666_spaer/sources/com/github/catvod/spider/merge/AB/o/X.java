@@ -3,12 +3,12 @@ package com.github.catvod.spider.merge.AB.o;
 import java.util.Map;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class X implements Runnable {
+public final  class X implements Runnable {
     public final int a;
     public final Z b;
     public final Map c;
 
-    public /* synthetic */ X(Z z, Map map, int i) {
+    public  X(Z z, Map map, int i) {
         this.a = i;
         this.b = z;
         this.c = map;

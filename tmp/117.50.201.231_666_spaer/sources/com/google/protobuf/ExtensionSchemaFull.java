@@ -13,11 +13,11 @@ import java.util.Map;
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 final class ExtensionSchemaFull extends ExtensionSchema<Descriptors.FieldDescriptor> {
     private static final long EXTENSION_FIELD_OFFSET = getExtensionsFieldOffset();
-    public static final /* synthetic */ int a = 0;
+    public static final  int a = 0;
 
     /* JADX INFO: renamed from: com.google.protobuf.ExtensionSchemaFull$1, reason: invalid class name */
-    /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
+     class AnonymousClass1 {
+        static final  int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {
             int[] iArr = new int[WireFormat.FieldType.values().length];

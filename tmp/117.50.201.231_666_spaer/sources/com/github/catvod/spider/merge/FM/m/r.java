@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class r extends N {
-    public final /* synthetic */ int a = 0;
+    public final  int a = 0;
     private final Serializable b;
 
     public r(String str) {

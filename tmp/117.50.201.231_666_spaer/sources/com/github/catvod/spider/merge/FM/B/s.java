@@ -7,7 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class s {
+public final  class s {
     public static Matcher a(byte[] bArr, byte[] bArr2, String str) {
         return Pattern.compile(C0298a.b(bArr, bArr2)).matcher(str);
     }

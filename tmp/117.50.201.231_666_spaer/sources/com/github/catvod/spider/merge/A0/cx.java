@@ -7,10 +7,10 @@ import java.util.Objects;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class cx extends AbstractSet {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ my b;
+    public final  int a;
+    public final  my b;
 
-    public /* synthetic */ cx(my myVar, int i) {
+    public  cx(my myVar, int i) {
         this.a = i;
         this.b = myVar;
     }

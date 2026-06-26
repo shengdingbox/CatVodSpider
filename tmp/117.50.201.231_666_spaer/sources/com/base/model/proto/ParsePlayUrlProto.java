@@ -77,7 +77,7 @@ public final class ParsePlayUrlProto {
                 this.msg_ = "";
             }
 
-            public /* synthetic */ Builder(int i) {
+            public  Builder(int i) {
                 this();
             }
 
@@ -89,7 +89,7 @@ public final class ParsePlayUrlProto {
                 this.msg_ = "";
             }
 
-            public /* synthetic */ Builder(AbstractMessage.BuilderParent builderParent, int i) {
+            public  Builder(AbstractMessage.BuilderParent builderParent, int i) {
                 this(builderParent);
             }
 
@@ -716,7 +716,7 @@ public final class ParsePlayUrlProto {
             this.msg_ = "";
         }
 
-        public /* synthetic */ ParsePlayUrlBean(Builder builder) {
+        public  ParsePlayUrlBean(Builder builder) {
             this((GeneratedMessage.Builder<?>) builder);
         }
 

@@ -15,7 +15,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'INT' uses e
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class JavaType {
-    private static final /* synthetic */ JavaType[] $VALUES;
+    private static final  JavaType[] $VALUES;
     public static final JavaType BOOLEAN;
     public static final JavaType BYTE_STRING;
     public static final JavaType DOUBLE;
@@ -30,7 +30,7 @@ public final class JavaType {
     private final Object defaultDefault;
     private final Class<?> type;
 
-    private static /* synthetic */ JavaType[] $values() {
+    private static  JavaType[] $values() {
         return new JavaType[]{VOID, INT, LONG, FLOAT, DOUBLE, BOOLEAN, STRING, BYTE_STRING, ENUM, MESSAGE};
     }
 

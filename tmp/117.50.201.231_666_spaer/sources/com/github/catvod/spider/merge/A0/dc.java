@@ -71,7 +71,7 @@ public abstract class dc extends wf {
         return !(charSequence instanceof String) ? i(charSequence, new char[]{c}, i, false) : ((String) charSequence).indexOf(c, i);
     }
 
-    public static /* synthetic */ int h(CharSequence charSequence, String str, int i, int i2) {
+    public static  int h(CharSequence charSequence, String str, int i, int i2) {
         if ((i2 & 2) != 0) {
             i = 0;
         }

@@ -303,7 +303,7 @@ public final class U {
         u.S();
     }
 
-    public static /* synthetic */ void b(U u, JSONObject jSONObject) {
+    public static  void b(U u, JSONObject jSONObject) {
         u.getClass();
         String str = System.currentTimeMillis() + "";
         String strOptString = jSONObject.optString(C0098a.a(new byte[]{35, 83, 3, -14, 82, 77, -7, 47, 36}, new byte[]{64, 63, 106, -105, 60, 57, -90, 70}));
@@ -395,7 +395,7 @@ public final class U {
         }
     }
 
-    public static /* synthetic */ void k(U u, String str) {
+    public static  void k(U u, String str) {
         u.getClass();
         HashMap map = new HashMap();
         map.put(C0098a.a(new byte[]{-126, -13, 48, 52, 109, 1, -16, -14, -123}, new byte[]{-31, -97, 89, 81, 3, 117, -81, -101}), C0098a.a(new byte[]{19, -101, -75}, new byte[]{32, -93, -124, -23, 117, 55, 48, 122}));

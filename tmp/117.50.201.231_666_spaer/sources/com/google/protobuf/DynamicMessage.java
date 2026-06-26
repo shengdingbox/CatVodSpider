@@ -21,8 +21,8 @@ public final class DynamicMessage extends AbstractMessage {
     private final UnknownFieldSet unknownFields;
 
     /* JADX INFO: renamed from: com.google.protobuf.DynamicMessage$2, reason: invalid class name */
-    /* synthetic */ class AnonymousClass2 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$Type;
+     class AnonymousClass2 {
+        static final  int[] $SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$Type;
 
         static {
             int[] iArr = new int[Descriptors.FieldDescriptor.Type.values().length];

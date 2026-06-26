@@ -22,11 +22,11 @@ import java.util.*;
 import static com.github.catvod.utils.PanStringUtils.getExtension;
 
 public class GuaZi extends NetPan {
-    public static /* synthetic */ int compareDesc(GuaZi guaZi, String a, String b) {
+    public static  int compareDesc(GuaZi guaZi, String a, String b) {
         return guaZi.getQualityScore(b) - guaZi.getQualityScore(a);
     }
 
-    public static /* synthetic */ int compareDesc2(GuaZi guaZi, String a, String b) {
+    public static  int compareDesc2(GuaZi guaZi, String a, String b) {
         return guaZi.getQualityScore(b) - guaZi.getQualityScore(a);
     }
 
@@ -441,12 +441,12 @@ public class GuaZi extends NetPan {
     }
 
     /** Obfuscation alias for compareDesc. */
-    public static /* synthetic */ int f(GuaZi guaZi, String a, String b) {
+    public static  int f(GuaZi guaZi, String a, String b) {
         return guaZi.getQualityScore(b) - guaZi.getQualityScore(a);
     }
 
     /** Obfuscation alias for compareDesc2. */
-    public static /* synthetic */ int g(GuaZi guaZi, String a, String b) {
+    public static  int g(GuaZi guaZi, String a, String b) {
         return guaZi.getQualityScore(b) - guaZi.getQualityScore(a);
     }
 }

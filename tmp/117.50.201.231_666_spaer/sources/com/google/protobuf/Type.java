@@ -1031,7 +1031,7 @@ public final class Type extends GeneratedMessage implements TypeOrBuilder {
         this.memoizedIsInitialized = (byte) -1;
     }
 
-    public static /* synthetic */ int access$1076(Type type, int i) {
+    public static  int access$1076(Type type, int i) {
         int i2 = i | type.bitField0_;
         type.bitField0_ = i2;
         return i2;

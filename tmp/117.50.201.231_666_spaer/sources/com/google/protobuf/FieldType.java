@@ -19,7 +19,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'DOUBLE' use
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class FieldType {
-    private static final /* synthetic */ FieldType[] $VALUES;
+    private static final  FieldType[] $VALUES;
     public static final FieldType BOOL;
     public static final FieldType BOOL_LIST;
     public static final FieldType BOOL_LIST_PACKED;
@@ -80,8 +80,8 @@ public final class FieldType {
     private final boolean primitiveScalar;
 
     /* JADX INFO: renamed from: com.google.protobuf.FieldType$1, reason: invalid class name */
-    /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$JavaType;
+     class AnonymousClass1 {
+        static final  int[] $SwitchMap$com$google$protobuf$JavaType;
 
         static {
             int[] iArr = new int[JavaType.values().length];
@@ -118,7 +118,7 @@ public final class FieldType {
         }
     }
 
-    private static /* synthetic */ FieldType[] $values() {
+    private static  FieldType[] $values() {
         return new FieldType[]{DOUBLE, FLOAT, INT64, UINT64, INT32, FIXED64, FIXED32, BOOL, STRING, MESSAGE, BYTES, UINT32, ENUM, SFIXED32, SFIXED64, SINT32, SINT64, GROUP, DOUBLE_LIST, FLOAT_LIST, INT64_LIST, UINT64_LIST, INT32_LIST, FIXED64_LIST, FIXED32_LIST, BOOL_LIST, STRING_LIST, MESSAGE_LIST, BYTES_LIST, UINT32_LIST, ENUM_LIST, SFIXED32_LIST, SFIXED64_LIST, SINT32_LIST, SINT64_LIST, DOUBLE_LIST_PACKED, FLOAT_LIST_PACKED, INT64_LIST_PACKED, UINT64_LIST_PACKED, INT32_LIST_PACKED, FIXED64_LIST_PACKED, FIXED32_LIST_PACKED, BOOL_LIST_PACKED, UINT32_LIST_PACKED, ENUM_LIST_PACKED, SFIXED32_LIST_PACKED, SFIXED64_LIST_PACKED, SINT32_LIST_PACKED, SINT64_LIST_PACKED, GROUP_LIST, MAP};
     }
 

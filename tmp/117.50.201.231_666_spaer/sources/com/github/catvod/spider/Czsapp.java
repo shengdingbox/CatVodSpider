@@ -69,7 +69,7 @@ public class Czsapp extends Spider {
                 }
 
                 @Override // com.github.catvod.spider.merge.FM.p.AbstractC0401c
-                protected final /* bridge */ /* synthetic */ void b(Response response) {
+                protected final /* bridge */  void b(Response response) {
                 }
             };
             f.c(f.b(), str, b(), abstractC0399a);

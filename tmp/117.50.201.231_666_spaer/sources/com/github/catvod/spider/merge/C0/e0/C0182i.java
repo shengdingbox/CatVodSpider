@@ -6,7 +6,7 @@ public final class C0182i extends N {
     public final int a;
     private final String b;
 
-    public /* synthetic */ C0182i(String str, int i) {
+    public  C0182i(String str, int i) {
         this.a = i;
         this.b = str;
     }

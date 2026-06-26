@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public final class O {
     private static final Pattern a = Pattern.compile(oZP.d("2B47487B446A1C46300C387C4A472C6A41085C505F1D080911505E7E446F4A472B2530314A465E7E48"));
     private static final TimeZone b = new Q(false, 0, 0);
-    public static final /* synthetic */ int c = 0;
+    public static final  int c = 0;
 
     public static TimeZone a(String str) {
         if (oZP.d("2F").equals(str) || oZP.d("203B34").equals(str)) {

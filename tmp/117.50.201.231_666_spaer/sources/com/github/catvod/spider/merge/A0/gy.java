@@ -5,7 +5,7 @@ import rxhttp.wrapper.param.IParam;
 import rxhttp.wrapper.param.Param;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public abstract /* synthetic */ class gy {
+public abstract  class gy {
     public static Param a(IParam iParam, Map map) {
         for (Map.Entry entry : map.entrySet()) {
             iParam.add((String) entry.getKey(), entry.getValue());

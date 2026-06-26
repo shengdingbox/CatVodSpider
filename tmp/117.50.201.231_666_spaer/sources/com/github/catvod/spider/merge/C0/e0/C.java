@@ -4,7 +4,7 @@ package com.github.catvod.spider.merge.C0.e0;
 public final class C extends N {
     public final int a;
 
-    public /* synthetic */ C(int i) {
+    public  C(int i) {
         this.a = i;
     }
 

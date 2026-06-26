@@ -14,8 +14,8 @@ import java.util.Map;
 public final class f implements com.github.catvod.spider.merge.L.d {
 
     final class a implements com.github.catvod.spider.merge.I.e {
-        final /* synthetic */ Map a;
-        final /* synthetic */ com.github.catvod.spider.merge.I.c b;
+        final  Map a;
+        final  com.github.catvod.spider.merge.I.c b;
 
         a(Map map, com.github.catvod.spider.merge.I.c cVar) {
             this.a = map;

@@ -5,7 +5,7 @@ import com.github.catvod.spider.merge.oZP;
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.N.s, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
 public final class C0085s extends N {
-    public final /* synthetic */ int a;
+    public final  int a;
     private final String b;
 
     public C0085s(String str, int i) {

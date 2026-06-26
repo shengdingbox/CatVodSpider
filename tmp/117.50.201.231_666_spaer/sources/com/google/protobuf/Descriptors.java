@@ -1004,7 +1004,7 @@ public final class Descriptors {
          */
         /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
         public final class Type {
-            private static final /* synthetic */ Type[] $VALUES;
+            private static final  Type[] $VALUES;
             public static final Type BOOL;
             public static final Type BYTES;
             public static final Type ENUM;
@@ -1026,7 +1026,7 @@ public final class Descriptors {
             public static final Type DOUBLE = new Type("DOUBLE", 0, JavaType.DOUBLE);
             public static final Type FLOAT = new Type("FLOAT", 1, JavaType.FLOAT);
 
-            private static /* synthetic */ Type[] $values() {
+            private static  Type[] $values() {
                 return new Type[]{DOUBLE, FLOAT, INT64, UINT64, INT32, FIXED64, FIXED32, BOOL, STRING, GROUP, MESSAGE, BYTES, UINT32, ENUM, SFIXED32, SFIXED64, SINT32, SINT64};
             }
 
@@ -2283,7 +2283,7 @@ public final class Descriptors {
             this.fieldCount = 0;
         }
 
-        public static /* synthetic */ int access$2908(OneofDescriptor oneofDescriptor) {
+        public static  int access$2908(OneofDescriptor oneofDescriptor) {
             int i = oneofDescriptor.fieldCount;
             oneofDescriptor.fieldCount = i + 1;
             return i;

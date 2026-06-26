@@ -5,13 +5,13 @@ import com.github.catvod.spider.merge.FM.d.C0336d;
 
 /* JADX INFO: renamed from: com.github.catvod.spider.merge.FM.b.j, reason: case insensitive filesystem */
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class RunnableC0315j implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final  class RunnableC0315j implements Runnable {
+    public final  int a;
+    public final  String b;
+    public final  Object c;
+    public final  Object d;
 
-    public /* synthetic */ RunnableC0315j(Object obj, String str, Object obj2, int i) {
+    public  RunnableC0315j(Object obj, String str, Object obj2, int i) {
         this.a = i;
         this.c = obj;
         this.b = str;

@@ -1,12 +1,12 @@
 package com.github.catvod.spider.merge.b;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class q implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ String c;
+public final  class q implements Runnable {
+    public final  int a;
+    public final  Object b;
+    public final  String c;
 
-    public /* synthetic */ q(Object obj, String str, int i) {
+    public  q(Object obj, String str, int i) {
         this.a = i;
         this.b = obj;
         this.c = str;

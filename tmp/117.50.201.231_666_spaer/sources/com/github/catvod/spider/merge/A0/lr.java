@@ -12,7 +12,7 @@ public final class lr implements Serializable {
     public static final ThreadLocal b;
     public boolean e;
     public boolean j;
-    public final /* synthetic */ int s;
+    public final  int s;
     public boolean c = true;
     public boolean d = true;
     public boolean f = true;

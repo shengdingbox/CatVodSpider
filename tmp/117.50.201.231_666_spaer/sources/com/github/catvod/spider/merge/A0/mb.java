@@ -5,11 +5,11 @@ import java.io.IOException;
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class mb extends kv {
     public volatile kv a;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ oa f;
-    public final /* synthetic */ fj g;
-    public final /* synthetic */ lw h;
+    public final  boolean d;
+    public final  boolean e;
+    public final  oa f;
+    public final  fj g;
+    public final  lw h;
 
     public mb(lw lwVar, boolean z, boolean z2, oa oaVar, fj fjVar) {
         this.h = lwVar;

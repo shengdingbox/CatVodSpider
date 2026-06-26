@@ -5,13 +5,13 @@ import com.github.catvod.spider.merge.AB.b.Q;
 import java.io.IOException;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class k implements Runnable {
+public final  class k implements Runnable {
     public static final k b = new k(0);
     public static final k c = new k(1);
     public static final k d = new k(2);
     public final int a;
 
-    public /* synthetic */ k(int i) {
+    public  k(int i) {
         this.a = i;
     }
 

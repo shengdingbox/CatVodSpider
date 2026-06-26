@@ -4,10 +4,10 @@ import java.util.List;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class aad extends rf {
-    public final /* synthetic */ int a;
+    public final  int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ aad(rf rfVar, int i, int i2) {
+    public  aad(rf rfVar, int i, int i2) {
         super(i, rfVar);
         this.a = i2;
     }

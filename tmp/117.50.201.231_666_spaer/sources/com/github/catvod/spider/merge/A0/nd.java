@@ -40,7 +40,7 @@ public final class nd implements Iterator, wi {
     }
 
     @Override // java.util.Iterator
-    public final /* bridge */ /* synthetic */ Object next() {
+    public final /* bridge */  Object next() {
         return Integer.valueOf(e());
     }
 

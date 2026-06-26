@@ -18,16 +18,16 @@ import java.util.concurrent.ConcurrentHashMap;
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 final class DescriptorMessageInfoFactory implements MessageInfoFactory {
     private static final String GET_DEFAULT_INSTANCE_METHOD_NAME = "getDefaultInstance";
-    public static final /* synthetic */ int a = 0;
+    public static final  int a = 0;
     private static final DescriptorMessageInfoFactory instance = new DescriptorMessageInfoFactory();
     private static final Set<String> specialFieldNames = new HashSet(Arrays.asList("Class", "DefaultInstanceForType", "ParserForType", "SerializedSize", "AllFields", "DescriptorForType", "InitializationErrorString", "UnknownFields", "CachedSize"));
     private static IsInitializedCheckAnalyzer isInitializedCheckAnalyzer = new IsInitializedCheckAnalyzer();
 
     /* JADX INFO: renamed from: com.google.protobuf.DescriptorMessageInfoFactory$3, reason: invalid class name */
-    /* synthetic */ class AnonymousClass3 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$DescriptorProtos$Edition;
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$Type;
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$JavaType;
+     class AnonymousClass3 {
+        static final  int[] $SwitchMap$com$google$protobuf$DescriptorProtos$Edition;
+        static final  int[] $SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$Type;
+        static final  int[] $SwitchMap$com$google$protobuf$JavaType;
 
         static {
             int[] iArr = new int[Descriptors.FieldDescriptor.Type.values().length];

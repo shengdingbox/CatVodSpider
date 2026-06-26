@@ -306,7 +306,7 @@ public final class x {
         xVar.O();
     }
 
-    public static /* synthetic */ void d(x xVar, Map map) {
+    public static  void d(x xVar, Map map) {
         xVar.getClass();
         com.github.catvod.spider.merge.AB.d.d dVarC = com.github.catvod.spider.merge.AB.d.d.g(com.github.catvod.spider.merge.AB.m.c.i("https://passport.aliyundrive.com/newlogin/qrcode/query.do?appName=aliyun_drive&fromSite=52&_bx-v=2.2.3", map)).b().c();
         if (dVarC.f()) {

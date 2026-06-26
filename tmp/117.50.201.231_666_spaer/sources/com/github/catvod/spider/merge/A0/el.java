@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.function.Function;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
-public final /* synthetic */ class el implements Function {
-    public final /* synthetic */ int a;
+public final  class el implements Function {
+    public final  int a;
 
-    public /* synthetic */ el(int i) {
+    public  el(int i) {
         this.a = i;
     }
 

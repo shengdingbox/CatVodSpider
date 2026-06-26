@@ -69,7 +69,7 @@ public class Init {
     }
 
     class UP implements Runnable {
-        final /* synthetic */ Context val$context;
+        final  Context val$context;
 
         UP(Context context) {
             this.val$context = context;
@@ -108,7 +108,7 @@ public class Init {
 
     /* JADX WARN: Type inference failed for: r3v11, types: [java.util.HashMap, java.util.Map<java.lang.String, java.lang.Boolean>] */
     /* JADX WARN: Type inference failed for: r3v18, types: [java.util.HashMap, java.util.Map<java.lang.String, java.lang.Boolean>] */
-    public static /* synthetic */ void a() throws IOException {
+    public static  void a() throws IOException {
         BufferedReader bufferedReader;
         File file = new File(context().getFilesDir(), "string.txt");
         if (file.exists() && "8da98e38747fe1fddd1ac860064a6220".equals(d(file))) {

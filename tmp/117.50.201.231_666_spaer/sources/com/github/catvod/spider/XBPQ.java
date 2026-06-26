@@ -1237,7 +1237,7 @@ public class XBPQ extends Spider {
             }
 
             @Override // com.github.catvod.spider.merge.C0.k.c
-            protected final /* bridge */ /* synthetic */ void onResponse(Response response) {
+            protected final /* bridge */  void onResponse(Response response) {
             }
         };
         String str3 = this.s;
@@ -1302,7 +1302,7 @@ public class XBPQ extends Spider {
                 }
 
                 @Override // com.github.catvod.spider.merge.C0.k.c
-                protected final /* bridge */ /* synthetic */ void onResponse(Response response) {
+                protected final /* bridge */  void onResponse(Response response) {
                 }
             };
             g.c(g.b(), str2, L, aVar);
@@ -2343,7 +2343,7 @@ public class XBPQ extends Spider {
                 }
 
                 @Override // com.github.catvod.spider.merge.C0.k.c
-                protected final /* bridge */ /* synthetic */ void onResponse(String str5) {
+                protected final /* bridge */  void onResponse(String str5) {
                 }
             };
             SpiderApi spiderApi3 = this.I;

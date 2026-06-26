@@ -3,13 +3,13 @@ package com.github.catvod.spider.merge.o;
 import com.github.catvod.spider.Init;
 
 /* JADX INFO: loaded from: /tmp/decompiler/446907477a41490d9e71cfdd71d695e7/classes.dex */
-public final /* synthetic */ class f implements Runnable {
-    public static final /* synthetic */ f b = new f(0);
-    public static final /* synthetic */ f c = new f(1);
-    public static final /* synthetic */ f d = new f(2);
-    public final /* synthetic */ int a;
+public final  class f implements Runnable {
+    public static final  f b = new f(0);
+    public static final  f c = new f(1);
+    public static final  f d = new f(2);
+    public final  int a;
 
-    public /* synthetic */ f(int i) {
+    public  f(int i) {
         this.a = i;
     }
 

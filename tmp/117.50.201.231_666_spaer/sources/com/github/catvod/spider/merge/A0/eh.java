@@ -12,12 +12,12 @@ public final class eh implements List, Serializable, RandomAccess, wi {
     public static final eh a = new eh();
 
     @Override // java.util.List
-    public final /* bridge */ /* synthetic */ void add(int i, Object obj) {
+    public final /* bridge */  void add(int i, Object obj) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
     @Override // java.util.List, java.util.Collection
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
+    public final /* bridge */  boolean add(Object obj) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -108,7 +108,7 @@ public final class eh implements List, Serializable, RandomAccess, wi {
     }
 
     @Override // java.util.List
-    public final /* bridge */ /* synthetic */ Object remove(int i) {
+    public final /* bridge */  Object remove(int i) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -128,7 +128,7 @@ public final class eh implements List, Serializable, RandomAccess, wi {
     }
 
     @Override // java.util.List
-    public final /* bridge */ /* synthetic */ Object set(int i, Object obj) {
+    public final /* bridge */  Object set(int i, Object obj) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 

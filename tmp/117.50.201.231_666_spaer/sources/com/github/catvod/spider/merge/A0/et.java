@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 /* JADX INFO: loaded from: /tmp/decompiler/61445fe823f54055bb8486d86e79a950/classes.dex */
 public final class et extends dr {
-    public final /* synthetic */ int a;
+    public final  int a;
     public final String e;
 
     public et(String str, int i) {
@@ -32,7 +32,7 @@ public final class et extends dr {
         }
     }
 
-    public /* synthetic */ et(String str, int i, boolean z) {
+    public  et(String str, int i, boolean z) {
         this.a = i;
         this.e = str;
     }
