@@ -1,5 +1,5 @@
 # ============================================================
-# CatVodSpider ProGuard/R8 Rules
+# CatVodSpider ProGuard/R8 Rules - Maximum Obfuscation
 # ============================================================
 
 # --- Global suppressions ---
@@ -9,9 +9,9 @@
 -dontwarn org.codehaus.mojo.animal_sniffer.**
 -dontwarn okhttp3.internal.platform.**
 
-# --- Strip debug info (remove source file, line numbers) ---
--renamesourcefileattribute Source
--keepattributes SourceFile,LineNumberTable
+# --- Strip ALL debug info ---
+-renamesourcefileattribute X
+-keepattributes !SourceFile,!LineNumberTable,!LocalVariableTable,!LocalVariableTypeTable,!Deprecated,!Synthetic,!Bridge,!Varargs,!Exceptions,!InnerClasses,!EnclosingMethod,!Signature,!AnnotationDefault
 -assumenosideeffects class android.util.Log {
     public static int v(...);
     public static int d(...);
@@ -28,6 +28,7 @@
 -keep class com.github.catvod.spider.Init {
     public static com.github.catvod.crawler.Spider getSpider(java.lang.String);
     public static java.lang.ClassLoader loader();
+    public static android.app.Application context();
 }
 
 # ============================================================
@@ -39,20 +40,19 @@
 -keep class com.github.catvod.parser.* { public <methods>; }
 
 # ============================================================
-# Internal dependencies: keep but allow full obfuscation
-# (renamed, repackaged, members overloaded)
+# Internal dependencies: allow FULL obfuscation + shrinking
 # ============================================================
--keep,allowobfuscation class com.github.catvod.utils.** { *; }
--keep,allowobfuscation class com.github.catvod.bean.** { *; }
--keep,allowobfuscation class com.github.catvod.internal.** { *; }
--keep,allowobfuscation class com.github.catvod.en.** { *; }
--keep,allowobfuscation class com.github.catvod.net.** { *; }
--keep,allowobfuscation class com.github.catvod.api.** { *; }
--keep,allowobfuscation class com.github.catvod.live.** { *; }
--keep,allowobfuscation class com.github.catvod.xpath.** { *; }
--keep,allowobfuscation class com.github.catvod.ui.** { *; }
--keep,allowobfuscation class com.github.catvod.debug.** { *; }
--keep,allowobfuscation class com.github.catvod.demo.** { *; }
+-keep,allowobfuscation,allowshrinking class com.github.catvod.utils.** { *; }
+-keep,allowobfuscation,allowshrinking class com.github.catvod.bean.** { *; }
+-keep,allowobfuscation,allowshrinking class com.github.catvod.internal.** { *; }
+-keep,allowobfuscation,allowshrinking class com.github.catvod.en.** { *; }
+-keep,allowobfuscation,allowshrinking class com.github.catvod.net.** { *; }
+-keep,allowobfuscation,allowshrinking class com.github.catvod.api.** { *; }
+-keep,allowobfuscation,allowshrinking class com.github.catvod.live.** { *; }
+-keep,allowobfuscation,allowshrinking class com.github.catvod.xpath.** { *; }
+-keep,allowobfuscation,allowshrinking class com.github.catvod.ui.** { *; }
+-keep,allowobfuscation,allowshrinking class com.github.catvod.debug.** { *; }
+-keep,allowobfuscation,allowshrinking class com.github.catvod.demo.** { *; }
 
 # Protect string constants from extraction
 -keepclassmembers class com.github.catvod.** {
@@ -67,7 +67,6 @@
 # ============================================================
 # Gson serialization
 # ============================================================
--keepattributes Signature
 -keepattributes *Annotation*
 -keep class com.google.gson.** { *; }
 -keep class * extends com.google.gson.TypeAdapter
@@ -99,21 +98,22 @@
 }
 
 # ============================================================
-# R8 Aggressive Obfuscation & Optimization
+# R8 Maximum Aggressive Obfuscation & Optimization
 # ============================================================
 
 # Reuse names across unrelated classes (maximizes name collision)
 -overloadaggressively
 
-# Widen access modifiers to enable more inlining
+# Widen access modifiers to enable more inlining & merging
 -allowaccessmodification
 
-# Merge non-entry-point classes aggressively
--optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*
+# Aggressive optimizations: class merging, inlining, dead code removal
+-optimizations !code/simplification/arithmetic,!code/simplification/cast
 -mergeinterfacesaggressively
 
-# Flatten obfuscated packages into single directory
+# Flatten ALL obfuscated packages into single directory 'a'
 -repackageclasses 'a'
 
-# Strip non-essential attributes
--keepattributes !SourceFile,!LineNumberTable,!LocalVariableTable,!LocalVariableTypeTable,!Deprecated,!Synthetic,!Bridge,!Varargs
+# Treat all classes as library classes (enables more aggressive optimization)
+-dontskipnonpubliclibraryclasses
+-dontskipnonpubliclibraryclassmembers

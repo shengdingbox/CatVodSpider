@@ -13,6 +13,7 @@ android {
         minSdkVersion 21
         buildConfigField("String", "CLIENT_ID", "\"${clientId}\"")
         buildConfigField("boolean", "ENCRYPT", "${ENCRYPT}")
+        buildConfigField("boolean", "OBFUSCATE", "${OBFUSCATE}")
     }
 
     compileOptions {
@@ -32,7 +33,7 @@ android {
         }
         release {
             signingConfig signingConfigs.debug
-            minifyEnabled Boolean.parseBoolean("${ENCRYPT}")
+            minifyEnabled Boolean.parseBoolean("${OBFUSCATE}")
             proguardFiles 'proguard-rules.pro'
             proguardDictionaries {
                 dictionaryNames = ["build/class-dictionary", "build/package-dictionary", "build/obfuscation-dictionary"]
