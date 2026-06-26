@@ -39,6 +39,16 @@
 -keep class com.github.catvod.spider.* { public <methods>; }
 -keep class com.github.catvod.parser.* { public <methods>; }
 
+# Force-rename ALL non-public members in spider/parser classes
+-keepclassmembers,allowobfuscation class com.github.catvod.spider.** {
+    !public <methods>;
+    !public <fields>;
+}
+-keepclassmembers,allowobfuscation class com.github.catvod.parser.** {
+    !public <methods>;
+    !public <fields>;
+}
+
 # ============================================================
 # Internal dependencies: allow FULL obfuscation + shrinking
 # ============================================================
@@ -54,12 +64,11 @@
 -keep,allowobfuscation,allowshrinking class com.github.catvod.debug.** { *; }
 -keep,allowobfuscation,allowshrinking class com.github.catvod.demo.** { *; }
 
-# StringCipher decryptor - preserve class name and key fields
+# StringCipher decryptor - keep only what's needed, rename internals
 -keep class com.github.catvod.spider.StringCipher {
-    static java.lang.String KEY;
-    static java.lang.String B64;
     public static java.lang.String decrypt(java.lang.String);
 }
+-keep,allowobfuscation class com.github.catvod.spider.StringCipher { *; }
 
 # ============================================================
 # Android framework
