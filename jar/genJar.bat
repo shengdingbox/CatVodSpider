@@ -50,8 +50,9 @@ call gradlew clean assembleRelease
 cd /d "%~dp0"
 
 :: Step 1b: Smali obfuscation (string encryption + opaque predicates)
-:: Runs when OBFUSCATE=true - StringCipher is pure Java, no native SO needed
-if /i not "%OBFUSCATE%"=="true" goto :skip_obfuscate
+:: Currently disabled - causes DEX loading issues in TVBox
+:: if /i not "%OBFUSCATE%"=="true" goto :skip_obfuscate
+goto :skip_obfuscate
 echo [*] Running smali obfuscator...
 set "OBF_DIR=%~dp0\Smali_classes"
 rd /s/q "%OBF_DIR%" 2>nul
