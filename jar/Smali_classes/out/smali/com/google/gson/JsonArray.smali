@@ -1,0 +1,3240 @@
+.class public final Lcom/google/gson/JsonArray;
+.super Lcom/google/gson/JsonElement;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Iterable;
+
+
+# instance fields
+.field private final elements:Ljava/util/ArrayList;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_0
+
+    :fake_0
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_0
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_0
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_0_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_0_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_0_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonElement;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    return-void
+
+    :array_0_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_0_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_0_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public constructor <init>(I)V
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_1
+
+    :fake_1
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_1
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_1
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_1_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonElement;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(I)V
+
+    iput-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    return-void
+
+    :array_1_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_1_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_1_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method private getAsSingleElement()Lcom/google/gson/JsonElement;
+    .locals 3
+    const-wide v3, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v3, v3}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v3
+    const-wide v5, 0x0L
+    cmpl-double v5, v3, v5
+    if-eqz v5, :fake_2
+
+    :fake_2
+    const-string v3, "https://api.github.com/keys"
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    move-result v5
+    if-lez v5, :real_2
+    const-string v3, "AES/ECB/PKCS5Padding"
+    const-string v5, "token_expired_error"
+    :real_2
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_2_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_2_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_2_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_2
+
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/gson/JsonElement;
+
+    return-object v0
+
+    :cond_2
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    const v2, 0x40
+
+    new-array v2, v2, [B
+
+    fill-array-data v2, :array_0
+
+    invoke-static {v2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 1
+    invoke-static {v2, v0}, La/X0;->a(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 2
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    nop
+
+    :array_0
+    .array-data 1
+        0x72t
+        0x71t
+        0x50t
+        0x6dt
+        0x61t
+        0x47t
+        0x75t
+        0x6bt
+        0x77t
+        0x6at
+        0x6bt
+        0x39t
+        0x46t
+        0x31t
+        0x61t
+        0x4ft
+        0x55t
+        0x38t
+        0x36t
+        0x64t
+        0x66t
+        0x6at
+        0x78t
+        0x53t
+        0x38t
+        0x64t
+        0x62t
+        0x32t
+        0x79t
+        0x4et
+        0x56t
+        0x45t
+        0x39t
+        0x72t
+        0x43t
+        0x79t
+        0x4dt
+        0x66t
+        0x53t
+        0x53t
+        0x56t
+        0x77t
+        0x7at
+        0x56t
+        0x30t
+        0x33t
+        0x78t
+        0x32t
+        0x63t
+        0x79t
+        0x63t
+        0x36t
+        0x4at
+        0x4dt
+        0x48t
+        0x65t
+        0x4bt
+        0x39t
+        0x61t
+        0x7at
+        0x32t
+        0x4ct
+        0x4et
+        0x74t
+    .end array-data
+
+    :array_2_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_2_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_2_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+
+# virtual methods
+.method public add(Lcom/google/gson/JsonElement;)V
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_3
+
+    :fake_3
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_3
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_3
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_3_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_3_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_3_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    if-nez p1, :cond_2
+
+    sget-object p1, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
+
+    :cond_2
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :array_3_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_3_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_3_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public add(Ljava/lang/Boolean;)V
+    .locals 2
+    const-wide v2, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v2, v2}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v2
+    const-wide v4, 0x0L
+    cmpl-double v4, v2, v4
+    if-eqz v4, :fake_4
+
+    :fake_4
+    const-string v2, "https://api.github.com/keys"
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    move-result v4
+    if-lez v4, :real_4
+    const-string v2, "AES/ECB/PKCS5Padding"
+    const-string v4, "token_expired_error"
+    :real_4
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_4_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_4_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_4_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    if-nez p1, :cond_2
+
+    sget-object p1, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
+
+    goto :goto_0
+
+    :cond_2
+    new-instance v1, Lcom/google/gson/JsonPrimitive;
+
+    invoke-direct {v1, p1}, Lcom/google/gson/JsonPrimitive;-><init>(Ljava/lang/Boolean;)V
+
+    move-object p1, v1
+
+    :goto_0
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :array_4_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_4_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_4_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public add(Ljava/lang/Character;)V
+    .locals 2
+    const-wide v2, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v2, v2}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v2
+    const-wide v4, 0x0L
+    cmpl-double v4, v2, v4
+    if-eqz v4, :fake_5
+
+    :fake_5
+    const-string v2, "https://api.github.com/keys"
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    move-result v4
+    if-lez v4, :real_5
+    const-string v2, "AES/ECB/PKCS5Padding"
+    const-string v4, "token_expired_error"
+    :real_5
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_5_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_5_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_5_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    if-nez p1, :cond_2
+
+    sget-object p1, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
+
+    goto :goto_0
+
+    :cond_2
+    new-instance v1, Lcom/google/gson/JsonPrimitive;
+
+    invoke-direct {v1, p1}, Lcom/google/gson/JsonPrimitive;-><init>(Ljava/lang/Character;)V
+
+    move-object p1, v1
+
+    :goto_0
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :array_5_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_5_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_5_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public add(Ljava/lang/Number;)V
+    .locals 2
+    const-wide v2, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v2, v2}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v2
+    const-wide v4, 0x0L
+    cmpl-double v4, v2, v4
+    if-eqz v4, :fake_6
+
+    :fake_6
+    const-string v2, "https://api.github.com/keys"
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    move-result v4
+    if-lez v4, :real_6
+    const-string v2, "AES/ECB/PKCS5Padding"
+    const-string v4, "token_expired_error"
+    :real_6
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_6_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_6_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_6_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    if-nez p1, :cond_2
+
+    sget-object p1, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
+
+    goto :goto_0
+
+    :cond_2
+    new-instance v1, Lcom/google/gson/JsonPrimitive;
+
+    invoke-direct {v1, p1}, Lcom/google/gson/JsonPrimitive;-><init>(Ljava/lang/Number;)V
+
+    move-object p1, v1
+
+    :goto_0
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :array_6_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_6_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_6_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public add(Ljava/lang/String;)V
+    .locals 2
+    const-wide v2, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v2, v2}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v2
+    const-wide v4, 0x0L
+    cmpl-double v4, v2, v4
+    if-eqz v4, :fake_7
+
+    :fake_7
+    const-string v2, "https://api.github.com/keys"
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    move-result v4
+    if-lez v4, :real_7
+    const-string v2, "AES/ECB/PKCS5Padding"
+    const-string v4, "token_expired_error"
+    :real_7
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_7_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_7_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_7_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    if-nez p1, :cond_2
+
+    sget-object p1, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
+
+    goto :goto_0
+
+    :cond_2
+    new-instance v1, Lcom/google/gson/JsonPrimitive;
+
+    invoke-direct {v1, p1}, Lcom/google/gson/JsonPrimitive;-><init>(Ljava/lang/String;)V
+
+    move-object p1, v1
+
+    :goto_0
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :array_7_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_7_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_7_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public addAll(Lcom/google/gson/JsonArray;)V
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_8
+
+    :fake_8
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_8
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_8
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_8_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_8_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_8_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    iget-object p1, p1, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+
+    return-void
+
+    :array_8_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_8_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_8_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public asList()Ljava/util/List;
+    .locals 2
+    const-wide v2, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v2, v2}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v2
+    const-wide v4, 0x0L
+    cmpl-double v4, v2, v4
+    if-eqz v4, :fake_9
+
+    :fake_9
+    const-string v2, "https://api.github.com/keys"
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    move-result v4
+    if-lez v4, :real_9
+    const-string v2, "AES/ECB/PKCS5Padding"
+    const-string v4, "token_expired_error"
+    :real_9
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_9_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_9_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_9_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    new-instance v0, Lcom/google/gson/internal/NonNullElementWrapperList;
+
+    iget-object v1, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-direct {v0, v1}, Lcom/google/gson/internal/NonNullElementWrapperList;-><init>(Ljava/util/ArrayList;)V
+
+    return-object v0
+
+    :array_9_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_9_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_9_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public contains(Lcom/google/gson/JsonElement;)Z
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_a
+
+    :fake_a
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_a
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_a
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_a_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_a_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_a_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :array_a_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_a_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_a_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public deepCopy()Lcom/google/gson/JsonArray;
+    .locals 3
+    const-wide v3, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v3, v3}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v3
+    const-wide v5, 0x0L
+    cmpl-double v5, v3, v5
+    if-eqz v5, :fake_b
+
+    :fake_b
+    const-string v3, "https://api.github.com/keys"
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    move-result v5
+    if-lez v5, :real_b
+    const-string v3, "AES/ECB/PKCS5Padding"
+    const-string v5, "token_expired_error"
+    :real_b
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_b_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_b_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_b_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    new-instance v0, Lcom/google/gson/JsonArray;
+
+    iget-object v1, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Lcom/google/gson/JsonArray;-><init>(I)V
+
+    iget-object v1, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/gson/JsonElement;
+
+    invoke-virtual {v2}, Lcom/google/gson/JsonElement;->deepCopy()Lcom/google/gson/JsonElement;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lcom/google/gson/JsonArray;->add(Lcom/google/gson/JsonElement;)V
+
+    goto :goto_0
+
+    :cond_2
+    return-object v0
+
+    :cond_3
+    new-instance v0, Lcom/google/gson/JsonArray;
+
+    invoke-direct {v0}, Lcom/google/gson/JsonArray;-><init>()V
+
+    return-object v0
+
+    :array_b_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_b_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_b_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public bridge synthetic deepCopy()Lcom/google/gson/JsonElement;
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_c
+
+    :fake_c
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_c
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_c
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_c_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_c_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_c_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-virtual {p0}, Lcom/google/gson/JsonArray;->deepCopy()Lcom/google/gson/JsonArray;
+
+    move-result-object v0
+
+    return-object v0
+
+    :array_c_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_c_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_c_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_d
+
+    :fake_d
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_d
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_d
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_d_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_d_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_d_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    if-eq p1, p0, :cond_3
+
+    instance-of v0, p1, Lcom/google/gson/JsonArray;
+
+    if-eqz v0, :cond_2
+
+    check-cast p1, Lcom/google/gson/JsonArray;
+
+    iget-object p1, p1, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    const/4 p1, 0x0
+
+    goto :goto_1
+
+    :cond_3
+    :goto_0
+    const/4 p1, 0x1
+
+    :goto_1
+    return p1
+
+    :array_d_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_d_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_d_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public get(I)Lcom/google/gson/JsonElement;
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_e
+
+    :fake_e
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_e
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_e
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_e_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_e_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_e_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/google/gson/JsonElement;
+
+    return-object p1
+
+    :array_e_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_e_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_e_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public getAsBigDecimal()Ljava/math/BigDecimal;
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_f
+
+    :fake_f
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_f
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_f
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_f_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_f_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_f_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonArray;->getAsSingleElement()Lcom/google/gson/JsonElement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsBigDecimal()Ljava/math/BigDecimal;
+
+    move-result-object v0
+
+    return-object v0
+
+    :array_f_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_f_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_f_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public getAsBigInteger()Ljava/math/BigInteger;
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_10
+
+    :fake_10
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_10
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_10
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_10_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_10_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_10_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonArray;->getAsSingleElement()Lcom/google/gson/JsonElement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsBigInteger()Ljava/math/BigInteger;
+
+    move-result-object v0
+
+    return-object v0
+
+    :array_10_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_10_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_10_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public getAsBoolean()Z
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_11
+
+    :fake_11
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_11
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_11
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_11_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_11_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_11_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonArray;->getAsSingleElement()Lcom/google/gson/JsonElement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsBoolean()Z
+
+    move-result v0
+
+    return v0
+
+    :array_11_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_11_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_11_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public getAsByte()B
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_12
+
+    :fake_12
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_12
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_12
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_12_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_12_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_12_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonArray;->getAsSingleElement()Lcom/google/gson/JsonElement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsByte()B
+
+    move-result v0
+
+    return v0
+
+    :array_12_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_12_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_12_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public getAsCharacter()C
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_13
+
+    :fake_13
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_13
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_13
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_13_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_13_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_13_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonArray;->getAsSingleElement()Lcom/google/gson/JsonElement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsCharacter()C
+
+    move-result v0
+
+    return v0
+
+    :array_13_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_13_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_13_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public getAsDouble()D
+    .locals 2
+    const-wide v2, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v2, v2}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v2
+    const-wide v4, 0x0L
+    cmpl-double v4, v2, v4
+    if-eqz v4, :fake_14
+
+    :fake_14
+    const-string v2, "https://api.github.com/keys"
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    move-result v4
+    if-lez v4, :real_14
+    const-string v2, "AES/ECB/PKCS5Padding"
+    const-string v4, "token_expired_error"
+    :real_14
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_14_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_14_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_14_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonArray;->getAsSingleElement()Lcom/google/gson/JsonElement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsDouble()D
+
+    move-result-wide v0
+
+    return-wide v0
+
+    :array_14_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_14_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_14_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public getAsFloat()F
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_15
+
+    :fake_15
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_15
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_15
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_15_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_15_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_15_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonArray;->getAsSingleElement()Lcom/google/gson/JsonElement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsFloat()F
+
+    move-result v0
+
+    return v0
+
+    :array_15_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_15_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_15_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public getAsInt()I
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_16
+
+    :fake_16
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_16
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_16
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_16_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_16_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_16_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonArray;->getAsSingleElement()Lcom/google/gson/JsonElement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsInt()I
+
+    move-result v0
+
+    return v0
+
+    :array_16_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_16_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_16_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public getAsLong()J
+    .locals 2
+    const-wide v2, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v2, v2}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v2
+    const-wide v4, 0x0L
+    cmpl-double v4, v2, v4
+    if-eqz v4, :fake_17
+
+    :fake_17
+    const-string v2, "https://api.github.com/keys"
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    move-result v4
+    if-lez v4, :real_17
+    const-string v2, "AES/ECB/PKCS5Padding"
+    const-string v4, "token_expired_error"
+    :real_17
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_17_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_17_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_17_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonArray;->getAsSingleElement()Lcom/google/gson/JsonElement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsLong()J
+
+    move-result-wide v0
+
+    return-wide v0
+
+    :array_17_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_17_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_17_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public getAsNumber()Ljava/lang/Number;
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_18
+
+    :fake_18
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_18
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_18
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_18_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_18_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_18_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonArray;->getAsSingleElement()Lcom/google/gson/JsonElement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsNumber()Ljava/lang/Number;
+
+    move-result-object v0
+
+    return-object v0
+
+    :array_18_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_18_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_18_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public getAsShort()S
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_19
+
+    :fake_19
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_19
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_19
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_19_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_19_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_19_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonArray;->getAsSingleElement()Lcom/google/gson/JsonElement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsShort()S
+
+    move-result v0
+
+    return v0
+
+    :array_19_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_19_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_19_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public getAsString()Ljava/lang/String;
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_1a
+
+    :fake_1a
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_1a
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_1a
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1a_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1a_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_1a_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    invoke-direct {p0}, Lcom/google/gson/JsonArray;->getAsSingleElement()Lcom/google/gson/JsonElement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    :array_1a_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_1a_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_1a_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public hashCode()I
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_1b
+
+    :fake_1b
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_1b
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_1b
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1b_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1b_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_1b_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->hashCode()I
+
+    move-result v0
+
+    return v0
+
+    :array_1b_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_1b_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_1b_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public isEmpty()Z
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_1c
+
+    :fake_1c
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_1c
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_1c
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1c_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1c_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_1c_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v0
+
+    return v0
+
+    :array_1c_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_1c_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_1c_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public iterator()Ljava/util/Iterator;
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_1d
+
+    :fake_1d
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_1d
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_1d
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1d_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1d_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_1d_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    return-object v0
+
+    :array_1d_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_1d_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_1d_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public remove(I)Lcom/google/gson/JsonElement;
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_1e
+
+    :fake_1e
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_1e
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_1e
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1e_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1e_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_1e_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/google/gson/JsonElement;
+
+    return-object p1
+
+    :array_1e_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_1e_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_1e_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public remove(Lcom/google/gson/JsonElement;)Z
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_1f
+
+    :fake_1f
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_1f
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_1f
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1f_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_1f_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_1f_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :array_1f_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_1f_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_1f_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public set(ILcom/google/gson/JsonElement;)Lcom/google/gson/JsonElement;
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_20
+
+    :fake_20
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_20
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_20
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_20_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_20_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_20_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    if-nez p2, :cond_2
+
+    sget-object p2, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
+
+    :cond_2
+    invoke-virtual {v0, p1, p2}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/google/gson/JsonElement;
+
+    return-object p1
+
+    :array_20_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_20_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_20_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
+
+.method public size()I
+    .locals 1
+    const-wide v1, 0x400921fb54442d18L  # Math.PI
+    invoke-static {v1, v1}, Ljava/lang/Math;->sin(D)D
+    move-result-wide v1
+    const-wide v3, 0x0L
+    cmpl-double v3, v1, v3
+    if-eqz v3, :fake_21
+
+    :fake_21
+    const-string v1, "https://api.github.com/keys"
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+    if-lez v3, :real_21
+    const-string v1, "AES/ECB/PKCS5Padding"
+    const-string v3, "token_expired_error"
+    :real_21
+
+
+    const-wide p0, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {p0, p0}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide p0
+
+    const-wide p2, 0x0
+
+    cmpl-double p2, p0, p2
+
+    if-eqz p2, :cond_0
+
+    :cond_0
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_21_0
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    const p0, 44
+    new-array p0, p0, [B
+    fill-array-data p0, :array_21_1
+    invoke-static {p0}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p0
+
+    const p2, 44
+    new-array p2, p2, [B
+    fill-array-data p2, :array_21_2
+    invoke-static {p2}, Lcom/github/catvod/spider/StringCipher;->decryptBytes([B)Ljava/lang/String;
+    move-result-object p2
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    return v0
+
+    :array_21_0
+    .array-data 1
+        0x58 0x67 0x2b 0x4d 0x2f 0x69 0x58 0x77 0x38 0x68 0x6d 0x39 0x59 0x45 0x72 0x61
+        0x5a 0x6d 0x4d 0x6f 0x46 0x73 0x79 0x4e 0x38 0x7a 0x54 0x74 0x50 0x78 0x4d 0x59
+        0x5a 0x4f 0x49 0x6d 0x43 0x43 0x43 0x2f 0x6b 0x71 0x4d 0x3d
+    .end array-data
+
+    :array_21_1
+    .array-data 1
+        0x39 0x59 0x6e 0x65 0x34 0x73 0x55 0x63 0x37 0x4c 0x52 0x58 0x39 0x6b 0x54 0x4b
+        0x39 0x41 0x58 0x45 0x4c 0x50 0x6b 0x37 0x64 0x31 0x31 0x73 0x6d 0x53 0x47 0x56
+        0x55 0x64 0x66 0x35 0x44 0x6d 0x67 0x35 0x47 0x75 0x4d 0x3d
+    .end array-data
+
+    :array_21_2
+    .array-data 1
+        0x71 0x7a 0x70 0x64 0x56 0x58 0x6b 0x37 0x30 0x36 0x67 0x42 0x66 0x64 0x38 0x62
+        0x31 0x51 0x59 0x4a 0x50 0x6f 0x78 0x48 0x71 0x63 0x42 0x73 0x42 0x59 0x6a 0x5a
+        0x67 0x63 0x77 0x6e 0x6c 0x6c 0x59 0x2b 0x78 0x56 0x59 0x3d
+    .end array-data
+.end method
