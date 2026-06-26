@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Doll extends Spider {
+public class Doll extends BaseSpider {
 
     private final String url = "https://hongkongdollvideo.com/";
 

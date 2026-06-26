@@ -32,7 +32,7 @@ import java.util.regex.Pattern;
  * Source from Author: CatVod
  */
 
-public class Imaple extends Spider {
+public class Imaple extends BaseSpider {
 
     private static final String siteUrl = "https://imaple.co/";
     private static final String siteHost = "imaple.co";

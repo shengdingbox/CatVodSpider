@@ -17,7 +17,7 @@ import org.json.JSONObject;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-public class PTT extends Spider {
+public class PTT extends BaseSpider {
     private String baseUrl = "https://ptt.red/";
     private String b;
 

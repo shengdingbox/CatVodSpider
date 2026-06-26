@@ -104,11 +104,12 @@ def is_shellifiable(smali_text: str) -> bool:
 
 def replace_with_shell(smali_text: str) -> str:
     """Replace the class body with a minimal shell that only has a no-arg constructor
-    calling BaseSpider.<init>()V."""
+    calling BaseSpider.<init>()V. The .super directive is preserved as-is."""
     lines = smali_text.splitlines()
 
     source_line = None
     class_line = None
+    super_line = None
     implements_lines = []
 
     for line in lines:
@@ -117,6 +118,8 @@ def replace_with_shell(smali_text: str) -> str:
             source_line = line
         elif stripped.startswith('.class '):
             class_line = line
+        elif stripped.startswith('.super '):
+            super_line = line
         elif stripped.startswith('.implements '):
             implements_lines.append(line)
 
@@ -127,7 +130,9 @@ def replace_with_shell(smali_text: str) -> str:
     if source_line:
         out.append(source_line)
     out.append(class_line)
-    out.append('.super Lcom/github/catvod/spider/BaseSpider;')
+    # Keep original .super (no longer changing to BaseSpider)
+    if super_line:
+        out.append(super_line)
     for impl in implements_lines:
         out.append(impl)
     out.append('')

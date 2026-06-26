@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class YunPan189 extends Spider {
+public class YunPan189 extends BaseSpider {
     public static final Pattern a = Pattern.compile("cloud.189.cn/t/?(.*)");
 
     public static void test() {

@@ -15,7 +15,7 @@
 //import java.util.regex.Pattern;
 //
 ///* loaded from: classes.dex */
-//public class Doudou extends Spider {
+//public class Doudou extends BaseSpider {
 //    @Override
 //    public String detailContent(List<String> list) {
 //        String d;

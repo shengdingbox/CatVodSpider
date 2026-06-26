@@ -27,7 +27,7 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Auete extends Spider {
+public class Auete extends BaseSpider {
     private static final String siteUrl = "https://auete.com";
     private static final String siteHost = "auete.com";
 

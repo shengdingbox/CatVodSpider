@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Eighteen extends Spider {
+public class Eighteen extends BaseSpider {
 
     private final String url = "https://mjv002.com/zh/";
 

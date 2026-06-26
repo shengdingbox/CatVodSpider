@@ -12,7 +12,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.*;
-public class LocalFile extends Spider {
+public class LocalFile extends BaseSpider {
     public static boolean checkstring(String str) {
         String[] strArr = {".avi", ".wmv", ".rm", ".3gp", ".mov", ".mp", ".m4", ".vob", ".ts", ".webm", ".dat", ".m3u", ".mkv", ".flv", ".aac", ".wma", ".flac", ".ape"};
         String lowerCase = str.toLowerCase();

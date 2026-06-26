@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Author: @SDL
  */
-public class PushAgent extends Spider {
+public class PushAgent extends BaseSpider {
     @Override
     public String detailContent(List<String> ids) {
         try {

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-public class SP360 extends Spider {
+public class SP360 extends BaseSpider {
     protected JSONObject a = null;
 
     protected final HashMap<String, String> a() {

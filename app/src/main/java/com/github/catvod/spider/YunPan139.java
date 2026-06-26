@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class YunPan139 extends Spider {
+public class YunPan139 extends BaseSpider {
     public static final Pattern a = Pattern.compile("(?:caiyun|yun)\\.139\\.com/(?:shareweb/#/)?([wm])/i/?(.*)");
 
     private VodItem a(String str, Matcher matcher, String str2) {

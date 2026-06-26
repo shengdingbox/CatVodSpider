@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 
-public class NetPan extends Spider {
+public class NetPan extends BaseSpider {
     public static final Pattern a = Pattern.compile("(www.aliyundrive.com|www.alipan.com)/s/([^/]+)(/folder/([^/]+))?");
     public static Quark quark = new Quark();
     public static Uc uc = new Uc();

@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class GuangYaPan extends Spider {
+public class GuangYaPan extends BaseSpider {
     public static final Pattern SHARE_PATTERN = Pattern.compile("www\\.guangyapan\\.com/s/([^/#?]*)(?:\\?code=([\\w]+))?(?:#/share/([\\w-]+))?");
 
     public String detailContent(String str, List<String> list) {

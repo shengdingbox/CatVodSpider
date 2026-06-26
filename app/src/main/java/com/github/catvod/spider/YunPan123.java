@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class YunPan123 extends Spider {
+public class YunPan123 extends BaseSpider {
     public String detailContent(String str, List<String> list) {
         return VodResult.m(Yun123Api.getInstance().buildVodItem(list.get(0).trim()));
     }
