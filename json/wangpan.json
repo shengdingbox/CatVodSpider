@@ -1,0 +1,13 @@
+{
+  "key": "多多影音",
+  "name": "👲┃多多┃影音",
+  "type": 3,
+  "api": "csp_Ddyy",
+  "searchable": 1,
+  "quickSearch": 1,
+  "changeable": 1,
+  "timeout": 30,
+  "ext": {
+    "site": "https://tv.yydsys.top,https://tv.yydsys.cc,https://tv.214521.xyz,https://yydsys.us.ci,https://yydsys.de5.net"
+  }
+},
