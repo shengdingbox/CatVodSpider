@@ -1,0 +1,153 @@
+name: Build Android Binaries
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - goos: android
+            goarch: arm
+            goarm: "7"
+            suffix: armv7
+          - goos: android
+            goarch: arm64
+            suffix: arm64
+          - goos: android
+            goarch: 386
+            suffix: 386
+          - goos: android
+            goarch: amd64
+            suffix: amd64
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+          cache-dependency-path: go/go.mod
+
+      - name: Build binary
+        working-directory: go
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+          GOARM: ${{ matrix.goarm }}
+          CGO_ENABLED: "0"
+        run: |
+          BINARY_NAME="tvbox-server-${{ matrix.suffix }}"
+          go build -ldflags="-s -w" -trimpath -o "../dist/${BINARY_NAME}" .
+          ls -lh "../dist/${BINARY_NAME}"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tvbox-server-${{ matrix.suffix }}
+          path: dist/tvbox-server-${{ matrix.suffix }}
+
+  package:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: dist/
+
+      - name: Create archives with run script
+        run: |
+          cd dist
+          for arch_dir in tvbox-server-*/; do
+            arch=$(basename "$arch_dir")
+            suffix="${arch#tvbox-server-}"
+
+            # 复制二进制到打包目录
+            cp "${arch_dir}/${arch}" "tvbox-server"
+            chmod +x "tvbox-server"
+
+            # 创建启动脚本
+            cat > run.sh << 'SCRIPT'
+          #!/system/bin/sh
+          # TVBox Go Server - Android Launcher
+          # Usage: ./run.sh [port]
+          # Default port: 8080
+
+          DIR="$(cd "$(dirname "$0")" && pwd)"
+          BINARY="${DIR}/tvbox-server"
+          PORT="${1:-8080}"
+
+          if [ ! -f "$BINARY" ]; then
+            echo "Error: tvbox-server binary not found"
+            exit 1
+          fi
+
+          chmod +x "$BINARY"
+          echo "Starting TVBox Server on port ${PORT}..."
+          echo "Access: http://localhost:${PORT}/api/health"
+          exec "$BINARY"
+          SCRIPT
+            chmod +x run.sh
+
+            # 打包
+            tar czf "tvbox-server-android-${suffix}.tar.gz" tvbox-server run.sh
+            rm -f tvbox-server run.sh
+          done
+
+          # 创建全架构合并包
+          mkdir -p all-in-one
+          for arch_dir in tvbox-server-*/; do
+            arch=$(basename "$arch_dir")
+            suffix="${arch#tvbox-server-}"
+            cp "${arch_dir}/${arch}" "all-in-one/tvbox-server-${suffix}"
+          done
+          tar czf tvbox-server-android-all.tar.gz -C all-in-one .
+          rm -rf all-in-one
+
+          echo "=== Packages ==="
+          ls -lh *.tar.gz
+
+      - name: Upload all packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: tvbox-server-android-all
+          path: dist/*.tar.gz
+
+  release:
+    needs: package
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download packages
+        uses: actions/download-artifact@v4
+        with:
+          name: tvbox-server-android-all
+          path: release/
+
+      - name: Generate checksums
+        working-directory: release
+        run: sha256sum *.tar.gz > checksums-sha256.txt
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            release/*.tar.gz
+            release/checksums-sha256.txt
