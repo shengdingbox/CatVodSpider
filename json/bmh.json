@@ -23,7 +23,7 @@
       }
     }
   ],
-  "spider": "http://117.50.201.231:666/uploads/tvbox/add/awdm.png",
+  "spider": "http://tvbox.shengdingit.com/jar/custom_spider.jar",
   "sites": [
     {
       "key": "csp_如意资源",
