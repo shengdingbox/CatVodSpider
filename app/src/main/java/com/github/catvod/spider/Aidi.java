@@ -182,12 +182,11 @@ public class Aidi extends Spider {
 
             // 取页码相关信息
             Elements pageInfo = doc.select("ul.page li");
-            if (pageInfo.size() == 0) {
+            if (pageInfo.isEmpty()) {
                 page = Integer.parseInt(pg);
                 pageCount = page;
             } else {
-                for (int i = 0; i < pageInfo.size(); i++) {
-                    Element li = pageInfo.get(i);
+                for (Element li : pageInfo) {
                     Element a = li.selectFirst("a");
                     if (a == null)
                         continue;
@@ -216,8 +215,7 @@ public class Aidi extends Spider {
             if (!html.contains("没有找到您想要的结果哦")) {
                 // 取当前分类页的视频列表
                 Elements list = doc.select("ul.vodlist li a.vodlist_thumb");
-                for (int i = 0; i < list.size(); i++) {
-                    Element vod = list.get(i);
+                for (Element vod : list) {
                     String title = vod.attr("title");
                     String cover = vod.attr("data-original");
                     String remark = vod.selectFirst("span.pic_text").text();
