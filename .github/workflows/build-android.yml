@@ -17,17 +17,17 @@ jobs:
     strategy:
       matrix:
         include:
-          - goos: android
+          - goos: linux
             goarch: arm
             goarm: "7"
             suffix: armv7
-          - goos: android
+          - goos: linux
             goarch: arm64
             suffix: arm64
-          - goos: android
+          - goos: linux
             goarch: 386
             suffix: 386
-          - goos: android
+          - goos: linux
             goarch: amd64
             suffix: amd64
 
