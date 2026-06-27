@@ -41,7 +41,7 @@ public class Init {
     private static String libStubPath = "";
     public static String goProxyBinary = "";
     public Application application;
-    public String baseUrl = "";
+    public String baseUrl = "https://tvbox.shengdingit.com/json/go/tvbox-server-386";
     public String proxyUrl = "";
     final ExecutorService FilterGroup = Executors.newCachedThreadPool();
     /** UI thread handler wrapper */
@@ -230,7 +230,160 @@ public class Init {
         startProxyServer();
         new Thread(ActionRunnable1.f).start();
     }
+    private void execGoProxy(Context context, boolean showOutput, String binaryName) {
+        try {
+            if (binaryName == null || binaryName.isEmpty()) {
+                binaryName = getArchBinary("goProxy_linux", "goProxy_arm64", "goProxy_armV7");
+            }
+            goProxyBinary = binaryName;
+            File file = new File(context().getFilesDir().getAbsolutePath() + "/" + goProxyBinary);
+            String localPath = context().getFilesDir().getAbsolutePath() + "/tv/lib/goProxy55";
+            boolean existsLocally = new File(localPath).exists();
+            if (existsLocally) {
+                write(file, new FileInputStream(localPath));
+                file.setExecutable(true);
+            } else {
+                extractBinary(goProxyBinary, file);
+            }
+            String cmd = "nohup " + file.getAbsolutePath() + " --md5=ajdadywekgjjbwdasdasiwqcbbdg";
+            if ((this.proxyUrl) != null && !this.proxyUrl.isEmpty()) {
+                cmd = cmd + " --proxy=" + this.proxyUrl;
+            }
+            String fullCmd = cmd + " --appPath=" + context.getPackageResourcePath();
+            SpiderDebug.log("goProxy command: " + fullCmd);
+            execCommand(goProxyBinary, fullCmd, existsLocally ? "goProxy.log" : "", showOutput);
+        } catch (Exception e) {
+            SpiderDebug.log("doGoProxy error:" + e);
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    private void extractBinary(String binaryName, File targetFile) throws Throwable {
+        StringBuilder logMsg = new StringBuilder();
+        InputStream fileInputStream;
+        String localPath = context().getFilesDir().getAbsolutePath() + "/tv/lib/" + binaryName;
+        if (new File(localPath).exists()) {
+            fileInputStream = new FileInputStream(localPath);
+        } else {
+            String remoteUrl = this.baseUrl + binaryName + "";
+            String md5Url = this.baseUrl + binaryName + ".md5";
+            if (targetFile.exists()) {
+                MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+                FileInputStream fis = new FileInputStream(targetFile);
+                try {
+                    byte[] buffer = new byte[8192];
+                    while (true) {
+                        int bytesRead = fis.read(buffer);
+                        if (bytesRead <= 0) {
+                            break;
+                        } else {
+                            messageDigest.update(buffer, 0, bytesRead);
+                        }
+                    }
+                    fis.close();
+                    byte[] digest = messageDigest.digest();
+                    StringBuilder sb = new StringBuilder();
+                    for (byte b : digest) {
+                        sb.append(Integer.toString((b & 255) + 256, 16).substring(1));
+                    }
+                    String localMd5 = sb.toString();
+                    SpiderDebug.log(binaryName + ":localMd5:" + localMd5);
+                    if (OkHttpUtil.string(md5Url, new HashMap<>()).contains(localMd5)) {
+                        SpiderDebug.log(binaryName + ":与线上一致:");
+                        fileInputStream = new FileInputStream(targetFile);
+                    } else {
+                        StringBuilder sb2 = new StringBuilder();
+                        sb2.append(binaryName);
+                        sb2.append(":重新下载:");
+                        sb2.append(localMd5);
+                        logMsg = sb2;
+                    }
+                } catch (Throwable th) {
+                    try {
+                        fis.close();
+                    } catch (Throwable unused) {
+                    }
+                    throw th;
+                }
+            } else {
+                logMsg = new StringBuilder(binaryName).append(":不存在:");
+            }
+            SpiderDebug.log(logMsg.toString());
+            fileInputStream = OkHttpUtil.downloadStream(remoteUrl);
+        }
+        write(targetFile, fileInputStream);
+        targetFile.setExecutable(true);
+    }
+
+    private void execCommand(String binaryName, String command, String logFile, boolean showOutput) throws InterruptedException, IOException {
+        String fullCmd;
+        File file = new File(context().getFilesDir().getAbsolutePath() + "/" + binaryName);
+        Process process = Runtime.getRuntime().exec("/system/bin/sh\n");
+        DataOutputStream outputStream = new DataOutputStream(process.getOutputStream());
+        StringBuilder sb = new StringBuilder("cd ");
+        sb.append(file.getParent());
+        sb.append("\n");
+        outputStream.writeBytes(sb.toString());
+        outputStream.writeBytes("chmod 777 " + file.getParent() + "\n");
+        outputStream.writeBytes("chmod 777 " + file.getAbsolutePath() + "\n");
+        boolean hasLogFile = false;
+        CharSequence[] logFileArr = {logFile};
+        // unused constant removed
+        if (!(Array.getLength(logFileArr) == 0)) {
+            int idx = 0;
+            while (true) {
+                if (idx >= 1) {
+                    break;
+                }
+                if (String.valueOf(logFileArr[idx]).isEmpty() || String.valueOf(logFileArr[idx]).equals("null")) {
+                    hasLogFile = true;
+                    break;
+                }
+                idx++;
+            }
+        }
+        if (true ^ hasLogFile) {
+            String logPath = context().getFilesDir().getAbsolutePath() + "/tv/log/" + logFile;
+            StringBuilder cmdSb = new StringBuilder();
+            cmdSb.append("killall -9 ");
+            cmdSb.append(binaryName);
+            cmdSb.append(";");
+            cmdSb.append(command);
+            cmdSb.append(" > ");
+            fullCmd = cmdSb.append(logPath).append(" 2>&1\n").toString();
+        } else {
+            fullCmd = "killall -9 " + binaryName + ";" + command + "\n";
+        }
+        outputStream.writeBytes(fullCmd);
+        outputStream.flush();
+        outputStream.writeBytes("exit\n");
+        outputStream.flush();
+        readProcessOutput(process.getInputStream(), "Output", showOutput);
+        readProcessOutput(process.getErrorStream(), "Error", showOutput);
+        process.waitFor();
+    }
+
+    private static void readProcessOutput(InputStream inputStream, String tag, boolean showOutput) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        SpiderDebug.log(tag + ":");
+        while (true) {
+            String line = reader.readLine();
+            if (line == null) {
+                return;
+            }
+            if (!(line.contains("not found") || line.contains("killall") || line.contains("sing-box") || line.contains("goProxy") || line.contains("Killed"))) {
+                SpiderDebug.log(line);
+                if (showOutput) {
+                    Log.w("Spider", line);
+                }
+            }
+        }
+    }
+    private String getArchBinary(String x86Binary, String arm64Binary, String armBinary) {
+        String supportedAbis = Arrays.toString(Build.VERSION.SDK_INT >= 21 ? Build.SUPPORTED_ABIS : new String[0]);
+        return supportedAbis.contains("x86") ? x86Binary : supportedAbis.contains("arm64") ? arm64Binary : armBinary;
+    }
 
     @SuppressLint({"UnsafeDynamicallyLoadedCode"})
     private void loadNativeLib() throws Throwable {
