@@ -1,6 +1,7 @@
 package com.github.catvod.demo;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import com.github.catvod.spider.AppRJ;
 import com.github.catvod.spider.XPath;
@@ -8,6 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends Activity {
@@ -27,6 +29,10 @@ public class MainActivity extends Activity {
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
+                // 获取支持的 ABI 列表字符串
+                String supportedAbis = Arrays.toString(Build.VERSION.SDK_INT >= 21 ? Build.SUPPORTED_ABIS : new String[0]);
+                // 按优先级返回对应文件名
+                System.out.println(supportedAbis);
 //                JSONObject homeContent = null;
 //                try {
 //                    String json1 = aidi1.homeContent(true);
