@@ -272,7 +272,7 @@ public class AppRJ extends Spider {
             }
 
             // 收集播放地址
-            JSONArray urls = source.optJSONArray("url");
+            JSONArray urls = source.optJSONArray("urls");
             ArrayList<String> episodes = new ArrayList<>();
             for (int u = 0; u < urls.length(); u++) {
                 JSONObject urlObj = urls.optJSONObject(u);

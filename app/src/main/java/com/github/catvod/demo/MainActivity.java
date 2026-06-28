@@ -27,22 +27,22 @@ public class MainActivity extends Activity {
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-                JSONObject homeContent = null;
-                try {
-                    String json1 = aidi1.homeContent(true);
-                    if (StringUtils.isNotEmpty(json1)) {
-                        homeContent = new JSONObject(json1);
-                        System.out.println(homeContent.toString());
-                    }
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-                try {
-                    String categoryContent = aidi1.categoryContent("1", "1", false, null);
-                    System.out.println(categoryContent);
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
+//                JSONObject homeContent = null;
+//                try {
+//                    String json1 = aidi1.homeContent(true);
+//                    if (StringUtils.isNotEmpty(json1)) {
+//                        homeContent = new JSONObject(json1);
+//                        System.out.println(homeContent.toString());
+//                    }
+//                } catch (Exception e) {
+//                    throw new RuntimeException(e);
+//                }
+//                try {
+//                    String categoryContent = aidi1.categoryContent("1", "1", false, null);
+//                    System.out.println(categoryContent);
+//                } catch (Exception e) {
+//                    throw new RuntimeException(e);
+//                }
 //                if (homeContent != null) {
 //                    try {
 //                        List<String> ids = new ArrayList<String>();
@@ -68,12 +68,12 @@ public class MainActivity extends Activity {
 //
 //                    }
 //                }
-                try {
-                    String searchContent = aidi1.searchContent("主角", false);
-                    System.out.println(searchContent);
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
+//                try {
+//                    String searchContent = aidi1.searchContent("主角", false);
+//                    System.out.println(searchContent);
+//                } catch (Exception e) {
+//                    throw new RuntimeException(e);
+//                }
                 try {
                     String detailContent = aidi1.detailContent(List.of("75852"));
                     System.out.println(detailContent);
