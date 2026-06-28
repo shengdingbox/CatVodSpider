@@ -1,14 +1,17 @@
 package com.github.catvod.crawler;
 
-import okhttp3.Dns;
-import okhttp3.OkHttpClient;
-
 import android.content.Context;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import okhttp3.Dns;
+import okhttp3.OkHttpClient;
+
 public abstract class Spider {
+
+    public String siteKey;
 
     public void init(Context context) throws Exception {
     }
@@ -45,6 +48,10 @@ public abstract class Spider {
         return "";
     }
 
+    public String liveContent(String url) throws Exception {
+        return "";
+    }
+
     public boolean manualVideoCheck() throws Exception {
         return false;
     }
@@ -53,7 +60,11 @@ public abstract class Spider {
         return false;
     }
 
-    public Object[] proxyLocal(Map<String, String> params) throws Exception {
+    public Object[] proxy(Map<String, String> params) throws Exception {
+        return null;
+    }
+
+    public String action(String action) throws Exception {
         return null;
     }
 

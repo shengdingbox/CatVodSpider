@@ -29,7 +29,9 @@ public class Result {
     @SerializedName("format")
     private String format;
     @SerializedName("danmaku")
-    private String danmaku;
+    private List<Danmaku> danmaku;
+    @SerializedName("click")
+    private String click;
     @SerializedName("msg")
     private String msg;
     @SerializedName("url")
@@ -81,8 +83,11 @@ public class Result {
         return Result.get().classes(classes).vod(list).string();
     }
 
-    public static String string(List<Vod> list) {
-        return Result.get().vod(list).string();
+    public static String string(List<?> list) {
+        if (list == null || list.isEmpty()) return "";
+        if (list.get(0) instanceof Vod) return Result.get().vod((List<Vod>) list).string();
+        if (list.get(0) instanceof Class) return Result.get().classes((List<Class>) list).string();
+        return "";
     }
 
     public static String string(Vod item) {
@@ -91,6 +96,10 @@ public class Result {
 
     public static String error(String msg) {
         return Result.get().vod(Collections.emptyList()).msg(msg).string();
+    }
+
+    public static String notify(String msg) {
+        return Result.get().msg(msg).string();
     }
 
     public static Result get() {
@@ -119,15 +128,17 @@ public class Result {
 
     public Result filters(JSONObject object) {
         if (object == null) return this;
-        Type listType = new TypeToken<LinkedHashMap<String, List<Filter>>>() {}.getType();
-        this.filters = new Gson().fromJson(object.toString(), listType);
+        Type filterList = TypeToken.getParameterized(List.class, Filter.class).getType();
+        Type filterMap = TypeToken.getParameterized(LinkedHashMap.class, String.class, filterList).getType();
+        this.filters = new Gson().fromJson(object.toString(), filterMap);
         return this;
     }
 
     public Result filters(JsonElement element) {
         if (element == null) return this;
-        Type listType = new TypeToken<LinkedHashMap<String, List<Filter>>>() {}.getType();
-        this.filters = new Gson().fromJson(element.toString(), listType);
+        Type filterList = TypeToken.getParameterized(List.class, Filter.class).getType();
+        Type filterMap = TypeToken.getParameterized(LinkedHashMap.class, String.class, filterList).getType();
+        this.filters = new Gson().fromJson(element.toString(), filterMap);
         return this;
     }
 
@@ -169,8 +180,13 @@ public class Result {
         return this;
     }
 
-    public Result danmaku(String danmaku) {
+    public Result danmaku(List<Danmaku> danmaku) {
         this.danmaku = danmaku;
+        return this;
+    }
+
+    public Result click(String click) {
+        this.click = click;
         return this;
     }
 

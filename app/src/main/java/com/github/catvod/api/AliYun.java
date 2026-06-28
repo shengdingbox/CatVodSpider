@@ -13,28 +13,51 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import com.github.catvod.BuildConfig;
+
 import com.github.catvod.bean.Result;
 import com.github.catvod.bean.Sub;
 import com.github.catvod.bean.Vod;
-import com.github.catvod.bean.ali.*;
+import com.github.catvod.bean.ali.Cache;
+import com.github.catvod.bean.ali.Code;
+import com.github.catvod.bean.ali.Data;
+import com.github.catvod.bean.ali.Download;
+import com.github.catvod.bean.ali.Drive;
+import com.github.catvod.bean.ali.Item;
+import com.github.catvod.bean.ali.OAuth;
+import com.github.catvod.bean.ali.Preview;
+import com.github.catvod.bean.ali.Resp;
+import com.github.catvod.bean.ali.Share;
+import com.github.catvod.bean.ali.User;
 import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.net.OkHttp;
 import com.github.catvod.net.OkResult;
 import com.github.catvod.spider.Init;
 import com.github.catvod.spider.Proxy;
-import com.github.catvod.utils.*;
+import com.github.catvod.utils.Json;
+import com.github.catvod.utils.Notify;
+import com.github.catvod.utils.Path;
+import com.github.catvod.utils.ProxyVideo;
+import com.github.catvod.utils.QRCode;
+import com.github.catvod.utils.ResUtil;
+import com.github.catvod.utils.Util;
 import com.google.gson.JsonObject;
-import okhttp3.Response;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.ReentrantLock;
+
+import okhttp3.Response;
 
 public class AliYun {
 
@@ -195,7 +218,7 @@ public class AliYun {
         JsonObject param = new JsonObject();
         param.addProperty("authorize", 1);
         param.addProperty("scope", "user:base,file:all:read,file:all:write");
-        String url = "https://open.aliyundrive.com/oauth/users/authorize?client_id=" + BuildConfig.CLIENT_ID + "&redirect_uri=https://alist.nn.ci/tool/aliyundrive/callback&scope=user:base,file:all:read,file:all:write&state=";
+        String url = "https://open.aliyundrive.com/oauth/users/authorize?client_id=76917ccccd4441c39457a04f6084fb2f&redirect_uri=https://alist.nn.ci/tool/aliyundrive/callback&scope=user:base,file:all:read,file:all:write&state=";
         String json = auth(url, param.toString(), true);
         return oauthRedirect(Code.objectFrom(json).getCode());
     }

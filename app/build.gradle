@@ -1,67 +1,49 @@
 plugins {
-    id 'com.android.application'
-    id 'ru.cleverpumpkin.proguard-dictionaries-generator'
+    alias(libs.plugins.android.application)
 }
 
 android {
-    compileSdk 34
+    namespace = 'com.github.catvod'
+
+    compileSdk libs.versions.compileSdk.get().toInteger()
 
     defaultConfig {
-        applicationId "com.github.catvod.demo"
-        minSdk 21
-        targetSdk 34
-        minSdkVersion 21
-        buildConfigField("String", "CLIENT_ID", "\"${clientId}\"")
-        buildConfigField("boolean", "ENCRYPT", "${ENCRYPT}")
-        buildConfigField("boolean", "OBFUSCATE", "${OBFUSCATE}")
+        applicationId = "com.github.catvod.demo"
+        minSdk libs.versions.minSdk.get().toInteger()
+        targetSdk libs.versions.targetSdk.get().toInteger()
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
-    }
-
-    signingConfigs {
-        debug {
-            // Uses default debug keystore
-        }
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
-        debug {
-            minifyEnabled false
-        }
         release {
-            signingConfig signingConfigs.debug
-            minifyEnabled Boolean.parseBoolean("${OBFUSCATE}")
+            minifyEnabled = true
             proguardFiles 'proguard-rules.pro'
-            proguardDictionaries {
-                dictionaryNames = ["build/class-dictionary", "build/package-dictionary", "build/obfuscation-dictionary"]
-                minLineLength 1
-                maxLineLength 3
-                linesCountInDictionary 100000
-            }
         }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     configurations.configureEach {
         resolutionStrategy {
-            force 'com.squareup.okhttp3:okhttp:3.12.13'
+            force "com.squareup.okhttp3:okhttp:${libs.versions.okhttp.get()}"
         }
     }
 }
 
 dependencies {
-    implementation "com.google.code.findbugs:jsr305:3.0.2"
-    implementation 'com.googlecode.juniversalchardet:juniversalchardet:1.0.3'
-    implementation 'com.github.thegrizzlylabs:sardine-android:0.9'
-    implementation 'wang.harlon.quickjs:wrapper-android:1.0.0'
-    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
-    implementation 'com.google.code.gson:gson:2.11.0'
-    implementation 'cn.wanghaomiao:JsoupXpath:2.5.3'
-    implementation 'org.nanohttpd:nanohttpd:2.3.1'
-    implementation 'com.google.zxing:core:3.5.3'
-    implementation 'com.orhanobut:logger:2.2.0'
-    implementation 'org.jsoup:jsoup:1.17.2'
-    implementation 'org.jetbrains:annotations:24.0.0'
+    implementation libs.okhttp
+    implementation libs.sardine.android
+    implementation libs.quickjs.wrapper
+    implementation libs.gson
+    implementation libs.smbj
+    implementation libs.jsoup
+    implementation(libs.logger) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
 }

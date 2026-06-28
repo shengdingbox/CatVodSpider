@@ -74,11 +74,11 @@ public class Util {
     }
 
     public static boolean isMedia(String text) {
-        return MEDIA.contains(getExt(text));
+        return MEDIA.contains(getExt(text).toLowerCase());
     }
 
     public static String getExt(String name) {
-        return name.contains(".") ? name.substring(name.lastIndexOf(".") + 1) : name;
+        return name.contains(".") ? name.substring(name.lastIndexOf(".") + 1).toLowerCase() : name.toLowerCase();
     }
 
     public static String getSize(double size) {
