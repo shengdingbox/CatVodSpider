@@ -29,7 +29,8 @@ public class Proxy extends Spider {
             return "http://127.0.0.1:" + proxyPort + "/proxy";
         }
 
-        public static Object[] proxy(Map<String, String> params) {
+        @Override
+        public Object[] proxy(Map<String, String> params) {
             try {
                 String action = params.get("do");
                 boolean isLive = action.equals("live");
@@ -144,7 +145,8 @@ public class Proxy extends Spider {
         }
     }
 
-    public static Object[] proxy(Map<String, String> params) {
+    @Override
+    public Object[] proxy(Map<String, String> params) {
         try {
         SpiderDebug.log("proxy" + params);
         String action = params.get("do");
@@ -157,7 +159,7 @@ public class Proxy extends Spider {
             case "ck":
                 return new Object[]{200, "text/plain; charset=utf-8", new ByteArrayInputStream("ok".getBytes("UTF-8"))};
             case "ali":
-                return NetPan.proxy(params);
+                return new NetPan().proxy(params);
             default:
                 return null;
         }

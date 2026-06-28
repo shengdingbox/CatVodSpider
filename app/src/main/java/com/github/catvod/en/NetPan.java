@@ -83,7 +83,7 @@ public class NetPan extends Spider {
 
     public static native boolean isYunSelfUc(String str);
 
-    public static native Object[] proxy(Map map);
+    public native Object[] proxy(Map map);
 
     public static native void writeTvTg();
 

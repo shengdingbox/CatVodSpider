@@ -15,7 +15,8 @@ import java.util.regex.Pattern;
 public class XBPQAli extends Spider {
     public static final Pattern a = Pattern.compile("www.aliyundrive.com/s/([^/]+)(/folder/([^/]+))?");
 
-    public static Object[] proxy(Map<String, String> map) throws UnsupportedEncodingException {
+    @Override
+    public Object[] proxy(Map<String, String> map) throws UnsupportedEncodingException {
         String str = map.get("type");
         if (str.equals("sub")) {
             return new Object[]{200, "application/octet-stream", AliPlayerFilter.o().H(map)};

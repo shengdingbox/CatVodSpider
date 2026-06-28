@@ -27,7 +27,7 @@ public class Card {
     private List<Card> cards;
 
     public static List<Card> arrayFrom(String str) {
-        Type listType = new TypeToken<List<Card>>() {}.getType();
+        Type listType = TypeToken.getParameterized(List.class, Card.class).getType();
         return new Gson().fromJson(str, listType);
     }
 

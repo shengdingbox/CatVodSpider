@@ -87,8 +87,8 @@ public class BaseSpider extends Spider {
     }
 
     @Override
-    public Object[] proxyLocal(Map<String, String> params) throws Exception {
-        return requireReal().proxyLocal(params);
+    public Object[] proxy(Map<String, String> params) throws Exception {
+        return requireReal().proxy(params);
     }
 
     @Override

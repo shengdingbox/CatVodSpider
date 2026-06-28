@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -152,7 +154,9 @@ public final class VodResult {
         if (jsonElement == null) {
             return this;
         }
-        this.c = (LinkedHashMap) new Gson().fromJson(jsonElement.toString(), new TypeToken<LinkedHashMap<String, List<Filter>>>(){}.getType());
+        Type filterListType = TypeToken.getParameterized(List.class, Filter.class).getType();
+        Type filterMapType = TypeToken.getParameterized(LinkedHashMap.class, String.class, filterListType).getType();
+        this.c = (LinkedHashMap) new Gson().fromJson(jsonElement.toString(), filterMapType);
         return this;
     }
 
@@ -160,7 +164,9 @@ public final class VodResult {
         if (jSONObject == null) {
             return this;
         }
-        this.c = (LinkedHashMap) new Gson().fromJson(jSONObject.toString(), new TypeToken<LinkedHashMap<String, List<Filter>>>(){}.getType());
+        Type filterListType = TypeToken.getParameterized(List.class, Filter.class).getType();
+        Type filterMapType = TypeToken.getParameterized(LinkedHashMap.class, String.class, filterListType).getType();
+        this.c = (LinkedHashMap) new Gson().fromJson(jSONObject.toString(), filterMapType);
         return this;
     }
 

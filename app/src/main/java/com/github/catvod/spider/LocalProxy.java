@@ -30,7 +30,8 @@ public class LocalProxy extends Spider {
         return string;
     }
 
-    public static Object[] proxy(Map<String, String> map) {
+    @Override
+    public Object[] proxy(Map<String, String> map) {
         Object[] objArrVod = null;
         try {
             String str = map.get("do");

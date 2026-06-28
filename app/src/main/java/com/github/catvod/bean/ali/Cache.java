@@ -48,7 +48,7 @@ public class Cache {
     }
 
     public void save() {
-        Init.execute(() -> Path.write(AliYun.get().getCache(), toString()));
+        Init.execute(() -> Path.write(AliYun.get().getCache(), toString().getBytes()));
     }
 
     @Override

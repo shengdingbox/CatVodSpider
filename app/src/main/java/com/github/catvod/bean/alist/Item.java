@@ -36,7 +36,7 @@ public class Item {
     }
 
     public static List<Item> arrayFrom(String str) {
-        Type listType = new TypeToken<List<Item>>() {}.getType();
+        Type listType = TypeToken.getParameterized(List.class, String.class).getType();
         return new Gson().fromJson(str, listType);
     }
 

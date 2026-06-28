@@ -18,7 +18,7 @@ public class Notify {
     }
 
     public static void show(String text) {
-        Init.post(new Runnable() {
+        Init.run(new Runnable() {
             @Override
             public void run() {
                 get().makeText(text);

@@ -1,122 +1,69 @@
-# ============================================================
-# CatVodSpider ProGuard/R8 Rules - Maximum Obfuscation
-# ============================================================
+# Merge
+-flattenpackagehierarchy com.github.catvod.spider.merge
 
-# --- Global suppressions ---
--dontwarn org.slf4j.impl.StaticLoggerBinder
--dontwarn sun.misc.**
--dontwarn javax.annotation.**
--dontwarn org.codehaus.mojo.animal_sniffer.**
--dontwarn okhttp3.internal.platform.**
+# dontwarn
+-dontwarn org.slf4j.**
+-dontwarn org.xmlpull.v1.**
+-dontwarn com.google.re2j.**
+-dontwarn android.content.res.**
+-dontwarn android.support.annotation.**
 
-# --- Strip ALL debug info ---
--renamesourcefileattribute X
--keepattributes !SourceFile,!LineNumberTable,!LocalVariableTable,!LocalVariableTypeTable,!Deprecated,!Synthetic,!Bridge,!Varargs,!Exceptions,!InnerClasses,!EnclosingMethod,!Signature,!AnnotationDefault
--assumenosideeffects class android.util.Log {
-    public static int v(...);
-    public static int d(...);
-    public static int i(...);
-    public static int w(...);
-    public static int e(...);
-}
+# slf4j
+-keeppackagenames org.slf4j.**
+-keep class org.slf4j.** { *; }
 
-# ============================================================
-# Native encrypted DEX bridge (must match native SO signatures)
-# ============================================================
--keep class com.github.catvod.spider.BaseSpider { *; }
--keep class com.github.catvod.spider.DexNative { *; }
--keep class com.github.catvod.spider.Init {
-    public static com.github.catvod.crawler.Spider getSpider(java.lang.String);
-    public static java.lang.ClassLoader loader();
-    public static android.app.Application context();
-}
+# Android runtime
+-keeppackagenames androidx.annotation.**
+-keeppackagenames androidx.startup.**
+-keeppackagenames androidx.tracing.**
+-keeppackagenames javax.xml.namespace.**
+-keeppackagenames org.xmlpull.v1.**
+-keep class javax.xml.namespace.** { *; }
+-keep class org.xmlpull.v1.** { *; }
 
-# ============================================================
-# Spider host interface (loaded via reflection by host app)
-# ============================================================
--keep class com.github.catvod.js.* { *; }
--keep class com.github.catvod.crawler.* { *; }
--keep class com.github.catvod.spider.* { public <methods>; }
--keep class com.github.catvod.parser.* { public <methods>; }
+# Demo app
+-keeppackagenames com.github.catvod.MainActivity*
+-keeppackagenames com.github.catvod.databinding.**
 
-# Force-rename ALL non-public members in spider/parser classes
--keepclassmembers,allowobfuscation class com.github.catvod.spider.** {
-    !public <methods>;
-    !public <fields>;
-}
--keepclassmembers,allowobfuscation class com.github.catvod.parser.** {
-    !public <methods>;
-    !public <fields>;
-}
+# Keep classes referenced via reflection / native and required by checkJar
+-keep class com.github.catvod.demo.** { *; }
+-dontwarn com.github.catvod.en.**
+-dontwarn com.github.catvod.utils.server.**
 
-# ============================================================
-# Internal dependencies: allow FULL obfuscation + shrinking
-# ============================================================
--keep,allowobfuscation,allowshrinking class com.github.catvod.utils.** { *; }
--keep,allowobfuscation,allowshrinking class com.github.catvod.bean.** { *; }
--keep,allowobfuscation,allowshrinking class com.github.catvod.internal.** { *; }
--keep,allowobfuscation,allowshrinking class com.github.catvod.en.** { *; }
--keep,allowobfuscation,allowshrinking class com.github.catvod.net.** { *; }
--keep,allowobfuscation,allowshrinking class com.github.catvod.api.** { *; }
--keep,allowobfuscation,allowshrinking class com.github.catvod.live.** { *; }
--keep,allowobfuscation,allowshrinking class com.github.catvod.xpath.** { *; }
--keep,allowobfuscation,allowshrinking class com.github.catvod.ui.** { *; }
--keep,allowobfuscation,allowshrinking class com.github.catvod.debug.** { *; }
--keep,allowobfuscation,allowshrinking class com.github.catvod.demo.** { *; }
-
-# StringCipher decryptor - keep only what's needed, rename internals
--keep class com.github.catvod.spider.StringCipher {
-    public static java.lang.String decrypt(java.lang.String);
-}
--keep,allowobfuscation class com.github.catvod.spider.StringCipher { *; }
-
-# ============================================================
-# Android framework
-# ============================================================
+# AndroidX
 -keep class androidx.core.** { *; }
 
-# ============================================================
-# Gson serialization
-# ============================================================
--keepattributes *Annotation*
+# Gson
 -keep class com.google.gson.** { *; }
--keep class * extends com.google.gson.TypeAdapter
--keep class * implements com.google.gson.TypeAdapterFactory
--keep class * implements com.google.gson.JsonSerializer
--keep class * implements com.google.gson.JsonDeserializer
--keepclassmembers,allowobfuscation class * {
-    @com.google.gson.annotations.SerializedName <fields>;
-}
--keep,allowobfuscation,allowshrinking class com.google.gson.reflect.TypeToken
--keep,allowobfuscation,allowshrinking class * extends com.google.gson.reflect.TypeToken
 
-# ============================================================
-# Third-party libraries
-# ============================================================
--keep class fi.iki.elonen.** { *; }
+# Kotlin
+-keep class kotlin.** { *; }
+
+# Spider
+-keep class com.github.catvod.crawler.* { *; }
+-keep class com.github.catvod.spider.* { public <methods>; }
+-keep class com.github.catvod.js.Function { *; }
+
+# OkHttp
 -dontwarn okhttp3.**
+-keeppackagenames okio.**
 -keep class okio.** { *; }
 -keep class okhttp3.** { *; }
--keep class com.orhanobut.logger.** { *; }
+
+# QuickJS
+-keeppackagenames com.whl.quickjs.**
 -keep class com.whl.quickjs.** { *; }
+
+# Sardine
+-keeppackagenames com.thegrizzlylabs.sardineandroid.**
 -keep class com.thegrizzlylabs.sardineandroid.** { *; }
+
+# SMBJ
+-keeppackagenames net.engio.mbassy.**
 -keep class com.hierynomus.** { *; }
 -keep class net.engio.mbassy.** { *; }
--keep class com.google.zxing.** { *; }
--keepclassmembers enum * {
-    public static **[] values();
-    public static ** valueOf(java.lang.String);
-}
+-dontwarn org.ietf.jgss.**
+-dontwarn javax.**
 
-# ============================================================
-# R8 Basic Obfuscation (name renaming only, no aggressive optimization)
-# ============================================================
-
-# Reuse names across unrelated classes
--overloadaggressively
-
-# Flatten ALL obfuscated packages into single directory 'a'
--repackageclasses 'a'
-
-# Disable ALL optimizations to avoid breaking plugin loading
--dontoptimize
+# Logger
+-keep class com.orhanobut.logger.** { *; }

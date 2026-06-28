@@ -44,6 +44,20 @@ public class OkHttp {
         return client().newCall(new Request.Builder().url(url).tag(tag).build()).execute();
     }
 
+    public static Response newCall(String url) throws IOException {
+        return client().newCall(new Request.Builder().url(url).build()).execute();
+    }
+
+    public static Response newCall(String url, Map<String, String> header) throws IOException {
+        Request.Builder builder = new Request.Builder().url(url);
+        if (header != null) builder.headers(Headers.of(header));
+        return client().newCall(builder.build()).execute();
+    }
+
+    public static Response newCall(Request request) throws IOException {
+        return client().newCall(request).execute();
+    }
+
     public static String string(String url) {
         return string(url, null);
     }

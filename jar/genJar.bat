@@ -33,6 +33,10 @@ if errorlevel 1 exit /b %errorlevel%
 move "%WORK%\smali\com\github\catvod\js" "%SPIDER%\smali\com\github\catvod\"
 if errorlevel 1 exit /b %errorlevel%
 
+:: 删除不该打包进去的系统 API
+rd /s /q "%SPIDER%\smali\org\xmlpull" 2>nul
+rd /s /q "%SPIDER%\smali\org\kxml2" 2>nul
+
 java -jar "%DIR%3rd\apktool_2.11.0.jar" b "%SPIDER%" -c
 if errorlevel 1 exit /b %errorlevel%
 
