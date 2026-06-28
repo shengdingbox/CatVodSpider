@@ -12,6 +12,14 @@ quickjsWrapper = "3.2.3"
 sardineAndroid = "0.9"
 smbj = "0.14.0"
 
+# 新增
+jsr305 = "3.0.2"
+juniversalchardet = "1.0.3"
+jsoupXpath = "2.5.3"
+nanohttpd = "2.3.1"
+zxing = "3.5.3"
+jetbrainsAnnotations = "24.0.0"
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
@@ -24,3 +32,10 @@ okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 quickjs-wrapper = { module = "wang.harlon.quickjs:wrapper-android", version.ref = "quickjsWrapper" }
 sardine-android = { module = "com.github.thegrizzlylabs:sardine-android", version.ref = "sardineAndroid" }
 smbj = { module = "com.hierynomus:smbj", version.ref = "smbj" }
+# 新增
+jsr305 = { module = "com.google.code.findbugs:jsr305", version.ref = "jsr305" }
+juniversalchardet = { module = "com.googlecode.juniversalchardet:juniversalchardet", version.ref = "juniversalchardet" }
+jsoup-xpath = { module = "cn.wanghaomiao:JsoupXpath", version.ref = "jsoupXpath" }
+nanohttpd = { module = "org.nanohttpd:nanohttpd", version.ref = "nanohttpd" }
+zxing-core = { module = "com.google.zxing:core", version.ref = "zxing" }
+jetbrains-annotations = { module = "org.jetbrains:annotations", version.ref = "jetbrainsAnnotations" }

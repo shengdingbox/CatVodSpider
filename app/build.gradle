@@ -46,4 +46,10 @@ dependencies {
     implementation(libs.logger) {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
+    implementation libs.jsr305
+    implementation libs.juniversalchardet
+    implementation libs.jsoup.xpath
+    implementation libs.nanohttpd
+    implementation libs.zxing.core
+    implementation libs.jetbrains.annotations
 }
