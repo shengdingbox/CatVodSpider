@@ -43,7 +43,7 @@ if errorlevel 1 exit /b %errorlevel%
 move /y "%SPIDER%\dist\dex.jar" "%OUT%"
 if errorlevel 1 exit /b %errorlevel%
 
-certUtil -hashfile "%OUT%" MD5 | find /i /v "md5" | find /i /v "certutil" > "%MD5%"
+powershell -NoProfile -Command "(Get-FileHash -LiteralPath '%OUT%' -Algorithm MD5).Hash.ToLowerInvariant() | Out-File -Encoding ASCII -FilePath '%MD5%' -NoNewline"
 if not exist "%MD5%" exit /b 1
 
 if not "%~1"=="" call :export "%~1"

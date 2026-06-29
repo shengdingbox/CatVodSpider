@@ -23,7 +23,7 @@
       }
     }
   ],
-  "spider": "http://tvbox.shengdingit.com/jar/custom_spider.jar;md5;4cbb61777c32d7fa7b45e2021d50b993",
+  "spider": "http://tvbox.shengdingit.com/jar/custom_spider.jar;md5;19cf6969abc707ee5886eceef1a101bb",
   "sites": [
     {
       "key": "csp_如意资源",

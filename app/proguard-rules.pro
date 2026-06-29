@@ -67,3 +67,15 @@
 
 # Logger
 -keep class com.orhanobut.logger.** { *; }
+
+# gomobile / tvboxserver
+-keep class tvboxserver.** { *; }
+-keep class go.** { *; }
+-keeppackagenames tvboxserver.**
+-keeppackagenames go.**
+-dontwarn tvboxserver.**
+-dontwarn go.**
+
+-keepclasseswithmembers class tvboxserver.Tvboxserver { native <methods>; static <methods>; }
+-keep class go.Seq { *; }
+-keep class go.Seq$* { *; }

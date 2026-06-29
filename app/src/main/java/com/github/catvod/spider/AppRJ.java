@@ -121,7 +121,7 @@ public class AppRJ extends Spider {
     public void init(Context context, String ext) throws Exception {
         try {
             this.baseUrl = new JSONObject(ext).getString("url");
-           String md5 =Tvboxserver.Md5(8080);
+           String md5 =Tvboxserver.md5("8080");
            SpiderDebug.log("go-md5: " + md5);
         } catch (Exception e) {
             e.printStackTrace();
