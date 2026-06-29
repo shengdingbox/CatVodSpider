@@ -2,6 +2,7 @@ package com.github.catvod.spider;
 
 import android.content.Context;
 import android.text.TextUtils;
+
 import com.github.catvod.bean.Class;
 import com.github.catvod.bean.Filter;
 import com.github.catvod.bean.FilterEntry;
@@ -39,10 +40,14 @@ import tvboxserver.Tvboxserver;
  */
 public class AppRJ extends Spider {
 
-    /** API 基地址，init 时从 ext 字段读取 */
+    /**
+     * API 基地址，init 时从 ext 字段读取
+     */
     private String baseUrl;
 
-    /** 签名密钥（硬编码在原版中，原值：7gp0bnd2sr85ydii2j32pcypscoc4w6c7g5spl） */
+    /**
+     * 签名密钥（硬编码在原版中，原值：7gp0bnd2sr85ydii2j32pcypscoc4w6c7g5spl）
+     */
     private static final String SIGN_SECRET = "7gp0bnd2sr85ydii2j32pcypscoc4w6c7g5spl";
 
     // ======================== 工具方法 ========================
@@ -87,7 +92,7 @@ public class AppRJ extends Spider {
     /**
      * 以 multipart/form-data 方式 POST 请求 API。
      *
-     * @param path  接口路径（如 /v3/home/search）
+     * @param path   接口路径（如 /v3/home/search）
      * @param params 表单字段
      * @return 响应体字符串，失败返回空串
      */
@@ -142,8 +147,8 @@ public class AppRJ extends Spider {
             String timestamp = (System.currentTimeMillis() / 1000) + "";
             params.put("timestamp", timestamp);
             params.put("sign", md5(SIGN_SECRET + timestamp));
-
-            JSONArray typeList = new JSONObject(postForm("/v3/type/top_type", params))
+            String md5 = Tvboxserver.md5("8080");
+            JSONArray typeList = new JSONObject(postForm("/v3/type/top_type?md5=" + md5, params))
                     .optJSONObject("data")
                     .optJSONArray("list");
 
@@ -159,11 +164,20 @@ public class AppRJ extends Spider {
                 for (String key : new String[]{"extend", "area", "year", "lang"}) {
                     String label;
                     switch (key) {
-                        case "extend": label = "类型"; break;
-                        case "area":   label = "地区"; break;
-                        case "year":   label = "年份"; break;
-                        case "lang":   label = "语言"; break;
-                        default: continue;
+                        case "extend":
+                            label = "类型";
+                            break;
+                        case "area":
+                            label = "地区";
+                            break;
+                        case "year":
+                            label = "年份";
+                            break;
+                        case "lang":
+                            label = "语言";
+                            break;
+                        default:
+                            continue;
                     }
 
                     JSONArray arr = typeObj.optJSONArray(key);
@@ -312,11 +326,11 @@ public class AppRJ extends Spider {
             }
 
             String parseUrls = parts[0];  // 解析地址（@ 分隔）
-            String videoUrl  = parts[1];
+            String videoUrl = parts[1];
             String userAgent = parts[2];
             // parts[3] = 空（分隔位）
-            String vodName   = parts[4];
-            String nid       = parts[5];
+            String vodName = parts[4];
+            String nid = parts[5];
 
             // 逐个尝试解析地址
             if (!TextUtils.isEmpty(parseUrls)) {
@@ -332,7 +346,7 @@ public class AppRJ extends Spider {
                             + "&timestamp=" + timestamp;
 
                     JSONObject json = new JSONObject(OkHttpUtil.string(fullUrl, headers));
-                    videoUrl  = json.optString("url");
+                    videoUrl = json.optString("url");
                     userAgent = json.optString("UA", userAgent);
 
                     if (UrlChecker.isMediaUrl(videoUrl)) break;
