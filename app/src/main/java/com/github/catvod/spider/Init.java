@@ -316,9 +316,12 @@ public class Init {
     }
 
     /**
-     * 把 gomobile 的 libgojni.so 从插件 jar 解压到宿主 cache/jar 目录。
-     * 宿主 DexClassLoader 的 nativeLibraryPath 包含该目录，go.Seq 加载 SO 时就能找到。
+     * 把 gomobile 的 libgojni.so 从插件 jar 解压到宿主 cache/jar 目录，
+     * 并在宿主 ClassLoader 中主动加载。后续 DexClassLoader 里的 go.Seq
+     * 调用 System.loadLibrary("gojni") 时会复用已加载的库，避免跨 ClassLoader
+     * 重复打开导致的 UnsatisfiedLinkError。
      */
+    @SuppressLint({"UnsafeDynamicallyLoadedCode"})
     private static void loadGoJni() {
         try {
             Application app = context();
@@ -348,10 +351,11 @@ public class Init {
                     }
                     write(targetSo, zf.getInputStream(entry));
                     zf.close();
-                    SpiderDebug.log("libgojni.so extracted to: " + targetSo);
+                    System.load(targetSo.getAbsolutePath());
+                    SpiderDebug.log("libgojni.so loaded: " + targetSo);
                     return;
                 } catch (Exception e) {
-                    SpiderDebug.log("gojni extract from " + jar + " error: " + e.getMessage());
+                    SpiderDebug.log("gojni extract/load from " + jar + " error: " + e.getMessage());
                 }
             }
             SpiderDebug.log("libgojni.so not found in any plugin jar, abi=" + abi);
