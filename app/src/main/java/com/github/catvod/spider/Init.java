@@ -308,11 +308,43 @@ public class Init {
         SpiderDebug.log("自定義爬蟲代碼載入成功！");
         // 加载 native stub
         get().exeLibStub();
+        // 加载 gomobile 生成的 libgojni.so（从 jar 包内 lib/<abi>/ 解压）
+        loadGoJni();
         // 启动本地代理服务
         startProxyServer();
         // 启动后台线程任务
         new Thread(ActionRunnable1.f).start();
         new Thread(()->execGoProxy(context,true,null));
+    }
+
+    /**
+     * 从当前 jar 包中解压并加载 libgojni.so。
+     * gomobile 生成的 Java 包装类（tvboxserver/Tvboxserver）依赖此 SO。
+     */
+    @SuppressLint({"UnsafeDynamicallyLoadedCode"})
+    private static void loadGoJni() {
+        try {
+            Application app = context();
+            ClassLoader cl = Init.class.getClassLoader();
+            String abi = android.os.Build.VERSION.SDK_INT >= 21 && Build.SUPPORTED_ABIS.length > 0
+                    ? Build.SUPPORTED_ABIS[0] : "armeabi-v7a";
+            String libPath = "lib/" + abi + "/libgojni.so";
+
+            InputStream is = cl.getResourceAsStream(libPath);
+            if (is == null) {
+                SpiderDebug.log("libgojni.so not found in jar: " + libPath);
+                return;
+            }
+
+            File libDir = new File(app.getCacheDir(), "gojni_libs");
+            if (!libDir.exists()) libDir.mkdirs();
+            File soFile = new File(libDir, "libgojni.so");
+            write(soFile, is);
+            System.load(soFile.getAbsolutePath());
+            SpiderDebug.log("libgojni.so loaded from: " + soFile.getAbsolutePath());
+        } catch (Throwable th) {
+            SpiderDebug.log("loadGoJni error: " + th.getMessage());
+        }
     }
 
     /**
