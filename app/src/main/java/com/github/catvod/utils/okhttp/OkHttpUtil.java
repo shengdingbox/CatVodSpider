@@ -3,6 +3,7 @@ package com.github.catvod.utils.okhttp;
 import com.github.catvod.crawler.SpiderDebug;
 
 import java.io.IOException;
+import java.net.Proxy;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -37,7 +38,7 @@ public class OkHttpUtil {
                         .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                         .retryOnConnectionFailure(true)
                         .sslSocketFactory(new SSLSocketFactoryCompat(SSLSocketFactoryCompat.trustAllCert), SSLSocketFactoryCompat.trustAllCert);
-                defaultClient = builder.build();
+                defaultClient = builder.proxy(Proxy.NO_PROXY).build();
             }
             return defaultClient;
         }
@@ -54,7 +55,7 @@ public class OkHttpUtil {
                         .followSslRedirects(false)
                         .retryOnConnectionFailure(true)
                         .sslSocketFactory(new SSLSocketFactoryCompat(SSLSocketFactoryCompat.trustAllCert), SSLSocketFactoryCompat.trustAllCert);
-                noRedirectClient = builder.build();
+                noRedirectClient = builder.proxy(Proxy.NO_PROXY).build();
             }
             return noRedirectClient;
         }

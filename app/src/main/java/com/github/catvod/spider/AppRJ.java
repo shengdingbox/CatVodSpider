@@ -28,6 +28,7 @@ import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import tvboxserver.Tvboxserver;
 
 /**
  * AppRJ 影视聚合爬虫（RJ 接口 /v3 系列）
@@ -120,6 +121,8 @@ public class AppRJ extends Spider {
     public void init(Context context, String ext) throws Exception {
         try {
             this.baseUrl = new JSONObject(ext).getString("url");
+           String md5 =Tvboxserver.Md5(8080);
+           SpiderDebug.log("go-md5: " + md5);
         } catch (Exception e) {
             e.printStackTrace();
         }
