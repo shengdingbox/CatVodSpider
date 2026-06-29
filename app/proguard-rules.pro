@@ -28,6 +28,9 @@
 # Keep classes referenced via reflection / native and required by checkJar
 -keep class com.github.catvod.demo.** { *; }
 -dontwarn com.github.catvod.en.**
+# Keep server package referenced from AppRJ / proxy
+-keeppackagenames com.github.catvod.utils.server.**
+-keep class com.github.catvod.utils.server.** { *; }
 -dontwarn com.github.catvod.utils.server.**
 
 # AndroidX

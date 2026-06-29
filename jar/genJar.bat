@@ -39,6 +39,8 @@ call :rmdir "%SPIDER%\smali\com\github\catvod\spider"
 if errorlevel 1 exit /b %errorlevel%
 call :rmdir "%SPIDER%\smali\com\github\catvod\js"
 if errorlevel 1 exit /b %errorlevel%
+call :rmdir "%SPIDER%\smali\com\github\catvod\utils"
+if errorlevel 1 exit /b %errorlevel%
 call :rmdir "%SPIDER%\smali\go"
 if errorlevel 1 exit /b %errorlevel%
 call :rmdir "%SPIDER%\smali\tvboxserver"
@@ -49,6 +51,8 @@ if not exist "%SPIDER%\smali\com\github\catvod" md "%SPIDER%\smali\com\github\ca
 move "%WORK%\smali\com\github\catvod\spider" "%SPIDER%\smali\com\github\catvod\"
 if errorlevel 1 exit /b %errorlevel%
 move "%WORK%\smali\com\github\catvod\js" "%SPIDER%\smali\com\github\catvod\"
+if errorlevel 1 exit /b %errorlevel%
+move "%WORK%\smali\com\github\catvod\utils" "%SPIDER%\smali\com\github\catvod\"
 if errorlevel 1 exit /b %errorlevel%
 move "%WORK%\smali\go" "%SPIDER%\smali\"
 if errorlevel 1 exit /b %errorlevel%

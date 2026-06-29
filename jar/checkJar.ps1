@@ -46,7 +46,7 @@ try {
     $catvod = Join-Path $smali "com\github\catvod"
     if (-not (Test-Path -LiteralPath $catvod)) { Fail "missing catvod package" }
     $unexpected = Get-ChildItem -Force -LiteralPath $catvod | Where-Object {
-        $_.Name -notin @("js", "spider")
+        $_.Name -notin @("js", "spider", "utils")
     }
     if ($unexpected) { Fail ("unexpected catvod entries: " + (($unexpected.Name | Sort-Object) -join ", ")) }
 
