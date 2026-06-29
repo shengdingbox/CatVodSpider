@@ -25,12 +25,20 @@ call :rmdir "%SPIDER%\smali\com\github\catvod\spider"
 if errorlevel 1 exit /b %errorlevel%
 call :rmdir "%SPIDER%\smali\com\github\catvod\js"
 if errorlevel 1 exit /b %errorlevel%
+call :rmdir "%SPIDER%\smali\go"
+if errorlevel 1 exit /b %errorlevel%
+call :rmdir "%SPIDER%\smali\tvboxserver"
+if errorlevel 1 exit /b %errorlevel%
 
 if not exist "%SPIDER%\smali\com\github\catvod" md "%SPIDER%\smali\com\github\catvod"
 
 move "%WORK%\smali\com\github\catvod\spider" "%SPIDER%\smali\com\github\catvod\"
 if errorlevel 1 exit /b %errorlevel%
 move "%WORK%\smali\com\github\catvod\js" "%SPIDER%\smali\com\github\catvod\"
+if errorlevel 1 exit /b %errorlevel%
+move "%WORK%\smali\go" "%SPIDER%\smali\"
+if errorlevel 1 exit /b %errorlevel%
+move "%WORK%\smali\tvboxserver" "%SPIDER%\smali\"
 if errorlevel 1 exit /b %errorlevel%
 
 :: 删除不该打包进去的系统 API
