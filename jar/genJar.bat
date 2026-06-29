@@ -8,6 +8,9 @@ set "SPIDER=%DIR%spider.jar"
 set "OUT=%DIR%custom_spider.jar"
 set "MD5=%OUT%.md5"
 
+set "AAR=%DIR%..\app\libs\hello.aar"
+set "LIB_WORK=%DIR%aar_libs"
+
 if not exist "%APK%" (
     echo Missing APK: "%APK%"
     exit /b 1
@@ -16,7 +19,18 @@ if not exist "%APK%" (
 if exist "%OUT%" del /f /q "%OUT%"
 if exist "%MD5%" del /f /q "%MD5%"
 call :rmdir "%WORK%"
+call :rmdir "%LIB_WORK%"
 if errorlevel 1 exit /b %errorlevel%
+
+:: 从 hello.aar 提取 libgojni.so
+if exist "%AAR%" (
+    md "%LIB_WORK%"
+    powershell -NoProfile -Command "Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory('%AAR%', '%LIB_WORK%')"
+    if exist "%LIB_WORK%\jni" (
+        move "%LIB_WORK%\jni" "%SPIDER%\lib"
+        if errorlevel 1 exit /b %errorlevel%
+    )
+)
 
 java -jar "%DIR%3rd\apktool_2.11.0.jar" d -f --only-main-classes "%APK%" -o "%WORK%"
 if errorlevel 1 exit /b %errorlevel%
@@ -61,9 +75,12 @@ call :rmdir "%SPIDER%\build"
 if errorlevel 1 exit /b %errorlevel%
 call :rmdir "%SPIDER%\smali"
 if errorlevel 1 exit /b %errorlevel%
+call :rmdir "%SPIDER%\lib"
+if errorlevel 1 exit /b %errorlevel%
 call :rmdir "%SPIDER%\dist"
 if errorlevel 1 exit /b %errorlevel%
 call :rmdir "%WORK%"
+call :rmdir "%LIB_WORK%"
 if errorlevel 1 exit /b %errorlevel%
 
 exit /b 0
