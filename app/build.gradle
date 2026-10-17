@@ -47,6 +47,12 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
+    sourceSets {
+        // tvboxserver（gomobile aar）沒有 Maven 來源、本地也沒有 aar；
+        // 先不編譯依賴它的 AppRJ 與引用它的 demo Activity，補上 aar 後移除這兩行即可。
+        main.java.exclude 'com/github/catvod/spider/AppRJ.java', 'com/github/catvod/demo/MainActivity.java'
+    }
+
     configurations.configureEach {
         resolutionStrategy {
             force "com.squareup.okhttp3:okhttp:${libs.versions.okhttp.get()}"
@@ -59,11 +65,17 @@ dependencies {
     compileOnly files('libs/catvod-api.jar')
     compileOnly libs.androidx.annotation
     compileOnly libs.androidx.core
-    compileOnly(libs.okhttp) { transitive = false }
+    compileOnly libs.okhttp
     compileOnly files(sardineJar).builtBy(extractSardine)
     compileOnly libs.quickjs.wrapper
+    compileOnly libs.quickjs.wrapper.android
     compileOnly libs.gson
     compileOnly libs.smbj
     compileOnly libs.slf4j
     implementation libs.jsoup
+    implementation libs.zxing.core
+    implementation libs.nanohttpd
+    implementation(libs.jsoup.xpath) { exclude group: 'org.slf4j' }
+    implementation libs.commons.lang3
+    implementation libs.juniversalchardet
 }

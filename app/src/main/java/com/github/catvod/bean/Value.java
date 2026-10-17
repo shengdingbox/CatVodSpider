@@ -1,28 +1,24 @@
 package com.github.catvod.bean;
 
-import com.google.gson.annotations.SerializedName;
-
-public class Value {
-
-    @SerializedName("n")
-    private String n;
-    @SerializedName("v")
-    private String v;
+public class Value extends Filter.Value {
 
     private Value() {
+        super(null, null);
     }
 
     public static Value create() {
         return new Value();
     }
 
+    @Override
     public Value n(String n) {
-        this.n = n;
+        super.n(n);
         return this;
     }
 
+    @Override
     public Value v(String v) {
-        this.v = v;
+        super.v(v);
         return this;
     }
 }

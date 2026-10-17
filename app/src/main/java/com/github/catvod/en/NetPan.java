@@ -1,0 +1,101 @@
+package com.github.catvod.en;
+
+import android.content.Context;
+import com.github.catvod.crawler.Spider;
+import com.github.catvod.spider.*;
+import org.json.JSONObject;
+
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Pattern;
+
+
+public class NetPan extends Spider {
+    public static final Pattern a = Pattern.compile("(www.aliyundrive.com|www.alipan.com)/s/([^/]+)(/folder/([^/]+))?");
+    public static Quark quark = new Quark();
+    public static Uc uc = new Uc();
+    public static YunPan139 yunPan139 = new YunPan139();
+    public static YunPan189 yunPan189 = new YunPan189();
+    public static YunPan123 yunPan123 = new YunPan123();
+    public static Yun115 yun115 = new Yun115();
+    public static GuangYaPan guangYaPan = new GuangYaPan();
+    public static JSONObject jsonObject;
+
+    public static native  void a(NetPan netPan, String str, Map map, String str2);
+
+    private native void b(String str, String str2, Map map);
+
+    private static native void c(String str, JSONObject jSONObject);
+
+    public static native boolean containPuHua();
+
+    private static native void d(JSONObject jSONObject);
+
+    public static native String extractNetName(String str);
+
+    public static native List filterNetPanLinks(List list, Integer num);
+
+    public static native List findMatches(String str, String str2);
+
+    public static native String getIsoDownloadUrl(String str);
+
+    public static native String getNetPanType(String str);
+
+    public static native String getYunPanPic(String str);
+
+    public static native void initOrder(List list);
+
+    public static native void initOrderByVodId(List list);
+
+    public static native void initProxy(JSONObject jSONObject);
+
+    public static native void initTg(boolean z, JSONObject jSONObject);
+
+    public static native boolean isAliPan(String str);
+
+    public static native boolean isBaidu(String str);
+
+    public static native boolean isGuangYa(String str);
+
+    public static native boolean isNetPan(String str);
+
+    public static native boolean isQuark(String str);
+
+    public static native boolean isUc(String str);
+
+    public static native boolean isXunlei(String str);
+
+    public static native boolean isYun115(String str);
+
+    public static native boolean isYun123(String str);
+
+    public static native boolean isYunPan139(String str);
+
+    public static native boolean isYunPan189(String str);
+
+    public static native boolean isYunSelf115(String str);
+
+    public static native boolean isYunSelfBaidu(String str);
+
+    public static native boolean isYunSelfGuangya(String str);
+
+    public static native boolean isYunSelfQuark(String str);
+
+    public static native boolean isYunSelfUc(String str);
+
+    public native Object[] proxy(Map map);
+
+    public static native void writeTvTg();
+
+    public native String detailContent(String str, String str2, List list);
+
+    public native String detailContent(List list);
+
+    public native String detailContentVodPlayFrom(List list);
+
+    public native String detailContentVodPlayUrl(String str, List list);
+
+    public native void init(Context context, String str);
+
+    public native String playerContent(String str, String str2, List list);
+}

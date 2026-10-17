@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,16 +27,18 @@ public class Parser {
     private final Cache cache;
 
     public Parser() {
-        cache = Cache.create();
+        cache = new Cache();
     }
 
     private Info getParseInfo(String rule) {
-        Info info = Info.create().rule(rule);
+        Info info = new Info(rule);
         if (rule.contains(":eq")) {
-            info.rule(rule.split(":")[0]).info(rule.split(":")[1]);
+            info.setRule(rule.split(":")[0]);
+            info.setInfo(rule.split(":")[1]);
         } else if (rule.contains("--")) {
             String[] rules = rule.split("--");
-            info.excludes(rules).rule(rules[0]);
+            info.setExcludes(rules);
+            info.setRule(rules[0]);
         }
         return info;
     }
@@ -94,7 +95,7 @@ public class Parser {
             String result = "";
             for (String s : option.split("[||]")) {
                 result = elements.attr(s);
-                if (s.toLowerCase(Locale.ROOT).contains("style") && result.contains("url(")) {
+                if (s.toLowerCase().contains("style") && result.contains("url(")) {
                     Matcher m = URL.matcher(result);
                     if (m.find()) result = m.group(1);
                     result = result.replaceAll("^['|\"](.*)['|\"]$", "$1");

@@ -1,6 +1,11 @@
 package com.github.catvod.bean;
 
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.List;
 
 public class Danmaku {
 
@@ -9,7 +14,9 @@ public class Danmaku {
     @SerializedName("url")
     private String url;
 
-    private Danmaku() {
+    public static List<Danmaku> arrayFrom(String str) {
+        Type listType = TypeToken.getParameterized(List.class, Danmaku.class).getType();
+        return new Gson().fromJson(str, listType);
     }
 
     public static Danmaku create() {

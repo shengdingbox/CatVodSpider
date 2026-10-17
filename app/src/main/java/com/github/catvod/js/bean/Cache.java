@@ -10,13 +10,6 @@ public class Cache {
     private Document pdfhDoc;
     private Document pdfaDoc;
 
-    private Cache() {
-    }
-
-    public static Cache create() {
-        return new Cache();
-    }
-
     public Document getPdfh(String html) {
         updatePdfh(html);
         return pdfhDoc;

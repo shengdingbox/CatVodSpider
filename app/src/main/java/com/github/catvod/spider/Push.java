@@ -1,96 +1,217 @@
 package com.github.catvod.spider;
 
+import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
+import com.github.catvod.crawler.SpiderDebug;
+import com.github.catvod.en.NetPan;
+import com.github.catvod.utils.okhttp.OkHttpUtil;
+import com.github.catvod.bean.VodItem;
+import com.github.catvod.bean.VodResult;
 
-import com.github.catvod.bean.Sub;
-import com.github.catvod.bean.Vod;
-import com.github.catvod.crawler.Spider;
-import com.github.catvod.utils.Image;
-import com.github.catvod.utils.Json;
-import com.github.catvod.utils.Path;
-import com.github.catvod.utils.Response;
-import com.github.catvod.utils.VodUtil;
-import com.google.gson.JsonObject;
+import org.jsoup.nodes.Element;
+import com.github.catvod.bean.Subtitle;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+public class Push extends NetPan {
+    public static final List<String> m = Arrays.asList("thunder", "magnet", "ed2k", "ftp");
+    private String l = "http://127.0.0.1:8090";
 
-public class Push extends Spider {
-
-    private static final Pattern THUNDER = Pattern.compile("(magnet|thunder|ed2k):.*");
-
-    @Override
-    public String detailContent(List<String> ids) {
-        return Response.create().vod(vod(ids.get(0))).string();
-    }
-
-    @Override
-    public String playerContent(String flag, String id, List<String> vipFlags) {
-        if (id.contains("://") && id.contains("***")) id = id.replace("***", "#");
-        Response result = Response.create().url(id);
-        switch (flag) {
-            case "直連" -> result.subs(getSubs(id));
-            case "解析" -> result.parse().jx();
-            case "嗅探" -> result.parse();
+    public static String extractFileName(String str) {
+        Matcher matcher = Pattern.compile(".*/([^/?]+)").matcher(str);
+        if (matcher.find()) {
+            return matcher.group(1);
         }
-        return result.string();
+        return null;
     }
 
-    private Vod vod(String url) {
-        Vod vod = Vod.create().id(url).name(url.startsWith("file://") ? new File(url).getName() : "").pic(Image.PUSH).typeName("FongMi");
-        if (url.contains("://") && url.contains("#")) url = url.replace("#", "***");
-        if (isThunder(url)) {
-            return vod.playUrl(url).playFrom("迅雷");
-        } else if (url.contains("youtube.com")) {
-            return vod.playUrl(url).playFrom("YouTube");
-        } else if (url.contains("$")) {
-            return vod.playFrom("直連").playUrl(TextUtils.join("#", url.split("\n")));
+    private String f(String str) throws InterruptedException, UnsupportedEncodingException {
+        String strA = OkHttpUtil.postJsonString(this.l + "/torrents",
+                String.format("{\"action\":\"add\",\"link\":\"%s\",\"title\":\"\",\"poster\":\"\",\"save_to_db\":true}", str),
+                new HashMap());
+        SpiderDebug.log("torr1 Torrent added" + strA);
+        try {
+            String string = new JSONObject(strA).getString("hash");
+            String strB = null;
+            String strM = OkHttpUtil.string(this.l + "/playlist?hash=" + string, new HashMap<>());
+            if (!strM.contains("http")) {
+                Thread.sleep(3000L);
+                strM = OkHttpUtil.string(this.l + "/playlist?hash=" + string, new HashMap<>());
+            }
+            Matcher matcher = Pattern.compile("http[^\n]+").matcher(strM);
+            ArrayList arrayList = new ArrayList();
+            while (matcher.find()) {
+                arrayList.add(matcher.group());
+            }
+            Iterator it = arrayList.iterator();
+            while (it.hasNext()) {
+                System.out.println((String) it.next());
+            }
+            for (int i = 0; i < arrayList.size(); i++) {
+                StringBuilder sb = new StringBuilder();
+                if (strB == null) {
+                    strB = "";
+                }
+                sb.append(strB);
+                sb.append(URLDecoder.decode(extractFileName((String) arrayList.get(i)), StandardCharsets.UTF_8.toString()));
+                sb.append("$");
+                strB = sb.append((String) arrayList.get(i)).append("#").toString();
+            }
+            return strB;
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private List<Subtitle> g(String str) {
+        ArrayList arrayList = new ArrayList();
+        if (str.startsWith("file://")) {
+            File file = new File(str.replace("file://", ""));
+            if (file.getParentFile() != null) {
+                File[] fileArrListFiles = file.getParentFile().listFiles();
+                fileArrListFiles.getClass();
+                for (File file2 : fileArrListFiles) {
+                    String fileName = file2.getName();
+                    String strJ = fileName.substring(fileName.lastIndexOf(".") + 1);
+                    if (strJ.equals("srt") || strJ.equals("ass") || strJ.equals("ssa")) {
+                        Subtitle sub = new Subtitle();
+                        String nameWithoutExt = fileName.contains(".") ? fileName.substring(0, fileName.lastIndexOf(".")) : fileName;
+                        sub.name(nameWithoutExt);
+                        sub.ext(strJ);
+                        sub.url("file://" + file2.getAbsolutePath());
+                        arrayList.add(sub);
+                    }
+                }
+            }
+        }
+        if (str.startsWith("http://")) {
+            List listAsList = Arrays.asList("mp4", "mkv");
+            List<String> listAsList2 = Arrays.asList("srt", "ass");
+            String urlExt = str.substring(str.lastIndexOf(".") + 1);
+            if (listAsList.contains(urlExt)) {
+                String urlBase = str.contains(".") ? str.substring(0, str.lastIndexOf(".")) : str;
+                for (String str2 : listAsList2) {
+                    String strConcat = urlBase + "." + str2;
+                    if (OkHttpUtil.string(strConcat).length() <= 100) {
+                        String lastPathSegment = Uri.parse(strConcat).getLastPathSegment();
+                        Subtitle sub = new Subtitle();
+                        sub.name(lastPathSegment);
+                        sub.ext(str2);
+                        sub.url(strConcat);
+                        arrayList.add(sub);
+                    }
+                }
+            }
+        }
+        return arrayList;
+    }
+
+    public static boolean isThunder(String str) {
+        return m.contains(scheme(str));
+    }
+
+    public static String scheme(String str) {
+        String scheme = Uri.parse(str).getScheme();
+        return scheme == null ? "" : scheme.toLowerCase();
+    }
+
+    @Override // com.github.catvod.en.NetPan
+    public String detailContent(List list) {
+        String strJoin;
+        String item0 = (String) list.get(0);
+        if (NetPan.isNetPan(item0)) {
+            return super.detailContent("", "", list);
+        }
+        if (item0 != null && !item0.isEmpty() && Youtube.hasYouTube(item0)) {
+            return Youtube.get().detailContent(list);
+        }
+        String str = item0;
+        VodItem iVar = new VodItem();
+        iVar.l(str);
+        iVar.g("FongMi");
+        iVar.m(str.startsWith("file://") ? new File(str).getName() : str);
+        iVar.n("https://pic.rmb.bdstatic.com/bjh/1d0b02d0f57f0a42201f92caba5107ed.jpeg");
+        if (isThunder(str)) {
+            String strF = null;
+            try {
+                strF = f(str);
+            } catch (Exception unused) {
+                System.out.println("获取在线Torr失败");
+            }
+            List listAsList = Arrays.asList("迅雷磁力", "Torr在线磁力");
+            StringBuilder sb = new StringBuilder();
+            Iterator it = listAsList.iterator();
+            if (it.hasNext()) {
+                while (true) {
+                    sb.append((CharSequence) it.next());
+                    if (!it.hasNext()) {
+                        break;
+                    }
+                    sb.append((CharSequence) "$$$");
+                }
+            }
+            iVar.o(sb.toString());
+            List listAsList2 = Arrays.asList("播放$" + str, strF);
+            StringBuilder sb2 = new StringBuilder();
+            Iterator it2 = listAsList2.iterator();
+            if (it2.hasNext()) {
+                while (true) {
+                    sb2.append((CharSequence) it2.next());
+                    if (!it2.hasNext()) {
+                        break;
+                    }
+                    sb2.append((CharSequence) "$$$");
+                }
+            }
+            strJoin = sb2.toString();
         } else {
-            return vod.playUrl(TextUtils.join("$$$", Arrays.asList(url, url, url))).playFrom(TextUtils.join("$$$", Arrays.asList("直連", "嗅探", "解析")));
+            iVar.o(TextUtils.join("$$$", Arrays.asList("直連", "嗅探", "解析")));
+            strJoin = TextUtils.join("$$$", Arrays.asList("播放$" + str, "播放$" + str, "播放$" + str));
         }
+        iVar.p(strJoin);
+        return VodResult.m(iVar);
     }
 
-    private boolean isThunder(String url) {
-        return THUNDER.matcher(url).find() || isTorrent(url);
+    @Override // com.github.catvod.en.NetPan
+    public void init(Context context, String str) {
+        super.init(context, str);
     }
 
-    private boolean isTorrent(String url) {
-        return !url.startsWith("magnet") && url.split(";")[0].endsWith(".torrent");
-    }
-
-    private List<Sub> getSubs(String url) {
-        List<Sub> subs = new ArrayList<>();
-        if (url.startsWith("file://")) setFileSub(url, subs);
-        if (url.startsWith("http://")) setHttpSub(url, subs);
-        return subs;
-    }
-
-    private void setHttpSub(String url, List<Sub> subs) {
-        List<String> vodTypes = Arrays.asList("mp4", "mkv");
-        List<String> subTypes = Arrays.asList("srt", "ass");
-        if (!vodTypes.contains(VodUtil.getExt(url))) return;
-        for (String ext : subTypes) detectSub(url, ext, subs);
-    }
-
-    private void detectSub(String url, String ext, List<Sub> subs) {
-        url = VodUtil.removeExt(url).concat(".").concat(ext);
-        JsonObject result = Json.parse(net.req(url, "{\"timeout\":15000}")).getAsJsonObject();
-        if (!"200".equals(result.get("code").getAsString()) || result.get("content").getAsString().length() < 100) return;
-        String name = Uri.parse(url).getLastPathSegment();
-        subs.add(Sub.create().name(name).format(ext).url(url));
-    }
-
-    private void setFileSub(String url, List<Sub> subs) {
-        File parent = new File(url.replace("file://", "")).getParentFile();
-        if (parent == null) return;
-        for (File f : Path.list(parent)) {
-            String ext = VodUtil.getExt(f.getName());
-            if (!f.isFile() || !VodUtil.isSub(ext)) continue;
-            subs.add(Sub.create().name(VodUtil.removeExt(f.getName())).format(ext).url("file://" + f.getAbsolutePath()));
+    @Override // com.github.catvod.en.NetPan
+    public String playerContent(String str, String str2, List list) {
+        if (str.equals("直連")) {
+            VodResult gVar = new VodResult();
+            gVar.w(str2);
+            gVar.v(g(str2));
+            return gVar.toString();
         }
+        if (str.startsWith("Torr在线磁力") || str.startsWith("迅雷")) {
+            VodResult gVar2 = new VodResult();
+            gVar2.w(str2);
+            gVar2.v(g(str2));
+            return gVar2.toString();
+        }
+        if (str.equals("嗅探")) {
+            VodResult gVar3 = new VodResult();
+            gVar3.k();
+            gVar3.w(str2);
+            return gVar3.toString();
+        }
+        if (!str.equals("解析")) {
+            return str2 != null && !str2.isEmpty() && Youtube.hasYouTube(str2) ? Youtube.get().playerContent(null, str2, null) : super.playerContent(str, str2, list);
+        }
+        VodResult gVar4 = new VodResult();
+        gVar4.k();
+        gVar4.h();
+        gVar4.w(str2);
+        return gVar4.toString();
     }
 }

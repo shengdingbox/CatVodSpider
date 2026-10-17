@@ -38,6 +38,10 @@ public class Sub {
         return this;
     }
 
+    public Sub ext(String ext) {
+        return format(ext);
+    }
+
     public Sub format(String ext) {
         this.format = VodUtil.getSubMimeType(ext);
         return this;
@@ -45,6 +49,11 @@ public class Sub {
 
     public Sub flag(int flag) {
         this.flag = flag;
+        return this;
+    }
+
+    public Sub forced() {
+        this.flag = 2;
         return this;
     }
 }
